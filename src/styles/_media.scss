@@ -1,0 +1,36 @@
+@use 'variables' as variable;
+
+@mixin media-tablet {
+
+    @media (max-width: variable.$mediaWidthTablet) {
+        @content;
+    }
+}
+
+@mixin media-tablet-horizontal {
+
+    @media (max-width: variable.$mediaWidthTabletHorizontal) {
+        @content;
+    }
+}
+
+@mixin media-laptop {
+
+    @media (max-width: variable.$mediaWidthLaptop) {
+        @content;
+    }
+}
+@mixin media-laptop-xl {
+
+    @media (max-width: variable.$mediaWidthLaptopXL) {
+        @content;
+    }
+}
+
+@mixin media-custom($width) {
+
+    @media (max-width: $width) {
+        @content;
+    }
+}
+
