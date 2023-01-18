@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react';
-import s from './Cursor.module.scss'
+// import s from './Cursor.module.scss'
 
 export default function Cursor() {
 
-    const delay = 18;
+    const delay = 15;
 
     const dot = useRef<HTMLDivElement>(null);
     const dotOutline = useRef<HTMLDivElement>(null);
@@ -112,8 +112,8 @@ export default function Cursor() {
 
     return (
     <>
-        <div className={s.cursorDotOutline} ref={dotOutline}></div>
-        <div className={s.cursorDot} ref={dot}></div>
+        <div className="cursor-dot-outline" ref={dotOutline}></div>
+        <div className="cursor-dot" ref={dot}></div>
     </>
 );
 };
