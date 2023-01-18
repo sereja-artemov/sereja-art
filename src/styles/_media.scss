@@ -1,28 +1,35 @@
 @use 'variables' as variable;
 
-@mixin media-tablet {
+@mixin media-XS {
 
-    @media (max-width: variable.$mediaWidthTablet) {
+    @media (max-width: variable.$mediaWidth-XS) {
         @content;
     }
 }
 
-@mixin media-tablet-horizontal {
+@mixin media-S {
 
-    @media (max-width: variable.$mediaWidthTabletHorizontal) {
+    @media (max-width: variable.$mediaWidth-S) {
         @content;
     }
 }
 
-@mixin media-laptop {
+@mixin media-M {
 
-    @media (max-width: variable.$mediaWidthLaptop) {
+    @media (max-width: variable.$mediaWidth-M) {
         @content;
     }
 }
-@mixin media-laptop-xl {
+@mixin media-L {
 
-    @media (max-width: variable.$mediaWidthLaptopXL) {
+    @media (max-width: variable.$mediaWidth-L) {
+        @content;
+    }
+}
+
+@mixin media-XL {
+
+    @media (max-width: variable.$mediaWidth-XL) {
         @content;
     }
 }
