@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import {useEffect, useRef} from 'react';
 // import s from './Cursor.module.scss'
 
 export default function Cursor() {
@@ -11,8 +11,15 @@ export default function Cursor() {
     const cursorVisible = useRef(true);
     const cursorEnlarged = useRef(false);
 
-    const endX = useRef(window.innerWidth / 2);
-    const endY = useRef(window.innerHeight / 2);
+    const getCursorPosition = () => {
+        if (localStorage.getItem('cursorPosition')) {
+            return JSON.parse(localStorage.getItem('cursorPosition') || '{}');
+        }
+    }
+    getCursorPosition()
+
+    const endX = useRef(getCursorPosition().x);
+    const endY = useRef(getCursorPosition().y);
     const _x = useRef(0);
     const _y = useRef(0);
 
@@ -27,6 +34,11 @@ export default function Cursor() {
 
         animateDotOutline();
 
+        // @ts-ignore
+        dot.current.style.top = endY.current + 'px';
+        // @ts-ignore
+        dot.current.style.left = endX.current + 'px';
+
         return () => {
             document.removeEventListener('mousedown', mouseOverEvent);
             document.removeEventListener('mouseup', mouseOutEvent);
@@ -37,6 +49,10 @@ export default function Cursor() {
             cancelAnimationFrame(requestRef.current);
         };
     }, []);
+
+    const saveCursorPositionInLS = (x: number, y: number) => {
+        localStorage.setItem('cursorPosition', JSON.stringify({x, y}));
+    }
 
     const toggleCursorVisibility = () => {
         if (cursorVisible.current) {
@@ -89,9 +105,11 @@ export default function Cursor() {
     const mouseMoveEvent = (e: { pageX: number; pageY: number; }) => {
         cursorVisible.current = true;
         toggleCursorVisibility();
+        saveCursorPositionInLS(e.pageX, e.pageY);
 
         endX.current = e.pageX;
         endY.current = e.pageY;
+        console.log(e.pageX)
 // @ts-ignore
         dot.current.style.top = endY.current + 'px';
         // @ts-ignore
