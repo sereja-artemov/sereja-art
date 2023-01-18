@@ -3,7 +3,6 @@
 
 :root {
   --max-width: 1100px;
-  --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
@@ -112,15 +111,15 @@ a {
 }
 
 .container {
-  width: 1280px;
-  padding: 0 20px;
+  width: 1140px;
+  padding: 0 10px;
   margin: 0 auto;
 }
 
 .container-fluid {
   width: 100%;
   max-width: 1920px;
-  padding: 0 74px;
+  padding: 0 75px;
   margin: 0 auto;
 }
 
