@@ -39,6 +39,7 @@ export default function Cursor() {
         // @ts-ignore
         dot.current.style.left = endX.current + 'px';
 
+
         return () => {
             document.removeEventListener('mousedown', mouseOverEvent);
             document.removeEventListener('mouseup', mouseOutEvent);
@@ -119,7 +120,7 @@ export default function Cursor() {
     const animateDotOutline = () => {
         _x.current += (endX.current - _x.current) / delay;
         _y.current += (endY.current - _y.current) / delay;
-// @ts-ignore
+    // @ts-ignore
         dotOutline.current.style.top = _y.current + 'px';
         // @ts-ignore
         dotOutline.current.style.left = _x.current + 'px';
