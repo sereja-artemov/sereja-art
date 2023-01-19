@@ -1,4 +1,4 @@
-import {useEffect, useRef} from 'react';
+import { useEffect, useRef } from 'react';
 // import s from './Cursor.module.scss'
 
 export default function Cursor() {
@@ -11,17 +11,22 @@ export default function Cursor() {
     const cursorVisible = useRef(true);
     const cursorEnlarged = useRef(false);
 
+    const centerDisplayX = window.innerWidth / 2;
+    const centerDisplayY = window.innerHeight / 2;
+
     const getCursorPosition = () => {
         if (localStorage.getItem('cursorPosition')) {
             return JSON.parse(localStorage.getItem('cursorPosition') || '{}');
+        } else {
+            return { x: centerDisplayX, y: centerDisplayY }
         }
     }
-    getCursorPosition()
+    const { x: cursorX, y: cursorY } = getCursorPosition();
 
-    const endX = useRef(getCursorPosition().x);
-    const endY = useRef(getCursorPosition().y);
-    const _x = useRef(0);
-    const _y = useRef(0);
+    const endX = useRef(cursorX);
+    const endY = useRef(cursorY);
+    const _x = useRef(cursorX);
+    const _y = useRef(cursorY);
 
     const requestRef = useRef(null);
 
@@ -39,14 +44,13 @@ export default function Cursor() {
         // @ts-ignore
         dot.current.style.left = endX.current + 'px';
 
-
         return () => {
             document.removeEventListener('mousedown', mouseOverEvent);
             document.removeEventListener('mouseup', mouseOutEvent);
             document.removeEventListener('mousemove', mouseMoveEvent);
             document.removeEventListener('mouseenter', mouseEnterEvent);
             document.removeEventListener('mouseleave', mouseLeaveEvent);
-// @ts-ignore
+        // @ts-ignore
             cancelAnimationFrame(requestRef.current);
         };
     }, []);
@@ -110,8 +114,7 @@ export default function Cursor() {
 
         endX.current = e.pageX;
         endY.current = e.pageY;
-        console.log(e.pageX)
-// @ts-ignore
+        // @ts-ignore
         dot.current.style.top = endY.current + 'px';
         // @ts-ignore
         dot.current.style.left = endX.current + 'px';
@@ -120,7 +123,7 @@ export default function Cursor() {
     const animateDotOutline = () => {
         _x.current += (endX.current - _x.current) / delay;
         _y.current += (endY.current - _y.current) / delay;
-    // @ts-ignore
+         // @ts-ignore
         dotOutline.current.style.top = _y.current + 'px';
         // @ts-ignore
         dotOutline.current.style.left = _x.current + 'px';
