@@ -11,8 +11,9 @@ export default function Header() {
                         <li className={s.listItem}><Link href="/" className={s.link}>Главная</Link></li>
                         <li className={s.listItem}><Link href="/about" className={s.link}>Обо мне</Link></li>
                         <li className={s.listItem}><Link href="#" className={s.link}>Портфолио</Link></li>
-                        <li className={s.listItem}><Link href="#" className={s.link}>Блог</Link></li>
                         <li className={s.listItem}><Link href="#" className={s.link}>Услуги</Link></li>
+                        <li className={s.listItem}><Link href="#" className={s.link}>Блог</Link></li>
+                        <li className={s.listItem}><Link href="#" className={s.link}>Контакты</Link></li>
                     </ul>
                 </nav>
             </div>
