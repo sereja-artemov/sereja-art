@@ -3,7 +3,7 @@ import '@/styles/_variables.scss'
 import '@/styles/globals.scss'
 import type {AppProps} from 'next/app'
 import {Montserrat, Roboto} from "@next/font/google";
-
+import Layout from "@/components/Layout/Layout";
 const montserrat = Montserrat({
     style: ['normal'],
     subsets: ['cyrillic', 'latin'],
@@ -18,7 +18,6 @@ const roboto = Roboto({
 
 export default function App({Component, pageProps}: AppProps) {
     return (
-
         <>
             <style jsx global>{`
               html {
@@ -29,7 +28,11 @@ export default function App({Component, pageProps}: AppProps) {
                 font-family: ${montserrat.style.fontFamily};
               }
             `}</style>
-            <Component {...pageProps} />
+
+                <Layout>
+                    <Component {...pageProps} />
+                </Layout>
+
         </>
     )
 }

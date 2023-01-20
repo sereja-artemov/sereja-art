@@ -1,5 +1,32 @@
-.headerH1 {
-  font-size: 50px;
-  text-transform: uppercase;
-  font-weight: 900;
+.header {
+  display: flex;
+  justify-content: space-between;
+  vertical-align: middle;
+  min-height: 30px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  vertical-align: middle;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--font-color);
+  font-size: 15px;
+  line-height: 1.5;
+  font-family: 'Montserrat', 'Roboto', 'Arial', sans-serif;
+}
+
+.toggleThemeButton {
+  width: 27px;
+  height: 27px;
+  border: none;
 }
