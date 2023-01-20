@@ -8,6 +8,7 @@ export default function Header() {
                 <a href="" className="logo"><img src="" alt="" className="logo-image"/></a>
                 <nav className={s.nav}>
                     <ul className={s.list}>
+                        <h1 className={s.headerH1}>я заголовок</h1>
                         <li className={s.listItem}><Link href="/" className={s.link}>Главная</Link></li>
                         <li className={s.listItem}><Link href="/about" className={s.link}>Обо мне</Link></li>
                         <li className={s.listItem}><Link href="#" className={s.link}>Портфолио</Link></li>
