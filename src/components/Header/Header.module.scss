@@ -3,3 +3,18 @@
   text-transform: uppercase;
   font-weight: 900;
 }
+.nav {
+  .list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    vertical-align: middle;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+  }
+  .link {
+    text-decoration: none;
+    color: var(--font-color);
+  }
+}
