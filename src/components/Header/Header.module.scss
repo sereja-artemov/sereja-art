@@ -1,21 +1,12 @@
+
 .header {
   position: relative;
   display: flex;
   justify-content: space-between;
-  vertical-align: middle;
+  align-items: center;
   min-height: 30px;
   padding-top: 40px;
   padding-bottom: 40px;
-}
-
-.list {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  vertical-align: middle;
-  justify-content: center;
-  gap: 30px;
-  list-style: none;
 }
 
 .link {
@@ -27,23 +18,34 @@
 }
 
 .toggleThemeButton {
+  background-color: #828282; //временно
   width: 27px;
   height: 27px;
   border: none;
 }
 .nav {
+  padding: 0 30px 0 30px;
+
   .list {
     margin: 0;
     padding: 0;
     display: flex;
+    flex-wrap: wrap;
     vertical-align: middle;
     justify-content: center;
-    gap: 30px;
     list-style: none;
   }
   .link {
     text-decoration: none;
     color: var(--font-color);
+  }
+  .listItem {
+    margin-right: 30px;
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
 .menuBtn {
@@ -61,4 +63,5 @@
     font-weight: bold;
     margin-bottom: 1px;
   }
+
 }
