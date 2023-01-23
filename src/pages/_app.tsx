@@ -2,9 +2,9 @@ import '@/styles/utils/normalize.css'
 import '@/styles/_variables.scss'
 import '@/styles/globals.scss'
 import type {AppProps} from 'next/app'
-import {Montserrat, Roboto} from "@next/font/google";
+import {Montserrat, Raleway, Roboto} from "@next/font/google";
 import Layout from "@/components/Layout/Layout";
-const montserrat = Montserrat({
+const raleway = Raleway({
     style: ['normal'],
     subsets: ['cyrillic', 'latin'],
     fallback: ['open-sans', 'system-ui', 'arial']
@@ -25,7 +25,7 @@ export default function App({Component, pageProps}: AppProps) {
               }
 
               h1, h2, h3, h4, h5, h6 {
-                font-family: ${montserrat.style.fontFamily};
+                font-family: ${raleway.style.fontFamily};
               }
             `}</style>
 

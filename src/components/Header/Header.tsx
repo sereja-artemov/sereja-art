@@ -25,8 +25,12 @@ export default function Header() {
                         <li className={s.listItem}><Link href="#" className={`${s.link} ${activeLink('#', router.pathname)}`}>Блог</Link></li>
                         <li className={s.listItem}><Link href="#" className={`${s.link} ${activeLink('#', router.pathname)}`}>Контакты</Link></li>
                     </ul>
+
                 </nav>
             <button className={s.toggleThemeButton}><img className={s.toggleThemeImage} src="" alt=""/></button>
+            <div className={s.menuBtn}>
+                <span>меню</span>
+            </div>
         </header>
     );
 }

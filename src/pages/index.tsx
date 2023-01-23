@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Descriptor from "@/components/Descriptor/Descriptor";
+import VideoBanner from "@/components/VideoBanner/VideoBanner";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <Descriptor />
+        <VideoBanner />
 </>
   )
 }

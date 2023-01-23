@@ -1,4 +1,5 @@
 .header {
+  position: relative;
   display: flex;
   justify-content: space-between;
   vertical-align: middle;
@@ -22,7 +23,7 @@
   color: var(--font-color);
   font-size: 15px;
   line-height: 1.5;
-  font-family: 'Montserrat', 'Roboto', 'Arial', sans-serif;
+  font-family: 'Roboto', 'Arial', sans-serif;
 }
 
 .toggleThemeButton {
@@ -43,5 +44,21 @@
   .link {
     text-decoration: none;
     color: var(--font-color);
+  }
+}
+.menuBtn {
+  display: none;
+  //display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid var(--font-color);
+
+  span {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 1px;
   }
 }
