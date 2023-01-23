@@ -1,21 +1,13 @@
+@import "../../styles/_media.scss";
+
 .header {
   position: relative;
   display: flex;
   justify-content: space-between;
-  vertical-align: middle;
+  align-items: center;
   min-height: 30px;
   padding-top: 40px;
   padding-bottom: 40px;
-}
-
-.list {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  vertical-align: middle;
-  justify-content: center;
-  gap: 30px;
-  list-style: none;
 }
 
 .link {
@@ -27,28 +19,65 @@
 }
 
 .toggleThemeButton {
+  flex-shrink: 0;
+  background-color: var(--tech-color); //временно
   width: 27px;
   height: 27px;
   border: none;
+  margin-right: 20px;
 }
+
 .nav {
+  padding: 0 30px 0 30px;
+
+  @include media-S {
+    display: none;
+    z-index: 800;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    padding-top: 80px;
+    background-color: #ebebeb;
+  }
+
   .list {
     margin: 0;
     padding: 0;
     display: flex;
+    flex-wrap: wrap;
     vertical-align: middle;
     justify-content: center;
-    gap: 30px;
     list-style: none;
+
+    @include media-S {
+      flex-direction: column;
+      justify-content: start;
+    }
   }
   .link {
     text-decoration: none;
     color: var(--font-color);
   }
+  .listItem {
+    margin-right: 30px;
+    margin-bottom: 10px;
+
+    @include media-S {
+      margin-right: 0;
+      text-align: right;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 }
+
 .menuBtn {
   display: none;
-  //display: flex;
+  flex-shrink: 0;
   justify-content: center;
   align-items: center;
   width: 56px;
@@ -60,5 +89,16 @@
     font-size: 12px;
     font-weight: bold;
     margin-bottom: 1px;
+  }
+
+  @include media-S {
+    z-index: 800;
+    //position: relative;
+    display: flex;
+    right: 10px;
+    top: 10px;
+    z-index: 850;
+    width: 47px;
+    height: 47px;
   }
 }

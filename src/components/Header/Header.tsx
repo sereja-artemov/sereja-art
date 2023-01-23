@@ -18,14 +18,25 @@ export default function Header() {
                 </Link>
                 <nav className={s.nav}>
                     <ul className={s.list}>
-                        <li className={s.listItem}><Link href="/" className={`${s.link} ${activeLink('/', router.pathname)}`}>Главная</Link></li>
-                        <li className={s.listItem}><Link href="/about" className={`${s.link} ${activeLink('/about', router.pathname)}`}>Обо мне</Link></li>
-                        <li className={s.listItem}><Link href="#" className={`${s.link} ${activeLink('#', router.pathname)}`}>Портфолио</Link></li>
-                        <li className={s.listItem}><Link href="#" className={`${s.link} ${activeLink('#', router.pathname)}`}>Услуги</Link></li>
-                        <li className={s.listItem}><Link href="#" className={`${s.link} ${activeLink('#', router.pathname)}`}>Блог</Link></li>
-                        <li className={s.listItem}><Link href="#" className={`${s.link} ${activeLink('#', router.pathname)}`}>Контакты</Link></li>
+                        <li className={s.listItem}>
+                            <Link href="/" className={`${s.link} ${activeLink('/', router.pathname)}`}>Главная</Link>
+                        </li>
+                        <li className={s.listItem}>
+                            <Link href="/about" className={`${s.link} ${activeLink('/about', router.pathname)}`}>Обо мне</Link>
+                        </li>
+                        <li className={s.listItem}>
+                            <Link href="#" className={`${s.link} ${activeLink('#', router.pathname)}`}>Портфолио</Link>
+                        </li>
+                        <li className={s.listItem}>
+                            <Link href="#" className={`${s.link} ${activeLink('#', router.pathname)}`}>Услуги</Link>
+                        </li>
+                        <li className={s.listItem}>
+                            <Link href="#" className={`${s.link} ${activeLink('#', router.pathname)}`}>Блог</Link>
+                        </li>
+                        <li className={s.listItem}>
+                            <Link href="#" className={`${s.link} ${activeLink('#', router.pathname)}`}>Контакты</Link>
+                        </li>
                     </ul>
-
                 </nav>
             <button className={s.toggleThemeButton}><img className={s.toggleThemeImage} src="" alt=""/></button>
             <div className={s.menuBtn}>
