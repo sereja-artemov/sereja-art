@@ -39,10 +39,14 @@ export default function Cursor() {
 
         animateDotOutline();
 
-        // @ts-ignore
-        dot.current.style.top = endY.current + 'px';
-        // @ts-ignore
-        dot.current.style.left = endX.current + 'px';
+        if (dot.current) {
+            dot.current.style.top = endY.current + 'px';
+            dot.current.style.left = endX.current + 'px';
+            dot.current.style.zIndex = '999';
+        }
+        if (dotOutline.current) {
+            dotOutline.current.style.zIndex = '999';
+        }
 
         return () => {
             document.removeEventListener('mousedown', mouseOverEvent);
