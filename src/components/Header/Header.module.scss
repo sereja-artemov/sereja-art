@@ -1,7 +1,8 @@
 @import "../../styles/_media.scss";
 
 .header {
-  position: relative;
+  position: absolute;
+  z-index: 800;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10,16 +11,9 @@
   padding-bottom: 40px;
 }
 
-.link {
-  text-decoration: none;
-  color: var(--font-color);
-  font-size: 15px;
-  line-height: 1.5;
-  font-family: 'Roboto', 'Arial', sans-serif;
-}
-
 .toggleThemeButton {
   flex-shrink: 0;
+  margin-left: auto;
   background-color: var(--tech-color); //временно
   width: 27px;
   height: 27px;
@@ -28,55 +22,45 @@
 }
 
 .nav {
-  padding: 0 30px 0 30px;
+  z-index: 700;
+  position: absolute;
+  top: 20px;
+  right: 50px;
 
-  @include media-S {
-    display: none;
-    z-index: 800;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    padding-top: 80px;
-    background-color: #ebebeb;
-  }
+  width: 30%;
+  height: auto;
+  max-height: 95vh;
+  overflow: auto;
+  padding: 50px;
+  border-radius: 30px;
+  border: 1px solid var(--font-color);
+  background: linear-gradient( to bottom, transparent, rgb(var(--background-end-rgb)) ) rgb(var(--background-start-rgb));
+}
 
-  .list {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    vertical-align: middle;
-    justify-content: center;
-    list-style: none;
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
-    @include media-S {
-      flex-direction: column;
-      justify-content: start;
-    }
-  }
-  .link {
-    text-decoration: none;
+.link {
+  text-decoration: none;
+  font-size: 65px;
+  font-weight: 900;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--font-color);
+
+  &:hover {
     color: var(--font-color);
-  }
-  .listItem {
-    margin-right: 30px;
-    margin-bottom: 10px;
-
-    @include media-S {
-      margin-right: 0;
-      text-align: right;
-    }
-
-    &:last-child {
-      margin-right: 0;
-    }
   }
 }
 
 .menuBtn {
-  display: none;
+  z-index: 800;
+  position: relative;
+  display: flex;
   flex-shrink: 0;
   justify-content: center;
   align-items: center;
@@ -91,14 +75,25 @@
     margin-bottom: 1px;
   }
 
+  &:hover {
+    background-color: #101921;
+    color: #fff;
+  }
+
+
   @include media-S {
     z-index: 800;
-    //position: relative;
-    display: flex;
     right: 10px;
     top: 10px;
-    z-index: 850;
     width: 47px;
     height: 47px;
   }
+}
+.menuActive {
+  background-color: #101921;
+  color: #fff;
+}
+.isSticky {
+  position: fixed;
+  top: 0;
 }

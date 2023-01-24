@@ -36,12 +36,12 @@ body {
 }
 
 body {
-  //background: linear-gradient(
-  //    to bottom,
-  //    transparent,
-  //    rgb(var(--background-end-rgb))
-  //  )
-  //  rgb(var(--background-start-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
 }
 
 .bg {
@@ -188,4 +188,7 @@ a {
 
 .block-mb {
   margin-bottom: 205px;
+}
+.top-block-padding {
+  padding-top: 96px;
 }
