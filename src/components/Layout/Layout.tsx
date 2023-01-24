@@ -15,7 +15,10 @@ export default function Layout({children}: LayoutProps) {
             <div className="bg"></div>
             <Cursor/>
             <Header/>
-            <main>{children}</main>
+            <main>
+                <div className="top-block-padding"></div>
+                {children}
+            </main>
         </>
     )
 }

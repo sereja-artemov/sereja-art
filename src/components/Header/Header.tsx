@@ -2,13 +2,40 @@ import s from './Header.module.scss';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { activeLink } from "@/utils/utils";
+import {useEffect, useRef, useState} from "react";
 
 export default function Header() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const headerRef = useRef<HTMLElement>(null);
+
+    function showMenu() {
+        setIsMenuOpen(true);
+    }
+    function closeMenu() {
+        setIsMenuOpen(false);
+    }
+
+    useEffect(() => {
+        // Sticky меню
+        window.addEventListener('scroll', activateSticky);
+        return () => {
+            window.removeEventListener('scroll', activateSticky);
+        };
+    }, []);
+
+    const activateSticky = () => {
+        const scrollTop = window.scrollY;
+        if (headerRef.current) {
+            scrollTop >= 96
+                ? headerRef.current.classList.add(`${s.isSticky}`)
+                : headerRef.current.classList.remove(`${s.isSticky}`);
+        }
+    };
 
     const router = useRouter();
 
     return (
-        <header className={`${s.header} container-fluid`}>
+        <header ref={headerRef} className={`${s.header} container-fluid`}>
                 <Link href="/" className={s.logo}>
                     <svg width="51" height="32" viewBox="0 0 51 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -16,30 +43,44 @@ export default function Header() {
                             fill="none" stroke="#101921"/>
                     </svg>
                 </Link>
-                <nav className={s.nav}>
-                    <ul className={s.list}>
-                        <li className={s.listItem}>
-                            <Link href="/" className={`${s.link} ${activeLink('/', router.pathname)}`}>Главная</Link>
-                        </li>
-                        <li className={s.listItem}>
-                            <Link href="/about" className={`${s.link} ${activeLink('/about', router.pathname)}`}>Обо мне</Link>
-                        </li>
-                        <li className={s.listItem}>
-                            <Link href="#" className={`${s.link} ${activeLink('#', router.pathname)}`}>Портфолио</Link>
-                        </li>
-                        <li className={s.listItem}>
-                            <Link href="#" className={`${s.link} ${activeLink('#', router.pathname)}`}>Услуги</Link>
-                        </li>
-                        <li className={s.listItem}>
-                            <Link href="#" className={`${s.link} ${activeLink('#', router.pathname)}`}>Блог</Link>
-                        </li>
-                        <li className={s.listItem}>
-                            <Link href="#" className={`${s.link} ${activeLink('#', router.pathname)}`}>Контакты</Link>
-                        </li>
-                    </ul>
-                </nav>
+
+            {isMenuOpen &&
+                <nav onMouseLeave={closeMenu} className={s.nav}>
+                <ul className={s.list}>
+                    <li className={s.listItem}>
+                        <Link href="/" className={`${s.link} ${activeLink('/', router.pathname)}`}>
+                            <span data-text="Главная">Главная</span>
+                        </Link>
+                    </li>
+                    <li className={s.listItem}>
+                        <Link href="/about" className={`${s.link} ${activeLink('/about', router.pathname)}`}>
+                            <span data-text="Обо мне">Обо мне</span>
+                        </Link>
+                    </li>
+                    <li className={s.listItem}>
+                        <Link href="#" className={`${s.link} ${activeLink('#', router.pathname)}`}>
+                            <span data-text="Портфолио">Портфолио</span>
+                        </Link>
+                    </li>
+                    <li className={s.listItem}>
+                        <Link href="#" className={`${s.link} ${activeLink('#', router.pathname)}`}>
+                            <span data-text="Услуги">Услуги</span>
+                        </Link>
+                    </li>
+                    <li className={s.listItem}>
+                        <Link href="#" className={`${s.link} ${activeLink('#', router.pathname)}`}>
+                            <span data-text="Блог">Блог</span>
+                        </Link>
+                    </li>
+                    <li className={s.listItem}>
+                        <Link href="#" className={`${s.link} ${activeLink('#', router.pathname)}`}>
+                            <span data-text="Контакты">Контакты</span>
+                        </Link>
+                    </li>
+                </ul>
+            </nav>}
             <button className={s.toggleThemeButton}><img className={s.toggleThemeImage} src="" alt=""/></button>
-            <div className={s.menuBtn}>
+            <div onMouseEnter={showMenu} className={`${s.menuBtn} ${isMenuOpen && s.menuActive}`}>
                 <span>меню</span>
             </div>
         </header>
