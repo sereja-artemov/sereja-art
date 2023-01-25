@@ -3,7 +3,7 @@
 .wrapper {
   position: relative;
   max-width: 880px;
-  height: 350px;
+  height: auto;
 }
 
 .video {
@@ -35,6 +35,12 @@
 
   font-size: 14px;
 
+  @include media-S {
+    padding: 9px 13px 8px 44px;
+    font-size: 12px;
+    bottom: -10px;
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -44,6 +50,10 @@
     width: 24px;
     height: 24px;
     background-image: url("../../images/icons/download-icon.svg");
+
+    @include media-S {
+      left: 10px;
+    }
   }
 
 }

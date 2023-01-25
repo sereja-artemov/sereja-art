@@ -224,6 +224,10 @@ a {
 
 .block-mb {
   margin-bottom: 205px;
+
+  @include media.media-S {
+    margin-bottom: 60px;
+  }
 }
 .top-block-padding {
   padding-top: 96px;
