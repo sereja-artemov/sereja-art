@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { activeLink } from "@/utils/utils";
 import {useEffect, useRef, useState} from "react";
+import Image from "next/image";
+import sunIcon from '@/images/icons/sun-icon.svg';
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -88,7 +90,9 @@ export default function Header() {
                     </li>
                 </ul>
             </nav>}
-            <button className={s.toggleThemeButton}><img className={s.toggleThemeImage} src="" alt=""/></button>
+            <button className={s.toggleThemeButton}>
+                <Image className={s.toggleThemeImage} src={sunIcon} width={27} height={27} alt="sun-icon"/>
+            </button>
             <button onMouseEnter={showMenu} onClick={toggleShowMenu} className={`${s.menuBtn} ${isMenuOpen && s.menuActive}`}>
                 <span>меню</span>
             </button>
