@@ -1,10 +1,20 @@
+@import "../../styles/_media.scss";
+
 .descriptor {
   padding-top: 150px;
   margin-bottom: 100px;
+
+  @include media-M {
+    padding-top: 85px;
+    margin-bottom: 70px;
+  }
+  @include media-S {
+    padding-top: 35px;
+  }
 }
 
 .contentWrapper {
-  max-width: 655px;
+  max-width: 601px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -15,6 +25,15 @@
   font-size: 48px;
   line-height: 1.4;
   font-weight: 900;
+
+  @include media-S {
+    font-size: 40px;
+    margin-bottom: 25px;
+  }
+  @include media-XS {
+    font-size: 7.4vw;
+    margin-bottom: 20px;
+  }
 }
 
 .stroke {
@@ -25,4 +44,12 @@
 }
 .description {
   font-size: 18px;
+
+  @include media-S {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  @include media-XS {
+    font-size: 14px;
+  }
 }

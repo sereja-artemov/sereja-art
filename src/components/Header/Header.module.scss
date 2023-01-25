@@ -11,6 +11,13 @@
   min-height: 30px;
   padding-top: 40px;
   padding-bottom: 40px;
+
+  @include media-S {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    backdrop-filter: blur(3px);
+    border-bottom: 1px solid rgb(255 255 255 / 20%);
+  }
 }
 
 .logo {
@@ -141,6 +148,7 @@
   height: 56px;
   border-radius: 50%;
   border: 1px solid var(--font-color);
+  background-color: transparent;
 
   @include media-S {
     z-index: 800;

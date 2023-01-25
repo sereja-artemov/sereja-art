@@ -161,9 +161,29 @@ a {
 }
 
 .container {
-  width: 1140px;
+  width: 1320px;
   padding: 0 10px;
   margin: 0 auto;
+
+  @include media.media-XL {
+    width: 1140px;
+  }
+
+  @include media.media-L {
+    width: 960px;
+  }
+
+  @include media.media-M {
+    width: 720px;
+  }
+
+  @include media.media-S {
+    width: 540px;
+  }
+
+  @include media.media-XS {
+    width: 100%;
+  }
 }
 
 .container-fluid {
@@ -173,7 +193,7 @@ a {
   margin: 0 auto;
 
   @include media.media-S {
-    padding: 0 15px;
+    padding: 0 10px;
   }
 }
 
@@ -207,4 +227,8 @@ a {
 }
 .top-block-padding {
   padding-top: 96px;
+
+  @include media.media-S {
+    padding-top: 67px;
+  }
 }
