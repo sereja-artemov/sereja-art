@@ -54,7 +54,7 @@ export default function Header() {
                     </li>
                     <li className={s.listItem}>
                         <Link href="/about" className={`${s.link} ${activeLink('/about', router.pathname)}`}>
-                            <span data-text="Обо мне">Обо мне</span>
+                            <span data-text="Обо&nbsp;мне">Обо мне</span>
                         </Link>
                     </li>
                     <li className={s.listItem}>
