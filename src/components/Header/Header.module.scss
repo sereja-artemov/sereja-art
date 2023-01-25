@@ -37,17 +37,32 @@
   border-radius: 30px;
   border: 1px solid var(--font-color);
   background: linear-gradient( to bottom, transparent, rgb(var(--background-end-rgb)) ) rgb(var(--background-start-rgb));
+
+  @include media-S {
+    width: 90vw;
+    top: 50px;
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 40px;
+  }
+  @include media-XS {
+    padding: 50px 30px 30px 30px;
+  }
 }
 
 .list {
   margin: 0;
   padding: 0;
   list-style: none;
+
+  @include media-S {
+    text-align: right;
+  }
 }
 
 .link {
-  display: block;
-  width: 100%;
+  display: inline-block;
   margin: 0;
   font-size: 65px;
   line-height: 1.5;
@@ -58,6 +73,18 @@
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: var(--font-color);
   -webkit-text-fill-color: transparent;
+
+  @include media-M {
+    font-size: 55px;
+  }
+
+  @include media-S {
+    font-size: 42px;
+  }
+
+  @include media-XS {
+    font-size: 35px;
+  }
 
   &::selection {
     background: var(--font-color);
@@ -101,6 +128,12 @@
   border-radius: 50%;
   border: 1px solid var(--font-color);
 
+  @include media-S {
+    z-index: 800;
+    width: 47px;
+    height: 47px;
+  }
+
   span {
     font-size: 12px;
     font-weight: bold;
@@ -110,15 +143,6 @@
   &:hover {
     background-color: #101921;
     color: #fff;
-  }
-
-
-  @include media-S {
-    z-index: 800;
-    right: 10px;
-    top: 10px;
-    width: 47px;
-    height: 47px;
   }
 }
 .menuActive {

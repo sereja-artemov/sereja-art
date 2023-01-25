@@ -11,8 +11,17 @@ export default function Header() {
     function showMenu() {
         setIsMenuOpen(true);
     }
+
     function closeMenu() {
         setIsMenuOpen(false);
+    }
+
+    function toggleShowMenu() {
+        isMenuOpen ? setIsMenuOpen(false) : setIsMenuOpen(true);
+    }
+
+    function closeMobileMenu() {
+        window.innerWidth <= 767.98 && closeMenu();
     }
 
     useEffect(() => {
@@ -48,39 +57,39 @@ export default function Header() {
                 <nav onMouseLeave={closeMenu} className={s.nav}>
                 <ul className={s.list}>
                     <li className={s.listItem}>
-                        <Link href="/" className={`${s.link} ${activeLink('/', router.pathname)}`}>
+                        <Link onClick={closeMobileMenu} href="/" className={`${s.link} ${activeLink('/', router.pathname)}`}>
                             <span data-text="Главная">Главная</span>
                         </Link>
                     </li>
                     <li className={s.listItem}>
-                        <Link href="/about" className={`${s.link} ${activeLink('/about', router.pathname)}`}>
+                        <Link onClick={closeMobileMenu} href="/about" className={`${s.link} ${activeLink('/about', router.pathname)}`}>
                             <span data-text="Обо&nbsp;мне">Обо мне</span>
                         </Link>
                     </li>
                     <li className={s.listItem}>
-                        <Link href="#" className={`${s.link} ${activeLink('#', router.pathname)}`}>
+                        <Link onClick={closeMobileMenu} href="#" className={`${s.link} ${activeLink('#', router.pathname)}`}>
                             <span data-text="Портфолио">Портфолио</span>
                         </Link>
                     </li>
                     <li className={s.listItem}>
-                        <Link href="#" className={`${s.link} ${activeLink('#', router.pathname)}`}>
+                        <Link onClick={closeMobileMenu} href="#" className={`${s.link} ${activeLink('#', router.pathname)}`}>
                             <span data-text="Услуги">Услуги</span>
                         </Link>
                     </li>
                     <li className={s.listItem}>
-                        <Link href="#" className={`${s.link} ${activeLink('#', router.pathname)}`}>
+                        <Link onClick={closeMobileMenu} href="#" className={`${s.link} ${activeLink('#', router.pathname)}`}>
                             <span data-text="Блог">Блог</span>
                         </Link>
                     </li>
                     <li className={s.listItem}>
-                        <Link href="#" className={`${s.link} ${activeLink('#', router.pathname)}`}>
+                        <Link onClick={closeMobileMenu} href="#" className={`${s.link} ${activeLink('#', router.pathname)}`}>
                             <span data-text="Контакты">Контакты</span>
                         </Link>
                     </li>
                 </ul>
             </nav>}
             <button className={s.toggleThemeButton}><img className={s.toggleThemeImage} src="" alt=""/></button>
-            <div onMouseEnter={showMenu} className={`${s.menuBtn} ${isMenuOpen && s.menuActive}`}>
+            <div onMouseEnter={showMenu} onClick={toggleShowMenu} className={`${s.menuBtn} ${isMenuOpen && s.menuActive}`}>
                 <span>меню</span>
             </div>
         </header>
