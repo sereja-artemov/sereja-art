@@ -15,8 +15,6 @@
   @include media-S {
     padding-top: 20px;
     padding-bottom: 20px;
-    backdrop-filter: blur(3px);
-    border-bottom: 1px solid rgb(255 255 255 / 20%);
   }
 }
 
@@ -68,7 +66,7 @@
     padding: 40px;
   }
   @include media-XS {
-    padding: 50px 30px 30px 30px;
+    padding: 35px 30px 35px 30px;
   }
 }
 
@@ -134,7 +132,6 @@
       width: 100%;
     }
   }
-
 }
 
 .menuBtn {

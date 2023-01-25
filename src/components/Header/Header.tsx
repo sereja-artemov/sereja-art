@@ -40,6 +40,14 @@ export default function Header() {
             scrollTop >= 96
                 ? headerRef.current.classList.add(`${s.isSticky}`)
                 : headerRef.current.classList.remove(`${s.isSticky}`);
+
+            if (scrollTop >= 96 && window.innerWidth <= 767.98) {
+                headerRef.current.style.backdropFilter = "blur(7px)";
+                headerRef.current.style.borderBottom = "1px solid rgba(255, 255, 255, 0.2)";
+            } else {
+                headerRef.current.style.backdropFilter = "none";
+                headerRef.current.style.borderBottom = "none";
+            }
         }
     };
 

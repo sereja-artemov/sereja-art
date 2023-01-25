@@ -1,6 +1,8 @@
+@import "../../styles/_media.scss";
+
 .wrapper {
   position: relative;
-  width: 880px;
+  max-width: 880px;
   height: 350px;
 }
 
@@ -10,6 +12,13 @@
   max-height: 100%;
   border-radius: 34px;
   border: 1px solid var(--font-color);
+
+  @include media-S {
+    border-radius: 25px;
+  }
+  @include media-XS {
+    border-radius: 15px;
+  }
 }
 .resumeBtn {
   z-index: 2;
