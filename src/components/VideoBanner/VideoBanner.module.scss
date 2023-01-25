@@ -25,4 +25,16 @@
   border-radius: 6px;
 
   font-size: 14px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    background-image: url("../../images/download-icon.svg");
+  }
+
 }
