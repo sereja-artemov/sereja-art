@@ -1,6 +1,7 @@
 import Head from 'next/head'
-import Descriptor from "@/components/Descriptor/Descriptor";
-import VideoBanner from "@/components/VideoBanner/VideoBanner";
+import Descriptor from '@/components/Descriptor/Descriptor';
+import VideoBanner from '@/components/VideoBanner/VideoBanner';
+import Skills from '@/components/Skills/Skills';
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         </Head>
         <Descriptor />
         <VideoBanner />
+        <Skills />
 </>
   )
 }

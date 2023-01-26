@@ -5,7 +5,10 @@
   //Текст
   --font-color: #101921;
   --tech-color: #828282;
+  --light-border-color: #cdcdcd;
+  --white-darker-color: #F9FAFB;
   --font-size: 20px;
+  --font-size-S: 15px;
   --line-height: 1.7rem;
   --text-container-width: 680px;
   --paragraph-margin-bottom: 2.15rem; //43px
@@ -45,6 +48,10 @@ body {
   font-size: var(--font-size);
   line-height: var(--line-height);
   color: var(--font-color);
+
+  @include media.media-S {
+    font-size: var(--font-size-S);
+  }
 }
 
 body {
@@ -229,6 +236,21 @@ a {
     margin-bottom: 60px;
   }
 }
+
+.block-title {
+  font-family: 'Raleway', 'Roboto', 'Arial', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  margin: 0;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  font-weight: 900;
+
+  @include media.media-S {
+    margin-bottom: 20px;
+  }
+}
+
 .top-block-padding {
   padding-top: 96px;
 

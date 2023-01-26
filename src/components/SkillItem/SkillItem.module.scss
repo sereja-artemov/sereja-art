@@ -1,0 +1,32 @@
+@import "../../styles/_media.scss";
+
+.skill {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  //width: 247px;
+  background-color: var(--white-darker-color);
+  border: 1px solid var(--light-border-color);
+  border-radius: 0.5vw;
+  padding: 15px;
+
+  @include media-S {
+    gap: 10px;
+    padding: 10px;
+    border-radius: 6px;
+  }
+}
+
+.image {
+  @include media-S {
+    max-width: 35px;
+  }
+}
+
+.name {
+  font-size: 16px;
+
+  @include media-S {
+    font-size: 14px;
+  }
+}
