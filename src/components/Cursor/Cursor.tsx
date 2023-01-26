@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-// import s from './Cursor.module.scss'
+// import s from './SkillItem.module.scss'
 
 export default function Cursor() {
 

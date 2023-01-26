@@ -1,0 +1,16 @@
+@import "../../styles/_media.scss";
+
+.cardsWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 12px;
+
+  @include media-M {
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+
+  @include media-XS {
+    grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+  }
+}
