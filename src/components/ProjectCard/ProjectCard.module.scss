@@ -2,15 +2,38 @@
 
 .card {
   position: relative;
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: end;
+  width: 685px !important;
+  height: 514px;
+  background-color: #fff;
+  border-radius: 24px;
+  padding: 30px;
 }
 
 .video {
   position: absolute;
   top: 0;
-  left: 0;
-
+  left: 50%;
   width: 100%;
-  height: auto;
+  transform: translateX(-50%);
+  height: 100vh;
   max-height: 100%;
   object-fit: cover;
+}
+
+.projectAbout {
+  position: relative;
+  padding: 28px 38px;
+  background-color: #fff;
+  border: 1px solid var(--light-border-color);
+  border-radius: 15px;
+
+  h3 {
+    margin: 0;
+    margin-bottom: 8px;
+    font-size: 24px;
+  }
 }
