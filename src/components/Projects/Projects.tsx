@@ -3,7 +3,7 @@ import { useKeenSlider } from 'keen-slider/react';
 import { useState } from 'react';
 import s from "./Projects.module.scss";
 import ProjectCard from "@/components/ProjectCard/ProjectCard";
-import {projectsData} from "@/data/ProjectsData";
+import { projectsData } from "@/data/projectsData";
 
 function Projects() {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -24,24 +24,30 @@ function Projects() {
             slideChanged(slider) {
                 setCurrentSlide(slider.track.details.rel)
             },
-            breakpoints: {
-                "(min-width: 400px) and (max-width: 500px)": {
-                    slides: { perView: "auto", spacing: 5, origin: "center" },
-                },
-                "(min-width: 768px)": {
-                    slides: { perView: "auto", spacing: 10, origin: "center" },
-                },
-            },
             initial: 0,
-            mode: "free-snap",
-
+            mode: "free",
             slides: {
-                perView: "auto",
-                spacing: () => 20,
+                perView: 'auto',
+                spacing: () => 60,
                 origin: "center",
-
             },
             dragSpeed: .6,
+            breakpoints: {
+                '(max-width: 767.98px)': {
+                    slides: {
+                        perView: 'auto',
+                        spacing: () => 30,
+                        origin: "center",
+                    }
+                },
+                '(max-width: 575.98px)': {
+                    slides: {
+                        perView: 'auto',
+                        spacing: () => 30,
+                        origin: "center",
+                    }
+                },
+            }
         },
         [
             // add plugins here
@@ -52,18 +58,14 @@ function Projects() {
         <section className={`block-mb`}>
             {/*<h1 className={`block-title`}>Мои проекты</h1>*/}
 
-            <div ref={ref} className="keen-slider" style={{ maxWidth: "100%" }}>
-                <div style={{height: 200, width: 200, backgroundColor: "orange"}} className="keen-slider__slide">1</div>
+            <div ref={ref} className="keen-slider">
                 {
                     projectsData.map((project, index) => {
-                        return <ProjectCard key={index} data={project} />
+                        return <ProjectCard key={index} image={project.image} video={project.video} name={project.name}
+                                            cost={project.cost} date={project.date} description={project.description}
+                                            link={project.link}/>
                     })
                 }
-                <div style={{height: 200, width: 200, backgroundColor: "indianred"}} className="keen-slider__slide">2</div>
-                <div style={{height: 200, width: 200, backgroundColor: "green"}} className="keen-slider__slide">3</div>
-                <div style={{height: 200, width: 200, backgroundColor: "darkslategray"}} className="keen-slider__slide">4</div>
-                <div style={{height: 200, width: 200, backgroundColor: "salmon"}} className="keen-slider__slide">5</div>
-                <div style={{height: 200, width: 200, backgroundColor: "skyblue"}} className="keen-slider__slide">6</div>
             </div>
             {!isAnimation && <p style={{textAlign: "center", position: "absolute", left: '50%', transform: "translateX(-50%)", fontSize: 15}}>Тащите мышкой</p>}
             {loaded && instanceRef.current && (

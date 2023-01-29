@@ -1,14 +1,25 @@
 import s from './ProjectCard.module.scss';
 import React from 'react';
 
-const ProjectCard = (data: object[]) => {
+interface ProjectCardProps {
+    name: string,
+    description?: string,
+    date: number | string | Date,
+    cost?: number,
+    link: string,
+    video: string,
+    image: string,
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = (data) => {
+
     return (
         <div className={`${s.card} keen-slider__slide`}>
             <video className={s.video}
                    loop
                    autoPlay
                    muted
-                   poster={data.image}
+                   poster={data.image.src}
                 // controls={false}
             >
                 <source src={data.video} type="video/mp4" />
