@@ -67,7 +67,7 @@ function Projects() {
                     })
                 }
             </div>
-            {!isAnimation && <p style={{textAlign: "center", position: "absolute", left: '50%', transform: "translateX(-50%)", fontSize: 15}}>Тащите мышкой</p>}
+            {/*!isAnimation && <p style={{textAlign: "center", position: "absolute", left: '50%', transform: "translateX(-50%)", fontSize: 15}}>Тащите мышкой</p>*/}
             {loaded && instanceRef.current && (
                     <div className={s.dots}>
                     {[
