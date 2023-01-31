@@ -1,4 +1,6 @@
-import project1 from '@/images/projects/project1.jpg';
+import project1 from '@/images/projects/project1.png';
+import prommaticwebp from '@/images/projects/prommatic.webp';
+
 import { StaticImageData } from 'next/image';
 
 export interface project {
@@ -7,19 +9,34 @@ export interface project {
     date: number | string | Date,
     cost: number,
     link: string,
-    video: string,
     image: string | StaticImageData,
 }
 
 export const projectsData: project[] = [
+    {
+        name: 'Сайт производственной компании Промматик',
+        description: 'Запустил с нуля сайт компании Промматик, наполнил контентом и подключил необходимые сервисы.',
+        date: new Date("2017-01-26"),
+        cost: 123,
+        link: 'https://testlink',
+        image: prommaticwebp,
+    },
     {
         name: 'Тестовый текст проекта 1',
         description: 'Тестовое описание проекта тестовое описание проекта 1 тестовое описание проекта 1 тестовое описание проекта',
         date: new Date("2017-01-26"),
         cost: 123,
         link: 'https://testlink',
-        video: '/video/banner-video.mp4',
-        image: project1,
+        image: prommaticwebp,
+    },
+
+    {
+        name: 'Сайт мебельной компании',
+        description: 'Сайт мебельной компании Сайт мебельной компании Сайт мебельной компании Сайт мебельной компании',
+        date: new Date("2017-01-26"),
+        cost: 123,
+        link: 'https://testlink',
+        image: prommaticwebp,
     },
     {
         name: 'Сайт мебельной компании',
@@ -27,25 +44,6 @@ export const projectsData: project[] = [
         date: new Date("2017-01-26"),
         cost: 123,
         link: 'https://testlink',
-        video: 'https://testvid',
-        image: project1,
-    },
-    {
-        name: 'Сайт мебельной компании',
-        description: 'Сайт мебельной компании Сайт мебельной компании Сайт мебельной компании Сайт мебельной компании',
-        date: new Date("2017-01-26"),
-        cost: 123,
-        link: 'https://testlink',
-        video: 'https://testvid',
-        image: project1,
-    },
-    {
-        name: 'Сайт мебельной компании',
-        description: 'Сайт мебельной компании Сайт мебельной компании Сайт мебельной компании Сайт мебельной компании',
-        date: new Date("2017-01-26"),
-        cost: 123,
-        link: 'https://testlink',
-        video: 'https://testvid',
         image: project1,
     },
 ]

@@ -9,10 +9,13 @@
   width: 670px !important;
   height: auto;
 
-  @include media-S {
+  @include media-M {
     padding: 0;
+    width: 515px !important;
+  }
+
+  @include media-S {
     width: 430px !important;
-    height: auto;
   }
   @include media-XS {
     width: 290px !important;
@@ -26,8 +29,18 @@
   height: 376px;
   overflow: hidden;
 
+  @include media-M {
+    height: 289px;
+  }
+
   @include media-S {
     height: 241px;
+    border-radius: 40px;
+  }
+
+  @include media-XS {
+    height: 163px;
+    border-radius: 30px;
   }
 }
 .video {
@@ -45,14 +58,13 @@
   padding: 28px 38px;
   background-color: rgb(255 255 255 / 65%);
   margin-top: -37px;
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(7px);
   border: 1px solid var(--light-border-color);
   border-radius: 40px;
 
-  @include media-S {
+  @include media-M {
     position: relative;
-    border: none;
-    padding: 20px 32px 31px 32px;
+    padding: 21px 31px;
   }
   @include media-XS {
     padding: 18px 23px;
@@ -63,13 +75,21 @@
     margin-bottom: 8px;
     font-size: 24px;
 
-    @include media-S {
+    @include media-M {
       font-size: 21px;
-      margin-bottom: 4px;
     }
     @include media-XS {
       font-size: 18px;
-      line-height: 1.4;
+      line-height: 1.3;
     }
+  }
+}
+
+.projectDescription {
+  @include media-M {
+    font-size: 18px;
+  }
+  @include media-S {
+    font-size: 15px;
   }
 }

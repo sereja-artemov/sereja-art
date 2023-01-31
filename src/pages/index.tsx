@@ -3,6 +3,7 @@ import Descriptor from '@/components/Descriptor/Descriptor';
 import VideoBanner from '@/components/VideoBanner/VideoBanner';
 import Skills from '@/components/Skills/Skills';
 import Projects from "@/components/Projects/Projects";
+import Blog from "@/components/Blog/Blog";
 
 export default function Home() {
   return (
@@ -13,10 +14,11 @@ export default function Home() {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        {/*<Descriptor />*/}
-        {/*<VideoBanner />*/}
-        {/*<Skills />*/}
+        <Descriptor />
+        <VideoBanner />
+        <Skills />
         <Projects />
+        <Blog />
 </>
   )
 }
