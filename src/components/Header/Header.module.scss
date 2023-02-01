@@ -55,7 +55,7 @@
   padding: 50px;
   border-radius: 30px;
   border: 1px solid var(--font-color);
-  background: linear-gradient( to bottom, transparent, rgb(var(--background-end-rgb)) ) rgb(var(--background-start-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 
   @include media-S {
     width: 90vw;
@@ -127,6 +127,7 @@
       -webkit-text-stroke-color: var(--font-color);
       -webkit-text-fill-color: var(--font-color);
     }
+
     &:hover::before {
       display: block;
       width: 100%;
@@ -164,10 +165,12 @@
     color: #fff;
   }
 }
+
 .menuActive {
   background-color: #101921;
   color: #fff;
 }
+
 .isSticky {
   position: fixed;
   top: 0;

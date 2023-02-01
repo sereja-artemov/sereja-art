@@ -25,6 +25,7 @@
   padding: 0;
   margin: 0;
 }
+
 ::-webkit-scrollbar {
   width: 7px;
 }
@@ -37,6 +38,7 @@
   background-color: var(--accent-color);
   outline: 1px solid slategrey;
 }
+
 //html::-webkit-scrollbar {
 //  display: none;
 //}
@@ -59,9 +61,9 @@ body {
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  ) rgb(var(--background-start-rgb));
 }
+
 .overlay {
   position: absolute;
   left: 0;
@@ -71,6 +73,7 @@ body {
   background-color: #222;
   opacity: .5;
 }
+
 .bg {
   z-index: -1;
   position: fixed;
@@ -86,19 +89,43 @@ body {
   opacity: .9;
   visibility: visible;
 }
+
 @keyframes bg-animation {
-  0% { transform: translate(0,0) }
-  10% { transform: translate(-5%,-5%) }
-  20% { transform: translate(-10%,5%) }
-  30% { transform: translate(5%,-10%) }
-  40% { transform: translate(-5%,15%) }
-  50% { transform: translate(-10%,5%) }
-  60% { transform: translate(15%,0) }
-  70% { transform: translate(0,10%) }
-  80% { transform: translate(-15%,0) }
-  90% { transform: translate(10%,5%) }
-  100% { transform: translate(5%,0) }
+  0% {
+    transform: translate(0, 0)
+  }
+  10% {
+    transform: translate(-5%, -5%)
+  }
+  20% {
+    transform: translate(-10%, 5%)
+  }
+  30% {
+    transform: translate(5%, -10%)
+  }
+  40% {
+    transform: translate(-5%, 15%)
+  }
+  50% {
+    transform: translate(-10%, 5%)
+  }
+  60% {
+    transform: translate(15%, 0)
+  }
+  70% {
+    transform: translate(0, 10%)
+  }
+  80% {
+    transform: translate(-15%, 0)
+  }
+  90% {
+    transform: translate(10%, 5%)
+  }
+  100% {
+    transform: translate(5%, 0)
+  }
 }
+
 img {
   max-width: 100%;
   height: auto;
@@ -159,6 +186,7 @@ img {
   p, ul {
     margin-bottom: var(--paragraph-margin-bottom);
   }
+
   ul > li {
     margin-bottom: 0.65rem;
   }
@@ -266,6 +294,7 @@ a {
     padding-top: 67px;
   }
 }
+
 .active-menu-link {
   color: var(--font-color) !important;
   -webkit-text-fill-color: var(--font-color) !important;
