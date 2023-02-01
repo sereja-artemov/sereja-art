@@ -1,30 +1,39 @@
 import * as React from 'react'
 import s from './BlogItem.module.scss';
-import Image from "next/image";
+import Image, {StaticImageData} from "next/image";
 import Link from "next/link";
 
-const BlogItem: React.FC = () => {
+interface BlogItemProps {
+  title: string,
+  description: string,
+  image: string | StaticImageData,
+  link: string,
+  date: number | string | Date | any,
+  time: string,
+}
 
-    return (
-        <Link className={s.articleLink} href={"#"}>
-            <article className={`${s.article}`}>
-                <Image src={''} alt={'image'}/>
-                <div className={s.contentWrapper}>
-                    <h3>Кодекс городского самурая</h3>
-                    <p>
-                        Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem
-                        Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а
-                        также...
-                    </p>
-                    <div className={s.contentBottom}>
-                        <span className={s.publicationDate}>25 декабря 2023</span>
-                        <span className={s.readingTime}>5 минут</span>
-                    </div>
-                </div>
-            </article>
-        </Link>
+const BlogItem: React.FC<BlogItemProps> = ({title, time, description, date, link, image}) => {
 
-    )
+  return (
+    <Link href="#" className={s.articleLink}>
+      <article className={s.article}>
+        <div className={s.imageWrapper}>
+          <Image className={s.image} src={image} alt={`${title} картинка`} fill={true} placeholder={"blur"} />
+        </div>
+        <div className={s.contentWrapper}>
+          <div className={s.content}>
+            <h3 className={s.title}>{title}</h3>
+            <p className={s.description}>{description}</p>
+          </div>
+          <div className={s.contentBottom}>
+            <span className={s.publicationDate}>{date.toLocaleDateString('en-GB')}</span>
+            <span className={s.readingTime}>{time}</span>
+          </div>
+        </div>
+      </article>
+    </Link>
+
+  )
 }
 
 export default BlogItem;
