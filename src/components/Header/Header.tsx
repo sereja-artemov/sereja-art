@@ -43,7 +43,8 @@ export default function Header() {
 
             if (scrollTop >= 96 && window.innerWidth <= 767.98) {
                 headerRef.current.style.backdropFilter = "blur(7px)";
-                headerRef.current.style.borderBottom = "1px solid rgba(255, 255, 255, 0.2)";
+                headerRef.current.style.borderBottom = "1px solid var(--light-border-color)";
+                // headerRef.current.style.boxShadow = '0px 5px 5px -7px rgba(34, 60, 80, 0.6);';
             } else {
                 headerRef.current.style.backdropFilter = "none";
                 headerRef.current.style.borderBottom = "none";
