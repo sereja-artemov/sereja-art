@@ -1,4 +1,4 @@
-import {ReactNode} from 'react';
+import {ReactNode, useState} from 'react';
 import dynamic from "next/dynamic";
 import Header from "@/components/Header/Header";
 
@@ -9,12 +9,14 @@ type LayoutProps = {
 }
 
 export default function Layout({children}: LayoutProps) {
+    const [isOverlay, setIsOverlay] = useState(false);
 
     return (
         <>
             <div className="bg"></div>
+            { isOverlay && <div className="overlay"></div> }
             <Cursor/>
-            <Header/>
+            <Header setIsOverlay={setIsOverlay} />
             <main>
                 <div className="top-block-padding"></div>
                 {children}

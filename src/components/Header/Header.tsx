@@ -2,24 +2,37 @@ import s from './Header.module.scss';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { activeLink } from "@/utils/utils";
-import {useEffect, useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import Image from "next/image";
 import sunIcon from '@/images/icons/sun-icon.svg';
 
-export default function Header() {
+type HeaderProps = {
+    setIsOverlay: (a: boolean) => void,
+}
+
+const Header: React.FC<HeaderProps> = ({setIsOverlay}) =>  {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const headerRef = useRef<HTMLElement>(null);
 
     function showMenu() {
         setIsMenuOpen(true);
+        setIsOverlay(true);
     }
 
     function closeMenu() {
         setIsMenuOpen(false);
+        setIsOverlay(false);
     }
 
     function toggleShowMenu() {
-        isMenuOpen ? setIsMenuOpen(false) : setIsMenuOpen(true);
+        // isMenuOpen ? setIsMenuOpen(false) : setIsMenuOpen(true);
+        if (isMenuOpen) {
+            setIsMenuOpen(false);
+            setIsOverlay(false);
+        } else {
+            setIsMenuOpen(true);
+            setIsOverlay(true);
+        }
     }
 
     function closeMobileMenu() {
@@ -108,3 +121,4 @@ export default function Header() {
         </header>
     );
 }
+export default Header;

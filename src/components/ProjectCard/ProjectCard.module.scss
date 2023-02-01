@@ -86,9 +86,8 @@
 }
 
 .projectDescription {
-  @include media-M {
-    font-size: 18px;
-  }
+  font-size: 18px;
+
   @include media-S {
     font-size: 15px;
   }
