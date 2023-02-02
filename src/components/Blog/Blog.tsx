@@ -10,17 +10,19 @@ const Blog: React.FC = () => {
   return (
     <section className={`${s.blog} container block-mb`}>
       <h1 className={`block-title`}>Блог</h1>
+      <div className={s.articleWrapper}>
+        {blogData.map((article, index) => {
+          return <BlogItem key={index}
+                           title={article.title}
+                           description={article.description}
+                           image={article.image}
+                           link={article.link}
+                           date={article.date}
+                           time={article.time}
+          />
+        })}
+      </div>
 
-      {blogData.map((article, index) => {
-        return <BlogItem key={index}
-                         title={article.title}
-                         description={article.description}
-                         image={article.image}
-                         link={article.link}
-                         date={article.date}
-                         time={article.time}
-        />
-      })}
     </section>
   )
 }
