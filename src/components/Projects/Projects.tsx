@@ -56,7 +56,9 @@ function Projects() {
 
   return (
     <section className={`block-mb`}>
-      {/*<h1 className={`block-title`}>Мои проекты</h1>*/}
+      <div className={`container`}>
+        <h1 className={`${s.projectTitle} block-title`}>Мои проекты</h1>
+      </div>
 
       <div ref={ref} className="keen-slider">
         {

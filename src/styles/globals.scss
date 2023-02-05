@@ -3,11 +3,12 @@
 
 :root {
   //Текст
-  --font-color: #101921;
-  --font-second-color: #616161;
+  --font-color-dark: #101921;
+  --font-color-light: #FBF9FA;
+  --font-color-second: #616161;
   --tech-color: #828282;
-  --light-border-color: #dadada;
-  --white-darker-color: #FBF9FA;
+  --border-light-color: #dadada;
+  --white-darker-color: #F9FAFB;
   --font-size: 20px;
   --font-size-S: 15px;
   --line-height: 1.5;
@@ -48,7 +49,7 @@ body {
   max-width: 100vw;
   font-size: var(--font-size);
   line-height: var(--line-height);
-  color: var(--font-color);
+  color: var(--font-color-dark);
 
   @include media.media-S {
     font-size: var(--font-size-S);
@@ -277,8 +278,7 @@ a {
   font-family: 'Raleway', 'Roboto', 'Arial', sans-serif;
   font-size: 1.2rem;
   line-height: 1.4;
-  margin: 0;
-  margin-bottom: 40px;
+  margin: 0 0 40px;
   text-transform: uppercase;
   font-weight: 900;
 
@@ -296,6 +296,23 @@ a {
 }
 
 .active-menu-link {
-  color: var(--font-color) !important;
-  -webkit-text-fill-color: var(--font-color) !important;
+  color: var(--font-color-dark) !important;
+  -webkit-text-fill-color: var(--font-color-dark) !important;
+}
+.btn {
+  display: inline-block;
+  margin: 0;
+  font-size: 15px;
+  line-height: 15px;
+  padding: 1em 2em;
+  border: none;
+  border-radius: .7em;
+  background-color: var(--accent-color);
+  color: var(--white-darker-color);
+
+  &--second {
+    background-color: transparent;
+    border: 1px solid var(--font-color-second);
+    color: var(--font-color-second);
+  }
 }

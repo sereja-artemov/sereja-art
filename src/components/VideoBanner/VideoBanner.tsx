@@ -13,7 +13,7 @@ export default function VideoBanner() {
       >
         <source src={"/video/banner-video.mp4"} type="video/mp4"/>
       </video>
-      <button className={s.resumeBtn}>Резюме</button>
+      <button className={`btn btn--second ${s.resumeBtn}`}>Резюме</button>
     </div>
   );
 }
