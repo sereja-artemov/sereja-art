@@ -15,24 +15,25 @@ interface BlogItemProps {
 const BlogItem: React.FC<BlogItemProps> = ({title, time, description, date, link, image}) => {
 
   return (
-    <Link href="#" className={s.articleLink}>
       <article className={s.article}>
         <div className={s.imageWrapper}>
-          <Image className={s.image} src={image} alt={`${title} картинка`} fill={true} placeholder={"blur"} />
+          <Image className={s.image} src={image} fill={false} alt={`${title} картинка`} placeholder={"blur"} />
         </div>
         <div className={s.contentWrapper}>
-          <div className={s.content}>
-            <h3 className={s.title}>{title}</h3>
-            <p className={s.description}>{description}</p>
-          </div>
-          <div className={s.contentBottom}>
+          <div className={s.info}>
             <span className={s.publicationDate}>{date.toLocaleDateString('en-GB')}</span>
             <span className={s.readingTime}>{time}</span>
           </div>
+          <div className={s.content}>
+            <Link className={s.articleLink} href={'#'}>
+              <h3 className={s.title}>{title}</h3>
+            </Link>
+            <p className={s.description}>{description}</p>
+            <button className={`btn ${s.button}`}>Читать</button>
+          </div>
+
         </div>
       </article>
-    </Link>
-
   )
 }
 

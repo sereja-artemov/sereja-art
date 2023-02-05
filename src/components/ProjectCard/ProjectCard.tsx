@@ -33,8 +33,11 @@ const ProjectCard: React.FC<ProjectCardProps> = (data) => {
         {/*</video>*/}
       </div>
       <div className={s.projectAbout}>
-        <h3>{data.name}</h3>
-        <p className={s.projectDescription}>{data.description}</p>
+        <div className={s.foreground}>
+          <h3>{data.name}</h3>
+          <p className={s.projectDescription}>{data.description}</p>
+        </div>
+        <div className={s.blur}></div>
       </div>
     </div>
   );

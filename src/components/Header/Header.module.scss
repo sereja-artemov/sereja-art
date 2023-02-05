@@ -9,12 +9,12 @@
   justify-content: space-between;
   align-items: center;
   min-height: 30px;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 18px;
+  padding-bottom: 18px;
 
   @include media-S {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
 }
 
@@ -54,7 +54,7 @@
   overflow: auto;
   padding: 50px;
   border-radius: 30px;
-  border: 1px solid var(--font-color);
+  border: 1px solid var(--font-color-dark);
   background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 
   @include media-S {
@@ -90,7 +90,7 @@
   text-decoration: none;
   text-transform: uppercase;
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: var(--font-color);
+  -webkit-text-stroke-color: var(--font-color-dark);
   -webkit-text-fill-color: transparent;
 
   @include media-M {
@@ -106,7 +106,7 @@
   }
 
   &::selection {
-    background: var(--font-color);
+    background: var(--font-color-dark);
     color: #fff;
   }
 
@@ -118,14 +118,14 @@
     &::before {
       display: block;
       width: 0;
-      color: var(--font-color);
+      color: var(--font-color-dark);
       overflow: hidden;
       position: absolute;
       content: attr(data-text);
       transition: all 1s cubic-bezier(0.84, 0, 0.08, 0.99);
       -webkit-text-stroke-width: 0;
-      -webkit-text-stroke-color: var(--font-color);
-      -webkit-text-fill-color: var(--font-color);
+      -webkit-text-stroke-color: var(--font-color-dark);
+      -webkit-text-fill-color: var(--font-color-dark);
     }
 
     &:hover::before {
@@ -145,7 +145,7 @@
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  border: 1px solid var(--font-color);
+  border: 1px solid var(--font-color-dark);
   background-color: transparent;
 
   @include media-S {

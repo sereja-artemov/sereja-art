@@ -6,7 +6,7 @@
   flex-shrink: 0;
   flex-direction: column;
   justify-content: end;
-  width: 670px !important;
+  width: 860px !important;
   height: auto;
 
   @include media-M {
@@ -27,7 +27,7 @@
   object-fit: cover;
   border-radius: 50px;
   width: 100%;
-  height: 376px;
+  height: 483px;
   overflow: hidden;
 
   @include media-M {
@@ -57,11 +57,12 @@
 
 .projectAbout {
   position: relative;
-  padding: 28px 38px;
+  padding: 27px 45px;
   background-color: rgb(255 255 255 / 65%);
   margin-top: -37px;
-  backdrop-filter: blur(7px);
-  border: 1px solid var(--light-border-color);
+  overflow: hidden;
+
+  border: 1px solid var(--border-light-color);
   border-radius: 40px;
 
   @include media-M {
@@ -69,13 +70,24 @@
     padding: 21px 31px;
   }
   @include media-XS {
-    padding: 18px 23px;
+    padding: 20px 28px;
+  }
+
+  .blur {
+    z-index: 90;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(7px);
   }
 
   h3 {
     margin: 0;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
     font-size: 24px;
+    font-weight: 800;
 
     @include media-M {
       font-size: 21px;
@@ -83,8 +95,14 @@
     @include media-XS {
       font-size: 18px;
       line-height: 1.3;
+      margin-bottom: 6px;
     }
   }
+}
+
+.foreground {
+  z-index: 100;
+  position: relative;
 }
 
 .projectDescription {
