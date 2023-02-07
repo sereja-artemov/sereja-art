@@ -24,23 +24,35 @@
   display: block;
   text-decoration: none;
   font-family: 'Raleway', 'Roboto', 'Arial', sans-serif;
-  font-size: 24px;
-  line-height: 1.6;
-  font-weight: 900;
-  margin-bottom: 17px;
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 800;
+  margin-bottom: 12px;
 
   &:hover {
     text-decoration: underline;
+  }
+
+  @include media-XS {
+    margin-bottom: 10px;
   }
 }
 
 .title {
   font-weight: 800;
+
+  @include media-XS {
+   font-size: 18px;
+  }
 }
 
 .content {
   height: 100%;
-  margin-bottom: 35px;
+  margin-bottom: 30px;
+
+  @include media-XS {
+    margin-bottom: 25px;
+  }
 }
 
 .contentWrapper {
@@ -48,11 +60,14 @@
   flex-direction: column;
   height: 100%;
   padding: 30px 30px;
+
+  @include media-XS {
+    padding: 25px 25px;
+  }
 }
 
 .description {
-
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.66;
   color: var(--font-color-second);
   display: -webkit-box;
@@ -60,15 +75,23 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  @include media-XS {
+    font-size: 15px;
+  }
 }
 
 .info {
   display: flex;
-  gap: 10px;
+  gap: 15px;
   flex-wrap: wrap;
   font-size: 14px;
   color: var(--tech-color);
-  margin-bottom: 25px;
+  margin-bottom: 20px;
+
+  @include media-XS {
+    margin-bottom: 11px;
+  }
 }
 
 .button {

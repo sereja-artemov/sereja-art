@@ -314,5 +314,10 @@ a {
     background-color: transparent;
     border: 1px solid var(--font-color-second);
     color: var(--font-color-second);
+
+    &:hover {
+      background-color: var(--accent-color);
+      color: var(--font-color-light);
+    }
   }
 }
