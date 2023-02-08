@@ -1,0 +1,10 @@
+@import "../../styles/_media.scss";
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 80px;
+  border-top: 1px solid var(--border-color);
+}
