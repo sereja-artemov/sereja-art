@@ -1,4 +1,5 @@
 import jsIcon from "@/images/icons/js-icon.jpg";
+import { SiHtml5, SiCss3, SiJavascript, SiReact, SiNextdotjs, SiSass, SiFigma, SiAdobephotoshop } from 'react-icons/si';
 
 interface skillsObj {
   name: string,
