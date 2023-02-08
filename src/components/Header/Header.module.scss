@@ -43,11 +43,10 @@
   width: 1.6em;
   height: 1.6em;
 }
-
-[data-theme="dark"] {
-  .sunIcon {
-    filter: invert(100%);
-  }
+.moonIcon {
+  fill: var(--icons-color);
+  width: 1.45em;
+  height: 1.45em;
 }
 
 .nav {

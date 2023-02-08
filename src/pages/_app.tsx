@@ -5,6 +5,7 @@ import type {AppProps} from 'next/app'
 import {Montserrat, Raleway, Roboto} from "@next/font/google";
 import Layout from "@/components/Layout/Layout";
 import {DarkModeProvider} from "@/context/darkModeContext";
+import { IconContext } from 'react-icons';
 
 const raleway = Raleway({
   style: ['normal'],
@@ -32,9 +33,11 @@ export default function App({Component, pageProps}: AppProps) {
             `}</style>
 
       <DarkModeProvider>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <IconContext.Provider value={{ color: 'var(--icons-color)' }}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </ IconContext.Provider>
       </DarkModeProvider>
     </>
   )
