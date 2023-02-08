@@ -123,7 +123,7 @@ const Header: React.FC = () => {
         </nav>}
       <button onClick={toggleTheme} className={s.toggleThemeButton}>
 
-        { currentTheme === theme.lightTheme ? <BsSun className={s.sunIcon} /> : <BsMoonStars className={s.moonIcon} /> }
+        { currentTheme === theme.lightTheme ? <BsSun className={s.sunIcon} /> : <BsMoonStars className={s.sunIcon} /> }
       </button>
       <button onMouseEnter={showMenu} onClick={toggleShowMenu} className={`${s.menuBtn} ${isMenuOpen && s.menuActive}`}>
         <span className={s.menuBtnText}>меню</span>
