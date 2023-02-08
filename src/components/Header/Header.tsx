@@ -30,12 +30,19 @@ const Header: React.FC = () => {
   function toggleShowMenu() {
     // isMenuOpen ? setIsMenuOpen(false) : setIsMenuOpen(true);
     if (isMenuOpen) {
+      lockScroll()
       setIsMenuOpen(false);
       // setIsOverlay(false);
     } else {
       setIsMenuOpen(true);
       // setIsOverlay(true);
     }
+  }
+
+  function lockScroll() {
+    const root = document.getElementsByTagName("html")[0];
+    root.classList.toggle("lock-scroll");
+    debugger
   }
 
   function closeMobileMenu() {

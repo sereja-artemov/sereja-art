@@ -52,7 +52,6 @@
 }
 
 
-
 * {
   cursor: none;
   box-sizing: border-box;
@@ -332,6 +331,7 @@ a {
   color: var(--font-color) !important;
   -webkit-text-fill-color: var(--font-color) !important;
 }
+
 .btn {
   display: inline-block;
   margin: 0;
@@ -354,4 +354,10 @@ a {
       border: 1px solid transparent;
     }
   }
+}
+
+.lock-scroll {
+  margin: 0;
+  height: 100%;
+  overflow: hidden
 }
