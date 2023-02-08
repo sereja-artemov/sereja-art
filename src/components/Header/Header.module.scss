@@ -26,10 +26,9 @@
 .toggleThemeButton {
   flex-shrink: 0;
   margin-left: auto;
-  width: 27px;
-  height: 27px;
   border: none;
   margin-right: 50px;
+  background: none;
 
   @include media-M {
     margin-right: 30px;
@@ -39,14 +38,25 @@
     margin-right: 25px;
   }
 }
+.sunIcon {
+  display: inline-block;
+  width: 1.6em;
+  height: 1.6em;
+}
+
+[data-theme="dark"] {
+  .sunIcon {
+    filter: invert(100%);
+  }
+}
 
 .nav {
   scrollbar-color: #6969dd #e0e0e0;
   scrollbar-width: thin;
   z-index: 700;
   position: absolute;
-  top: 20px;
-  right: 50px;
+  top: 10px;
+  right: 56px;
 
   min-width: 30vw;
   height: auto;
@@ -54,8 +64,8 @@
   overflow: auto;
   padding: 50px;
   border-radius: 30px;
-  border: 1px solid var(--font-color-dark);
-  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  border: 1px solid var(--border-color);
+  background: linear-gradient(to top, transparent, var(--background-card-start-rgb)) var(--background-card-end-rgb);
 
   @include media-S {
     width: 90vw;
@@ -90,7 +100,7 @@
   text-decoration: none;
   text-transform: uppercase;
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: var(--font-color-dark);
+  -webkit-text-stroke-color: var(--font-color);
   -webkit-text-fill-color: transparent;
 
   @include media-M {
@@ -106,7 +116,7 @@
   }
 
   &::selection {
-    background: var(--font-color-dark);
+    background: var(--font-color);
     color: #fff;
   }
 
@@ -118,14 +128,14 @@
     &::before {
       display: block;
       width: 0;
-      color: var(--font-color-dark);
+      color: var(--font-color);
       overflow: hidden;
       position: absolute;
       content: attr(data-text);
       transition: all 1s cubic-bezier(0.84, 0, 0.08, 0.99);
       -webkit-text-stroke-width: 0;
-      -webkit-text-stroke-color: var(--font-color-dark);
-      -webkit-text-fill-color: var(--font-color-dark);
+      -webkit-text-stroke-color: var(--font-color);
+      -webkit-text-fill-color: var(--font-color);
     }
 
     &:hover::before {
@@ -142,10 +152,10 @@
   flex-shrink: 0;
   justify-content: center;
   align-items: center;
-  width: 56px;
-  height: 56px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  border: 1px solid var(--font-color-dark);
+  border: 1px solid var(--font-color);
   background-color: transparent;
 
   @include media-S {
@@ -153,22 +163,22 @@
     width: 47px;
     height: 47px;
   }
+}
 
-  span {
-    font-size: 12px;
-    font-weight: bold;
-    margin-bottom: 1px;
-  }
-
-  &:hover {
-    background-color: #101921;
-    color: #fff;
-  }
+.menuBtnText {
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 1px;
+  color: var(--font-color);
 }
 
 .menuActive {
-  background-color: #101921;
-  color: #fff;
+  background-color: var(--font-color);
+  color: var(--card-background-color);
+  .menuBtnText {
+    color: var(--card-background-color);
+  }
+
 }
 
 .isSticky {

@@ -39,7 +39,7 @@
 
 .stroke {
   color: transparent;
-  -webkit-text-stroke: 1px var(--font-color-dark);
+  -webkit-text-stroke: 1px var(--font-color);
   letter-spacing: .54em;
   margin-left: .6em;
 }
@@ -53,5 +53,11 @@
   }
   @include media-XS {
     font-size: 14px;
+  }
+}
+
+body[data-theme="dark"] {
+  .stroke {
+    -webkit-text-stroke: 1px var(--font-color);
   }
 }

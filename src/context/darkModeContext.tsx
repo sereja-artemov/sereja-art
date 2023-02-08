@@ -1,16 +1,15 @@
-import React, {createContext, useEffect, useState} from 'react';
+import React, {createContext, useContext, useEffect, useState} from 'react';
 
-export const DarkModeContext = createContext(undefined);
+const DarkModeContext = createContext(undefined);
 
-export const DarkModeProvider = ({ children }) => {
-  const darkTheme = 'dark';
-  const lightTheme = 'light';
+const DarkModeProvider = ({ children }) => {
 
-  const [currentTheme, setCurrentTheme] = useState(lightTheme);
+  const theme = {
+    darkTheme: 'dark',
+    lightTheme: 'light',
+  }
 
-  useEffect(() => {
-    setLightTheme();
-  }, [])
+  const [currentTheme, setCurrentTheme] = useState(theme.lightTheme);
 
   useEffect(() => {
     updateTheme();
@@ -18,27 +17,36 @@ export const DarkModeProvider = ({ children }) => {
 
   const updateTheme = () => {
     const currentTheme = localStorage.getItem('theme');
-    if (currentTheme === darkTheme) {
-      document.body.setAttribute('data-theme', darkTheme);
+    if (currentTheme === theme.darkTheme) {
+      document.body.setAttribute('data-theme', theme.darkTheme);
     } else {
-      document.body.setAttribute('data-theme', lightTheme);
+      document.body.setAttribute('data-theme', theme.lightTheme);
     }
   }
 
   const setDarkTheme = () => {
-    setCurrentTheme(darkTheme);
-    localStorage.setItem('theme', darkTheme);
+    setCurrentTheme(theme.darkTheme);
+    localStorage.setItem('theme', theme.darkTheme);
   }
 
   const setLightTheme = () => {
-    setCurrentTheme(lightTheme);
-    localStorage.setItem('theme', lightTheme);
+    setCurrentTheme(theme.lightTheme);
+    localStorage.setItem('theme', theme.lightTheme);
   }
 
   return (
-    <DarkModeContext.Provider value={{setDarkTheme, setLightTheme}}>
+    <DarkModeContext.Provider value={{theme, currentTheme, setDarkTheme, setLightTheme}}>
       {children}
     </DarkModeContext.Provider>
   )
-
 }
+
+const useTheme = () => {
+  const context = useContext(DarkModeContext);
+  if (context === undefined) {
+    throw new Error("useTheme must be used within a ThemeProvider");
+  }
+  return context;
+};
+
+export { DarkModeProvider, useTheme};
