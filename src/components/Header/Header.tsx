@@ -16,6 +16,10 @@ const Header: React.FC = () => {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
+  //
+  // useEffect(() => {
+  //   lockScroll();
+  // }, [isMenuOpen])
 
   function showMenu() {
     setIsMenuOpen(true);
@@ -30,7 +34,7 @@ const Header: React.FC = () => {
   function toggleShowMenu() {
     // isMenuOpen ? setIsMenuOpen(false) : setIsMenuOpen(true);
     if (isMenuOpen) {
-      lockScroll()
+
       setIsMenuOpen(false);
       // setIsOverlay(false);
     } else {
@@ -39,11 +43,20 @@ const Header: React.FC = () => {
     }
   }
 
-  function lockScroll() {
-    const root = document.getElementsByTagName("html")[0];
-    root.classList.toggle("lock-scroll");
-    debugger
-  }
+  // function lockScroll() {
+  //   const root = document.getElementsByTagName("html")[0];
+  //   const body = document.getElementsByTagName("body")[0];
+  //   const header = document.getElementsByTagName("header")[0];
+  //   if (isMenuOpen) {
+  //     root.classList.add("lock-scroll");
+  //     body.style.marginRight = '7px';
+  //     header.style.paddingRight = '72px';
+  //   } else {
+  //     root.classList.remove("lock-scroll");
+  //     body.style.marginRight = '0';
+  //     header.style.paddingRight = '65px';
+  //   }
+  // }
 
   function closeMobileMenu() {
     window.innerWidth <= 767.98 && closeMenu();
