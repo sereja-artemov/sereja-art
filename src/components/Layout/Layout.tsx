@@ -2,6 +2,7 @@ import {ReactNode, useEffect, useState} from 'react';
 import dynamic from "next/dynamic";
 import Header from "@/components/Header/Header";
 import Footer from '../Footer/Footer';
+import ScrollTopButton from "@/components/ScrollTopButton/ScrollTopButton";
 
 const Cursor = dynamic(() => import("../Cursor/Cursor"), {ssr: false});
 
@@ -27,6 +28,7 @@ export default function Layout({children}: LayoutProps) {
         {children}
       </main>
       <Footer />
+      <ScrollTopButton />
     </>
   )
 }
