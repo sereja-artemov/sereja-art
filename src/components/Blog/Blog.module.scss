@@ -12,4 +12,7 @@
   @include media-M {
     grid-template-columns: repeat(auto-fill, minmax(333px, 1fr));
   }
+  @include media-XS {
+    grid-template-columns: repeat(1, minmax(300px, 1fr));
+  }
 }
