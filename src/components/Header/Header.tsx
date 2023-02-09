@@ -89,7 +89,6 @@ const Header: React.FC = () => {
       }
     }
   };
-
   const router = useRouter();
 
   const toggleTheme = () => {

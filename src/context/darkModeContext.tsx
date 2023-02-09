@@ -19,8 +19,10 @@ const DarkModeProvider = ({ children }) => {
     const currentTheme = localStorage.getItem('theme');
     if (currentTheme === theme.darkTheme) {
       document.body.setAttribute('data-theme', theme.darkTheme);
+      setDarkTheme();
     } else {
       document.body.setAttribute('data-theme', theme.lightTheme);
+      setLightTheme();
     }
   }
 
