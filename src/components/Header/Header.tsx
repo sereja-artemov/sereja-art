@@ -63,6 +63,7 @@ const Header: React.FC = () => {
   }
 
   useEffect(() => {
+
     // Sticky меню
     window.addEventListener('scroll', activateSticky);
     return () => {
