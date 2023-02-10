@@ -2,10 +2,14 @@ import '@/styles/utils/normalize.css'
 import '@/styles/_variables.scss'
 import '@/styles/globals.scss'
 import type {AppProps} from 'next/app'
-import {Montserrat, Raleway, Roboto} from "@next/font/google";
+import { Raleway, Roboto } from "@next/font/google";
 import Layout from "@/components/Layout/Layout";
 import {DarkModeProvider} from "@/context/darkModeContext";
 import { IconContext } from 'react-icons';
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
+import NProgress from 'nprogress';
+import "nprogress/nprogress.css";
 
 const raleway = Raleway({
   style: ['normal'],
@@ -19,7 +23,32 @@ const roboto = Roboto({
   fallback: ['open-sans', 'system-ui', 'arial']
 });
 
+/* Progressbar Configurations */
+NProgress.configure({
+  easing: "ease",
+  speed: 500,
+  showSpinner: false,
+});
+
 export default function App({Component, pageProps}: AppProps) {
+  const router = useRouter();
+
+  useEffect(() => {
+    const start = () => NProgress.start();
+    const end = () => NProgress.done();
+
+    router.events.on("routeChangeStart", start);
+    router.events.on("routeChangeComplete", end);
+    router.events.on("routeChangeError", end);
+
+    return () => {
+      router.events.off("routeChangeStart", start);
+      router.events.off("routeChangeComplete", end);
+      router.events.off("routeChangeError", end);
+    }
+
+  }, [router.events])
+
   return (
     <>
       <style jsx global>{`

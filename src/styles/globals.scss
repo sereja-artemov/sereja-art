@@ -360,3 +360,17 @@ a {
   height: 100%;
   overflow: hidden
 }
+
+/* nprogress */
+#nprogress .bar {
+  background: var(--accent-color) !important;
+  height: 4px !important;
+}
+/* Fancy blur effect */
+#nprogress .peg {
+  box-shadow: 0 0 10px var(--accent-color), 0 0 5px var(--accent-color) !important;
+}
+#nprogress .spinner-icon {
+  border-top-color: var(--accent-color) !important;
+  border-left-color: var(--accent-color) !important;
+}
