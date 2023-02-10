@@ -78,6 +78,7 @@
 
   @include media-XS {
     font-size: 15px;
+    -webkit-line-clamp: 2;
   }
 }
 

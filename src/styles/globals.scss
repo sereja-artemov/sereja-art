@@ -56,6 +56,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+
 }
 
 ::-webkit-scrollbar {
@@ -94,7 +95,6 @@ body {
   ) var(--background-start-rgb);
   overflow-x: hidden;
 }
-
 
 .overlay {
   position: absolute;
@@ -361,7 +361,7 @@ a {
   overflow: hidden
 }
 
-/* nprogress */
+/* Nprogress bar Custom Styling (force) >>start<< */
 #nprogress .bar {
   background: var(--accent-color) !important;
   height: 4px !important;
@@ -374,3 +374,4 @@ a {
   border-top-color: var(--accent-color) !important;
   border-left-color: var(--accent-color) !important;
 }
+/* Nprogress bar Custom Styling (force) >>end<< */
