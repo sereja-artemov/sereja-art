@@ -1,42 +1,42 @@
 import jsIcon from "@/images/icons/js-icon.jpg";
-import { SiHtml5, SiCss3, SiJavascript, SiReact, SiNextdotjs, SiSass, SiFigma, SiAdobephotoshop } from 'react-icons/si';
 
 interface skillsObj {
   name: string,
-  image: string,
+  active: boolean,
 }
 
 export const skillsData: skillsObj[] = [
   {
     name: 'JavaScript',
-    image: jsIcon
+    active: false,
   },
   {
     name: 'HTML',
-    image: jsIcon
+    active: true,
   },
   {
     name: 'CSS',
-    image: jsIcon
+    active: true,
   },
   {
     name: 'SCSS',
-    image: jsIcon
+    active: true,
   },
   {
     name: 'React',
-    image: jsIcon
+    active: true,
   },
   {
     name: 'NextJS',
-    image: jsIcon
+    active: true,
   },
   {
     name: 'Figma',
-    image: jsIcon
+    active: true,
   },
   {
     name: 'Photoshop',
-    image: jsIcon
+    active: true,
   },
 ];
+
