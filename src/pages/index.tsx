@@ -6,6 +6,7 @@ import Projects from "@/components/Projects/Projects";
 import Blog from "@/components/Blog/Blog";
 
 export default function Home() {
+
   return (
     <>
       <Head>
@@ -19,6 +20,7 @@ export default function Home() {
       <Skills />
       <Projects />
       <Blog/>
+
     </>
   )
 }
