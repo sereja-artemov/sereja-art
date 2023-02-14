@@ -17,11 +17,11 @@ const BlogItem: React.FC<BlogItemProps> = ({title, time, description, date, link
   return (
       <article className={s.article}>
         <div className={s.imageWrapper}>
-          <Image className={s.image} src={image} fill={false} alt={`${title} картинка`} placeholder={"blur"} />
+          {/*<Image width={500} height={200} className={s.image} src={image} fill={false} alt={`${title} картинка`} />*/}
         </div>
         <div className={s.contentWrapper}>
           <div className={s.info}>
-            <span className={s.publicationDate}>{date.toLocaleDateString('en-GB')}</span>
+            <span className={s.publicationDate}>{date}</span>
             <span className={s.readingTime}>{time}</span>
           </div>
           <div className={s.content}>

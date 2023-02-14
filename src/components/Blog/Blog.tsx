@@ -17,7 +17,7 @@ const Blog: React.FC = () => {
                            description={article.description}
                            image={article.image}
                            link={article.link}
-                           date={article.date}
+
                            time={article.time}
           />
         })}
