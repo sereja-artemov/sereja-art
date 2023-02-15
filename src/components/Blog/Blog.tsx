@@ -5,20 +5,16 @@ import Image from 'next/image';
 import {blogData} from "@/data/blogData";
 import BlogItem from "@/components/BlogItem/BlogItem";
 
-const Blog: React.FC = () => {
+const Blog: React.FC = ({ blogs }) => {
 
   return (
     <section className={`${s.blog} container block-mb`}>
       <h1 className={`block-title`}>Блог</h1>
       <div className={s.articleWrapper}>
-        {blogData.map((article, index) => {
-          return <BlogItem key={index}
-                           title={article.title}
-                           description={article.description}
-                           image={article.image}
-                           link={article.link}
+        {blogs.map((article, index) => {
 
-                           time={article.time}
+          return <BlogItem key={index}
+                           article={article}
           />
         })}
       </div>

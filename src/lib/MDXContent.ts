@@ -44,7 +44,7 @@ export default class MDXContent {
         date: (data.date ?? new Date()).toString(),
         stringDate: data.stringDate ?? "",
         keywords: data.keywords ?? "",
-        image: data.image ?? "",
+        image: data.image ?? "https://sereja-art.ru/upload/image-not-found.jpg",
       };
     }
   }

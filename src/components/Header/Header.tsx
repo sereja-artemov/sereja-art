@@ -130,7 +130,7 @@ const Header: React.FC = () => {
               </Link>
             </li>
             <li className={s.listItem}>
-              <Link onClick={closeMobileMenu} href="#" className={`${s.link} ${activeLink('#', router.pathname)}`}>
+              <Link onClick={closeMobileMenu} href="/blogs" className={`${s.link} ${activeLink('#', router.pathname)}`}>
                 <span data-text="Блог">Блог</span>
               </Link>
             </li>

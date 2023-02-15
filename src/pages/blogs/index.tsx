@@ -1,16 +1,19 @@
 import MDXContent from "@/lib/MDXContent";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import BlogItem from "@/components/BlogItem/BlogItem";
+import BlogsPage from "@/components/BlogsPage/BlogsPage";
+import PageTopBlock from "@/components/PageTopBlock/PageTopBlock";
 
 function Blogs({ blogs }) {
   const [filteredBlogs, setFilteredBlogs] = useState([...blogs]);
-  console.log(filteredBlogs)
+
   return (
-    <div>
-      { filteredBlogs.map((article, index) => {
-        return <BlogItem title={article.title} date={article.date} description={article.excerpt} image={article.image} key={`article.slug + ${index}`}  />
-      }) }
-    </div>
+    <>
+      <PageTopBlock pageTitle="Блог">
+        Количество записей в моем блоге: {blogs.length}.
+      </PageTopBlock>
+      <BlogsPage filteredBlogs={filteredBlogs} />
+    </>
   );
 }
 

@@ -12,25 +12,25 @@ interface BlogItemProps {
   time: string,
 }
 
-const BlogItem: React.FC<BlogItemProps> = ({title, time, description, date, link, image}) => {
+const BlogItem: React.FC<BlogItemProps> = ({ article }) => {
 
   return (
       <article className={s.article}>
         <div className={s.imageWrapper}>
-          {/*<Image width={500} height={200} className={s.image} src={image} fill={false} alt={`${title} картинка`} />*/}
+          <Image width={635} height={400} className={s.image} src={article.image} fill={false} alt={`${article.title} картинка`} />
         </div>
         <div className={s.contentWrapper}>
           <div className={s.info}>
-            <span className={s.publicationDate}>{date}</span>
-            <span className={s.readingTime}>{time}</span>
+            <span className={s.publicationDate}>{article.date}</span>
+            <span className={s.readingTime}>{article.readingTime.text}</span>
           </div>
           <div className={s.content}>
-            <Link className={s.articleLink} href={'#'}>
-              <h3 className={s.title}>{title}</h3>
+            <Link className={s.articleLink} href={`blogs/${article.slug}`}>
+              <h3 className={s.title}>{article.title}</h3>
             </Link>
-            <p className={s.description}>{description}</p>
+            <p className={s.description}>{article.excerpt}</p>
           </div>
-            <button className={`btn btn--second ${s.button}`}>Читать</button>
+            <Link href={`blogs/${article.slug}`} className={`btn btn--second ${s.button}`}>Читать</Link>
 
         </div>
       </article>

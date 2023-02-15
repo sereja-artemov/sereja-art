@@ -4,8 +4,9 @@ import VideoBanner from '@/components/VideoBanner/VideoBanner';
 import Skills from '@/components/Skills/Skills';
 import Projects from "@/components/Projects/Projects";
 import Blog from "@/components/Blog/Blog";
+import MDXContent from "@/lib/MDXContent";
 
-export default function Home() {
+export default function Home({ blogs }) {
 
   return (
     <>
@@ -19,8 +20,17 @@ export default function Home() {
       <VideoBanner />
       <Skills />
       <Projects />
-      <Blog/>
+      <Blog blogs={blogs} />
 
     </>
   )
+}
+
+export async function getStaticProps() {
+  /* Получаем только gray matter */
+  const blogs = new MDXContent('src/posts').getAllPosts();
+
+  return {
+    props: { blogs },
+  }
 }
