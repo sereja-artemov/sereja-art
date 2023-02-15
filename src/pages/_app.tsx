@@ -10,6 +10,17 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import NProgress from 'nprogress';
 import "nprogress/nprogress.css";
+import type { ReactElement, ReactNode } from 'react'
+import type { NextPage } from 'next'
+import type { AppProps } from 'next/app'
+
+export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+  getLayout?: (page: ReactElement) => ReactNode
+}
+
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout
+}
 
 const raleway = Raleway({
   style: ['normal'],
@@ -30,7 +41,9 @@ NProgress.configure({
   showSpinner: false,
 });
 
-export default function App({Component, pageProps}: AppProps) {
+export default function App({Component, pageProps}: AppPropsWithLayout) {
+  const getLayout = Component.getLayout ?? ((page) => page);
+
   const router = useRouter();
 
   useEffect(() => {
@@ -49,6 +62,7 @@ export default function App({Component, pageProps}: AppProps) {
 
   }, [router.events])
 
+
   return (
     <>
       <style jsx global>{`
@@ -64,7 +78,7 @@ export default function App({Component, pageProps}: AppProps) {
       <DarkModeProvider>
         <IconContext.Provider value={{ color: 'var(--icons-color)' }}>
           <Layout>
-            <Component {...pageProps} />
+            { getLayout(<Component {...pageProps} />) }
           </Layout>
         </ IconContext.Provider>
       </DarkModeProvider>
