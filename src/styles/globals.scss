@@ -319,10 +319,14 @@ a {
 }
 
 .top-block-padding {
-  padding-top: 96px;
+  padding-top: 140px;
+
+  @include media.media-M {
+    padding-top: 120px;
+  }
 
   @include media.media-S {
-    padding-top: 67px;
+    padding-top: 100px;
   }
 }
 

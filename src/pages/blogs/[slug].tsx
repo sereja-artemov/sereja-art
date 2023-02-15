@@ -1,9 +1,22 @@
 import MDXContent from '@/lib/MDXContent';
+import ArticleLayout from "@/layout/ArticleLayout";
+import {ReactElement} from "react";
+import type { ReactElement } from 'react'
+import type { NextPageWithLayout } from './_app'
 
-export default function Post({post, error}) {
+const Post: NextPageWithLayout = ({ post, error }) => {
   console.log(post)
+  return (
+    <p>hello world</p>
+  )
+}
 
-
+Post.getLayout = function getLayout(page: ReactElement) {
+  return (
+    <ArticleLayout>
+      {page}
+    </ArticleLayout>
+  )
 }
 
 /* Генерируем страницу для каждого slug */
@@ -43,3 +56,4 @@ export async function getStaticPaths() {
     fallback: false,
   };
 }
+export default Post;

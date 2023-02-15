@@ -1,5 +1,19 @@
 @import "../../styles/_media.scss";
 
-.title {
+.topBlock {
+  margin-bottom: 50px;
 
+  @include media-M {
+    margin-bottom: 40px;
+  }
+}
+
+.title {
+  margin: 0;
+  font-size: 3rem;
+  line-height: 1.5;
+
+  @include media-M {
+    font-size: 2rem;
+  }
 }
