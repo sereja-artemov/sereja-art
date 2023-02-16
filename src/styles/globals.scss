@@ -9,6 +9,7 @@
   --font-color-second: #616161;
   --tech-color: #828282;
   --border-color: #dadada;
+  --border-color-strong: var(--font-color);
   --white-darker-color: #F9FAFB;
   --font-size: 20px;
   --font-size-S: 15px;
@@ -42,6 +43,7 @@
     --background-end-rgb: rgb(42, 47, 54);
 
     --card-background-color: rgb(51, 56, 65);
+    --border-color-strong: var(--border-color);
     --border-color: #464646;
     --card-background-color-opacity: rgb(51 56 65 / 65%);
 

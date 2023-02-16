@@ -1,20 +1,20 @@
 import MDXContent from '@/lib/MDXContent';
-import PostLayout from "@/layout/PostLayout";
-import {ReactElement} from "react";
-import type { ReactElement } from 'react'
-import type { NextPageWithLayout } from './_app'
+import PageNotFound from "@/pages/404";
+import {MDXRemote} from "next-mdx-remote";
+import MDXComponents from "@/components/MDXComponents";
+import PostLayout from "@/components/Layout/PostLayout/PostLayout";
 
-const Post: NextPageWithLayout = ({ post, error }) => {
-  console.log(post)
-  return (
-    <p>hello world</p>
-  )
-}
+const Post = ({ post, error }) => {
 
-Post.getLayout = function getLayout(page: ReactElement) {
+  if (error) return <PageNotFound />;
+
   return (
-    <PostLayout>
-      {page}
+    <PostLayout post={post} >
+      <MDXRemote
+        {...post.source}
+        frontmatter={post.meta}
+        components={MDXComponents}
+      />
     </PostLayout>
   )
 }

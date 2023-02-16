@@ -1,0 +1,44 @@
+@import '../../../styles/media';
+
+.post {
+  box-sizing: content-box;
+  max-width: 680px;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  padding: 0 20px;
+
+  h1 {
+    margin: 0;
+    margin-bottom: 1.2rem;
+    font-size: 2.6rem; //52px
+    line-height: 1.2;
+  }
+}
+
+.topBlock {
+  border-radius: 22px;
+  border: 1px solid var(--border-color-strong);
+  padding: 45px 35px;
+  background-color: var(--card-background-color);
+}
+
+.title {
+  font-family: 'Raleway', 'Roboto', 'Arial', sans-serif;
+}
+
+.time {
+  font-size: .9rem;
+  margin-right: 15px;
+}
+
+.words {
+  span {
+    font-size: .9rem;
+  }
+}
+
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}

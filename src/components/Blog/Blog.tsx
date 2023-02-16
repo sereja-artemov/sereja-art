@@ -6,7 +6,7 @@ import {blogData} from "@/data/blogData";
 import BlogItem from "@/components/BlogItem/BlogItem";
 
 const Blog: React.FC = ({ blogs }) => {
-
+  console.log(blogs)
   return (
     <section className={`${s.blog} container block-mb`}>
       <h1 className={`block-title`}>Блог</h1>
