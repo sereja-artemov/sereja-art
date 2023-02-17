@@ -28,7 +28,7 @@
 
 .time {
   font-size: .9rem;
-  margin-right: 15px;
+  margin-right: 1.1rem;
 }
 
 .words {
@@ -40,5 +40,20 @@
 .info {
   display: flex;
   flex-wrap: wrap;
-  gap: 25px;
+  justify-content: space-between;
+  gap: 40px;
+  font-size: .9rem;
+}
+
+.icon {
+  display: inline-block;
+  width: 23px;
+  height: 23px;
+  margin-right: 9px;
+  margin-bottom: 1px;
+  line-height: 22px;
+  vertical-align: middle;
+}
+.iconCalendar {
+  margin-bottom: .2rem;
 }

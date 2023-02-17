@@ -1,19 +1,10 @@
 import s from './PostLayout.module.scss';
+import getLocaleDate from "@/lib/getLocaleDate";
+import {AiOutlineCalendar, AiOutlineFieldTime, AiOutlineRead} from "react-icons/ai";
 
 
 function PostLayout({post, children}) {
   console.log(post)
-
-  // let options = {
-  //   year: 'numeric',
-  //   month: 'numeric',
-  //   day: 'numeric',
-  //   timezone: 'UTC'
-  // };
-  //
-  // let date = post.meta.date;
-  // let rudate = new Date(date).toLocaleString("ru", options);
-  //
 
   return (
     <section className={s.postLayout}>
@@ -22,10 +13,17 @@ function PostLayout({post, children}) {
         <div className={s.topBlock}>
           <h1 className={s.title}>{post.meta.title}</h1>
           <div className={s.info}>
-            <span className={s.date}>{post.meta.stringDate}</span>
+            <span className={s.date}>
+              {<AiOutlineCalendar className={`${s.icon} ${s.iconCalendar}`} />}
+              {getLocaleDate('ru',post.meta.date)}</span>
             <div className={s.readingInfo}>
-              <span className={s.time}>{post.meta.readingTime.text}</span>
-              <span className={s.words}>{post.meta.readingTime.words}<span> слов</span></span>
+              <span className={s.time}>
+                {<AiOutlineFieldTime className={`${s.icon} ${s.iconTime}`} />}
+                {post.meta.readingTime.text}
+              </span>
+              <span className={s.words}>
+                {<AiOutlineRead className={`${s.icon} ${s.iconRead}`} />}
+                {post.meta.readingTime.words}<span> слов</span></span>
             </div>
           </div>
         </div>
