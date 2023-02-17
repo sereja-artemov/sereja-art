@@ -4,7 +4,6 @@ import Image, {StaticImageData} from "next/image";
 import Link from "next/link";
 import {AiOutlineCalendar, AiOutlineFieldTime} from "react-icons/ai";
 import getLocaleDate from "@/lib/getLocaleDate";
-import {log} from "util";
 
 interface BlogItemProps {
   title: string,

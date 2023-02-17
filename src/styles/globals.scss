@@ -359,6 +359,10 @@ a {
   background-color: var(--accent-color);
   color: var(--white-darker-color);
 
+  @include media.media-S {
+    padding: .8em;
+  }
+
   &--second {
     background-color: transparent;
     border: 1px solid var(--font-color);

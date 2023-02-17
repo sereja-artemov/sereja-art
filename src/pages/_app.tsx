@@ -10,6 +10,8 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import NProgress from 'nprogress';
 import "nprogress/nprogress.css";
+import {MDXProvider} from "@mdx-js/react";
+import Link from "next/link";
 
 const raleway = Raleway({
   style: ['normal'],
@@ -51,6 +53,8 @@ export default function App({Component, pageProps}: AppProps) {
   }, [router.events])
 
 
+
+
   return (
     <>
       <style jsx global>{`
@@ -65,6 +69,7 @@ export default function App({Component, pageProps}: AppProps) {
 
       <DarkModeProvider>
         <IconContext.Provider value={{ color: 'var(--icons-color)' }}>
+
           <Layout>
             <Component {...pageProps} />
           </Layout>
