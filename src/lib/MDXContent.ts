@@ -5,8 +5,9 @@ import matter from 'gray-matter';
 import { serialize } from "next-mdx-remote/serialize";
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import readTime from "reading-time";
+import readTime, {ReadTimeResults} from "reading-time";
 import rehypePrettyCode from "rehype-pretty-code";
+import getWordEnding from "@/lib/getWordEnding";
 
 export default class MDXContent {
   POST_PATH: string;
@@ -14,6 +15,17 @@ export default class MDXContent {
   constructor(folderName: string) {
     /* .replace(/\\/g, '/') меняем палочки для windows */
     this.POST_PATH = path.join(process.cwd(), folderName).replace(/\\/g, '/');
+  }
+
+  /* Переводим минуты на русский язык */
+  transformReadingTime(content) {
+    const readingTime = readTime(content, { wordsPerMinute: 200 });
+
+    const readingTimeMinutes = readingTime.text.match( /\d+/g );
+    const word = getWordEnding(Number(readingTimeMinutes), [' минута', ' минуты', ' минут']);
+    const readingTimeText = readingTime.text.replace(/[^0-9\.]+/g, word);
+
+    return readingTimeText;
   }
 
   /* Получаем все slug из каталога */
@@ -33,7 +45,9 @@ export default class MDXContent {
     /* Возвращаем содержимое файла */
     const source = readFileSync(postPath);
     const { content, data } = matter(source);
-    const readingTime = readTime(content, { wordsPerMinute: 200 });
+
+    const readingTime: ReadTimeResults = readTime(content, { wordsPerMinute: 200 });
+    readingTime.textRU = this.transformReadingTime(content);
 
     if (data.published) {
       return {

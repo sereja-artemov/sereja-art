@@ -12,6 +12,10 @@
     margin-bottom: 1.2rem;
     font-size: 2.6rem; //52px
     line-height: 1.2;
+
+    @include media-S {
+      font-size: 2rem;
+    }
   }
 }
 
@@ -20,10 +24,15 @@
   border: 1px solid var(--border-color-strong);
   padding: 45px 35px;
   background-color: var(--card-background-color);
+
+  @include media-S {
+    padding: 20px 25px;
+  }
 }
 
 .title {
   font-family: 'Raleway', 'Roboto', 'Arial', sans-serif;
+
 }
 
 .time {
