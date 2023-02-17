@@ -2,8 +2,9 @@ import * as React from 'react'
 import s from './BlogItem.module.scss';
 import Image, {StaticImageData} from "next/image";
 import Link from "next/link";
-import {AiOutlineCalendar, AiOutlineFieldTime} from "react-icons/ai";
+import {AiOutlineCalendar, AiOutlineFieldTime, AiOutlineRead} from "react-icons/ai";
 import getLocaleDate from "@/lib/getLocaleDate";
+import getWordEnding from "@/lib/getWordEnding";
 
 interface BlogItemProps {
   title: string,
@@ -29,6 +30,10 @@ const BlogItem: React.FC<BlogItemProps> = ({ article }) => {
             <span className={s.readingTime}>
               <AiOutlineFieldTime className={s.icon} />
               {article.readingTime.textRU}</span>
+            <span className={s.readingWords}>
+              <AiOutlineRead className={s.icon} />
+              {article.readingTime.words}
+              {getWordEnding(article.readingTime.words, [' слово', ' слова', ' слов'])}</span>
           </div>
           <div className={s.content}>
             <Link className={s.articleLink} href={`blogs/${article.slug}`}>

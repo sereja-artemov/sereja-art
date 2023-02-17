@@ -104,7 +104,13 @@
   fill: var(--font-color-second);
 }
 .publicationDate,
-.readingTime {
+.readingTime,
+.readingWords {
   display: flex;
   gap: 7px;
+}
+.readingWords {
+  @include media-custom(424.98px) {
+    display: none;
+  }
 }
