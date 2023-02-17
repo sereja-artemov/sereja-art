@@ -3,19 +3,44 @@ import PageNotFound from "@/pages/404";
 import {MDXRemote} from "next-mdx-remote";
 import MDXComponents from "@/components/MDXComponents";
 import PostLayout from "@/components/Layout/PostLayout/PostLayout";
+import Link from 'next/link';
+import { MDXProvider } from '@mdx-js/react'
+import { transliterate } from "transliteration";
 
 const Post = ({ post, error }) => {
-
   if (error) return <PageNotFound />;
 
+  // кастомные MDX заголовки, id присваивает rehypeSlug из MDXContent
+  const CustomH2 = ({ id, ...rest }) => {
+    // транслитерируем id, т.к. в ссылках содержания мы используем транслитерированные якоря
+    const transliteratedID = transliterate(id);
+
+    if (transliteratedID) {
+      return <h2 id={transliteratedID} {...rest} />;
+    }
+    return <h2 {...rest} />;
+  };
+
+  const components = {
+    h2: CustomH2,
+  };
+
+  // this would also work in pages/_app.js
+  // const Layout = ({ children }) => {
+  //   return <MDXProvider components={components}>{children}
+  // };
+
+
   return (
-    <PostLayout post={post} >
-      <MDXRemote
-        {...post.source}
-        frontmatter={post.meta}
-        components={MDXComponents}
-      />
-    </PostLayout>
+    <MDXProvider components={components}>
+      <PostLayout post={post} >
+        <MDXRemote
+          {...post.source}
+          frontmatter={post.meta}
+          components={MDXComponents}
+        />
+      </PostLayout>
+    </MDXProvider>
   )
 }
 
