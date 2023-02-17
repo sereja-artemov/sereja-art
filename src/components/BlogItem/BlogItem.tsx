@@ -25,10 +25,10 @@ const BlogItem: React.FC<BlogItemProps> = ({ article }) => {
         <div className={s.contentWrapper}>
           <div className={s.info}>
             <span className={s.publicationDate}>
-              <AiOutlineCalendar />
-              {getLocaleDate('ru', article.date)}</span>
+              <AiOutlineCalendar className={s.icon} />
+              {getLocaleDate('ru', article.date, 'short')}</span>
             <span className={s.readingTime}>
-              <AiOutlineFieldTime />
+              <AiOutlineFieldTime className={s.icon} />
               {article.readingTime.textRU}</span>
           </div>
           <div className={s.content}>

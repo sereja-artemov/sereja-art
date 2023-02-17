@@ -1,11 +1,10 @@
 
-export default function getLocaleDate(locales: string, date: string) {
-  const options = {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    timezone: 'UTC'
-  };
+export default function getLocaleDate(locales: string, date: string, monthStrLength:string = 'long', options: object = {
+  year: 'numeric',
+  month: monthStrLength,
+  day: 'numeric',
+  timezone: 'UTC'
+}) {
 
   return new Date(date).toLocaleString(locales, options);
 }
