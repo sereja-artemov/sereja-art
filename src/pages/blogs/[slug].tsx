@@ -3,19 +3,95 @@ import PageNotFound from "@/pages/404";
 import {MDXRemote} from "next-mdx-remote";
 import MDXComponents from "@/components/MDXComponents";
 import PostLayout from "@/components/Layout/PostLayout/PostLayout";
+import Link from 'next/link';
+import { MDXProvider } from '@mdx-js/react'
+import { transliterate } from "transliteration";
 
 const Post = ({ post, error }) => {
-
   if (error) return <PageNotFound />;
 
+  // кастомные MDX заголовки, id присваивает rehypeSlug из MDXContent
+  const CustomH1 = ({ id, ...rest }) => {
+    // транслитерируем id, т.к. в ссылках содержания мы используем транслитерированные якоря
+    const transliteratedID = transliterate(id);
+
+    if (transliteratedID) {
+      return <h1 id={transliteratedID} {...rest} />;
+    }
+    return <h1 {...rest} />;
+  };
+
+  const CustomH2 = ({ id, ...rest }) => {
+    // транслитерируем id, т.к. в ссылках содержания мы используем транслитерированные якоря
+    const transliteratedID = transliterate(id);
+
+    if (transliteratedID) {
+      return <h2 id={transliteratedID} {...rest} />;
+    }
+    return <h2 {...rest} />;
+  };
+
+  const CustomH3 = ({ id, ...rest }) => {
+    // транслитерируем id, т.к. в ссылках содержания мы используем транслитерированные якоря
+    const transliteratedID = transliterate(id);
+
+    if (transliteratedID) {
+      return <h3 id={transliteratedID} {...rest} />;
+    }
+    return <h3 {...rest} />;
+  };
+
+  const CustomH4 = ({ id, ...rest }) => {
+    // транслитерируем id, т.к. в ссылках содержания мы используем транслитерированные якоря
+    const transliteratedID = transliterate(id);
+
+    if (transliteratedID) {
+      return <h4 id={transliteratedID} {...rest} />;
+    }
+    return <h4 {...rest} />;
+  };
+
+  const CustomH5 = ({ id, ...rest }) => {
+    // транслитерируем id, т.к. в ссылках содержания мы используем транслитерированные якоря
+    const transliteratedID = transliterate(id);
+
+    if (transliteratedID) {
+      return <h5 id={transliteratedID} {...rest} />;
+    }
+    return <h5 {...rest} />;
+  };
+
+  const CustomH6 = ({ id, ...rest }) => {
+    // транслитерируем id, т.к. в ссылках содержания мы используем транслитерированные якоря
+    const transliteratedID = transliterate(id);
+
+    if (transliteratedID) {
+      return <h6 id={transliteratedID} {...rest} />;
+    }
+    return <h6 {...rest} />;
+  };
+
+  const components = {
+    h1: CustomH1,
+    h2: CustomH2,
+    h3: CustomH3,
+    h4: CustomH4,
+    h5: CustomH5,
+    h6: CustomH6,
+  };
+
+  // this would also work in pages/_app.js
+
   return (
-    <PostLayout post={post} >
-      <MDXRemote
-        {...post.source}
-        frontmatter={post.meta}
-        components={MDXComponents}
-      />
-    </PostLayout>
+    <MDXProvider components={components}>
+      <PostLayout post={post} >
+        <MDXRemote
+          {...post.source}
+          frontmatter={post.meta}
+          components={MDXComponents}
+        />
+      </PostLayout>
+    </MDXProvider>
   )
 }
 

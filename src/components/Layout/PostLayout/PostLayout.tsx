@@ -3,8 +3,6 @@ import getLocaleDate from "@/lib/getLocaleDate";
 import {AiOutlineCalendar, AiOutlineFieldTime, AiOutlineRead} from "react-icons/ai";
 import getWordEnding from "@/lib/getWordEnding";
 import Link from "next/link";
-import { slugify } from 'transliteration';
-import {stringToSlug} from "@/lib/stringToSlug";
 
 function PostLayout({post, children}) {
   console.log(post)
@@ -13,7 +11,7 @@ function PostLayout({post, children}) {
     <section className={`${s.postLayout} container-fluid`}>
       <div className={s.tableOfContents}>
         { post.tableOfContents.map((item, index: string) => {
-          return <Link key={index} href={`#${stringToSlug(item.heading)}`}>{item.heading}</Link>
+          return <Link key={index} href={`#${item.transliteratedHeading}`}>{item.heading}</Link>
         }) }
       </div>
       <article className={s.post}>

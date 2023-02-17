@@ -8,6 +8,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import readTime, {ReadTimeResults} from "reading-time";
 import rehypePrettyCode from "rehype-pretty-code";
 import getWordEnding from "@/lib/getWordEnding";
+import {slugify, transliterate} from "transliteration";
 
 export default class MDXContent {
   POST_PATH: string;
@@ -96,8 +97,8 @@ export default class MDXContent {
     const mdxSource = await serialize(content, {
       mdxOptions: {
         rehypePlugins: [
-          rehypeSlug,
-          [rehypeAutolinkHeadings, { behaviour: "wrap" }],
+          rehypeSlug, // автоматически создает заголовкам id с таким же названием
+          // [rehypeAutolinkHeadings, { behaviour: "wrap" }],
           [rehypePrettyCode, prettyCodeOptions],
         ],
       },
@@ -145,6 +146,7 @@ export default class MDXContent {
       return {
         level: heading.split("#").length - 1 - 2, // мы начинаем с h2, поэтому мы вычитаем 2, а 1 - это дополнительный текст заголовка
         heading: heading.replace(/#{2,6}/, "").trim(),
+        transliteratedHeading: slugify(heading), //делаем транслитерацию для заголовка
       };
     });
   }
