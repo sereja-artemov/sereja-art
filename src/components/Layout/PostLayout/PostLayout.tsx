@@ -19,7 +19,7 @@ function PostLayout({post, children}) {
             <div className={s.readingInfo}>
               <span className={s.time}>
                 {<AiOutlineFieldTime className={`${s.icon} ${s.iconTime}`} />}
-                {post.meta.readingTime.text}
+                {post.meta.readingTime.textRU}
               </span>
               <span className={s.words}>
                 {<AiOutlineRead className={`${s.icon} ${s.iconRead}`} />}

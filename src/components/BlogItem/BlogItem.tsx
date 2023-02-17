@@ -29,7 +29,7 @@ const BlogItem: React.FC<BlogItemProps> = ({ article }) => {
               {getLocaleDate('ru', article.date)}</span>
             <span className={s.readingTime}>
               <AiOutlineFieldTime />
-              {article.readingTime.text}</span>
+              {article.readingTime.textRU}</span>
           </div>
           <div className={s.content}>
             <Link className={s.articleLink} href={`blogs/${article.slug}`}>

@@ -12,7 +12,9 @@
   --border-color-strong: var(--font-color);
   --white-darker-color: #F9FAFB;
   --font-size: 20px;
+  --font-size-M: 18px;
   --font-size-S: 15px;
+  --font-size-XS: 14px;
   --line-height: 1.5;
   --text-container-width: 680px;
   --paragraph-margin-bottom: 2.15rem; //43px
@@ -84,8 +86,15 @@ body {
   line-height: var(--line-height);
   color: var(--font-color);
 
+  @include media.media-M {
+    font-size: var(--font-size-M);
+  }
+
   @include media.media-S {
     font-size: var(--font-size-S);
+  }
+  @include media.media-XS {
+    font-size: var(--font-size-XS);
   }
 }
 
