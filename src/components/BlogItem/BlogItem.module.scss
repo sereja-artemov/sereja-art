@@ -104,7 +104,8 @@
   fill: var(--font-color-second);
 }
 .publicationDate,
-.readingTime {
+.readingTime,
+.readingWords {
   display: flex;
   gap: 7px;
 }
