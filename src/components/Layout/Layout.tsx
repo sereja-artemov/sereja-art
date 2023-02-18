@@ -24,7 +24,6 @@ export default function Layout({children}: LayoutProps) {
       <Cursor/>
       <Header />
       <main>
-        <div className="top-block-padding"></div>
         {children}
       </main>
       <Footer />

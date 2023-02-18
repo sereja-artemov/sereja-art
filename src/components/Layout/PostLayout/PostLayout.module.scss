@@ -4,6 +4,7 @@
   box-sizing: content-box;
   max-width: 680px;
   margin: 0 auto;
+  margin-left: 30%;
   margin-bottom: 2rem;
   padding: 0 20px;
   font-size: 1rem;
@@ -13,7 +14,7 @@
   }
   @include media-S {
     max-width: 510px;
-    padding: 0;
+    padding: 0 15px;
   }
 
 
@@ -69,7 +70,10 @@
     margin-bottom: 1.25em;
   }
 }
-
+.postLayout {
+  position: relative;
+  padding: 0;
+}
 .topBlock {
   border-radius: 22px;
   border: 1px solid var(--border-color-strong);
@@ -132,4 +136,31 @@
 }
 .iconCalendar {
   margin-bottom: .2rem;
+}
+.tableOfContents {
+  border: 1px solid var(--accent-color);
+
+  position: fixed;
+  left: 0;
+  overflow: auto;
+
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-width: 30%;
+  padding-top: 20px;
+  padding-right: 15px;
+  padding-bottom: 150px;
+
+  a {
+   text-decoration: none;
+   color: inherit;
+  }
+}
+.tableOfContentsBtn {
+  display: none;
+
+  @include media-S {
+    display: block;
+  }
 }

@@ -9,10 +9,29 @@ function PostLayout({post, children}) {
 
   return (
     <section className={`${s.postLayout} container-fluid`}>
-      <div className={s.tableOfContents}>
+      <div className={`${s.tableOfContents} container-fluid`}>
         { post.tableOfContents.map((item, index: string) => {
           return <Link key={index} href={`#${item.transliteratedHeading}`}>{item.heading}</Link>
         }) }
+        { post.tableOfContents.map((item, index: string) => {
+          return <Link key={index} href={`#${item.transliteratedHeading}`}>{item.heading}</Link>
+        }) }
+        { post.tableOfContents.map((item, index: string) => {
+          return <Link key={index} href={`#${item.transliteratedHeading}`}>{item.heading}</Link>
+        }) }
+        { post.tableOfContents.map((item, index: string) => {
+          return <Link key={index} href={`#${item.transliteratedHeading}`}>{item.heading}</Link>
+        }) }
+        { post.tableOfContents.map((item, index: string) => {
+          return <Link key={index} href={`#${item.transliteratedHeading}`}>{item.heading}</Link>
+        }) }
+        { post.tableOfContents.map((item, index: string) => {
+          return <Link key={index} href={`#${item.transliteratedHeading}`}>{item.heading}</Link>
+        }) }{ post.tableOfContents.map((item, index: string) => {
+        return <Link key={index} href={`#${item.transliteratedHeading}`}>{item.heading}</Link>
+      }) }
+
+        <button className={`btn ${s.tableOfContentsBtn}`}>Открыть содержание</button>
       </div>
       <article className={s.post}>
         <div className={s.topBlock}>
