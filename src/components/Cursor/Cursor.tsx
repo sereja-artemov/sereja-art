@@ -3,7 +3,7 @@ import {useEffect, useRef} from 'react';
 
 export default function Cursor() {
 
-  const delay = 15;
+  const delay = 10; //скорость следования follower 'cursor-dot'
 
   const dot = useRef<HTMLDivElement>(null);
   const dotOutline = useRef<HTMLDivElement>(null);
