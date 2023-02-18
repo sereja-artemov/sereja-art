@@ -16,11 +16,21 @@
     padding: 0;
   }
 
+
+  h2, h3, h4, h5, h6 {
+    margin-top: 1.6em;
+    margin-bottom: 0.8em;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
   h1 {
-    margin: 0;
-    margin-bottom: 1.2rem;
     font-size: 2.6rem; //52px
     line-height: 1.2;
+    margin: 0;
+    margin-bottom: 1.7rem;
 
     @include media-S {
       font-size: 2.2rem;
@@ -29,13 +39,30 @@
       font-size: 1.8rem;
     }
   }
-  h2, h3, h4, h5, h6 {
-    margin-top: 1.6em;
-    margin-bottom: 0.8em;
 
-    a {
-      text-decoration: none;
-    }
+  h2 {
+    font-size: 2.05rem;
+    line-height: 3.25rem;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+    line-height: 2.55rem;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+    line-height: 2.05rem;
+  }
+
+  h5 {
+    font-size: 1rem;
+    line-height: 1.7rem;
+  }
+
+  h6 {
+    font-size: 0.8rem;
+    line-height: 1.4rem;
   }
 
   p, ul, ol, blockquote, img, pre {
