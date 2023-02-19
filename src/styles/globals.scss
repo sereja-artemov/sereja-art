@@ -36,6 +36,11 @@
   --icons-color: var(--font-color);
   --divider-color: var(--border-color);
 
+  --header-offset: 87px;
+  @include media.media-S {
+    --header-offset: 78px;
+  }
+
   [data-theme="dark"] {
     color: var(--font-color);
     --font-color: #ededef;
@@ -60,7 +65,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-
+  scroll-margin-top: 95px;
 }
 
 ::-webkit-scrollbar {

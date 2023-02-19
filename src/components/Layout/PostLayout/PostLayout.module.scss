@@ -7,6 +7,7 @@
   margin-left: 30%;
   margin-bottom: 2rem;
   padding: 0 20px;
+  padding-top: 1rem;
   font-size: 1rem;
 
   @include media-M {
@@ -138,29 +139,66 @@
   margin-bottom: .2rem;
 }
 .tableOfContents {
-  border: 1px solid var(--accent-color);
-
   position: fixed;
   left: 0;
   overflow: auto;
 
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+  height: 100%;
+  max-height: calc(100vh - var(--header-offset));
   max-width: 30%;
-  padding-top: 20px;
-  padding-right: 15px;
-  padding-bottom: 150px;
+  padding-top: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1.5rem;
 
-  a {
-   text-decoration: none;
-   color: inherit;
-  }
 }
 .tableOfContentsBtn {
   display: none;
 
   @include media-S {
     display: block;
+  }
+}
+.inputSearchTitle {
+  width: 100%;
+  font-size: 15px;
+  padding: 17px 25px;
+  border-radius: 9px;
+  border: 1px solid var(--border-color-strong);
+  margin-bottom: 1.5rem;
+  background-color: var(--card-background-color-opacity);
+
+  &::placeholder {
+    color: var(--tech-color);
+  }
+}
+.tocTitle {
+  margin-bottom: .5rem;
+}
+.tocLinkWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &::after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background-color: var(--border-color-strong);
+  }
+
+  a {
+    padding: .25em;
+    padding-left: .7em;
+    text-decoration: none;
+    border-left: 1px solid var(--border-color-strong);
+
+    &:hover {
+      background-color: var(--card-background-color-opacity);
+      border-left: 1px solid var(--accent-color);
+    }
   }
 }

@@ -5,34 +5,28 @@ import getWordEnding from "@/lib/getWordEnding";
 import Link from "next/link";
 
 function PostLayout({post, children}) {
-  console.log(post)
 
   return (
     <section className={`${s.postLayout} container-fluid`}>
-      <div className={`${s.tableOfContents} container-fluid`}>
-        { post.tableOfContents.map((item, index: string) => {
-          return <Link key={index} href={`#${item.transliteratedHeading}`}>{item.heading}</Link>
-        }) }
-        { post.tableOfContents.map((item, index: string) => {
-          return <Link key={index} href={`#${item.transliteratedHeading}`}>{item.heading}</Link>
-        }) }
-        { post.tableOfContents.map((item, index: string) => {
-          return <Link key={index} href={`#${item.transliteratedHeading}`}>{item.heading}</Link>
-        }) }
-        { post.tableOfContents.map((item, index: string) => {
-          return <Link key={index} href={`#${item.transliteratedHeading}`}>{item.heading}</Link>
-        }) }
-        { post.tableOfContents.map((item, index: string) => {
-          return <Link key={index} href={`#${item.transliteratedHeading}`}>{item.heading}</Link>
-        }) }
-        { post.tableOfContents.map((item, index: string) => {
-          return <Link key={index} href={`#${item.transliteratedHeading}`}>{item.heading}</Link>
-        }) }{ post.tableOfContents.map((item, index: string) => {
-        return <Link key={index} href={`#${item.transliteratedHeading}`}>{item.heading}</Link>
-      }) }
+      {
+        post.tableOfContents.length !== 0 &&
+        <div className={`${s.tableOfContents} container-fluid`}>
+          <input className={s.inputSearchTitle} type="search" placeholder="Найти" />
+          <h3 className={s.tocTitle}>Содержание</h3>
+          <div className={s.tocLinkWrapper}>
+            { post.tableOfContents.map((item, index: string) => {
+              console.log(1 - Number(`0.${item.level}`))
+              if (item.level >= 1) {
+                return <Link style={{marginLeft: (item.level * 15) + "px", fontSize: 1 - Number(`0.${item.level}`) + "em",}} key={item.heading + index} href={`#${item.transliteratedHeading}`}>{item.heading}</Link>
+              }
+              return <Link style={{marginLeft: (item.level * 15) + "px"}} key={item.heading + index} href={`#${item.transliteratedHeading}`}>{item.heading}</Link>
+            }) }
+          </div>
 
-        <button className={`btn ${s.tableOfContentsBtn}`}>Открыть содержание</button>
-      </div>
+
+          <button className={`btn ${s.tableOfContentsBtn}`}>Открыть содержание</button>
+        </div>
+      }
       <article className={s.post}>
         <div className={s.topBlock}>
           <h1 className={s.title}>{post.meta.title}</h1>
