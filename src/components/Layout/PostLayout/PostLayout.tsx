@@ -3,29 +3,33 @@ import getLocaleDate from "@/lib/getLocaleDate";
 import {AiOutlineCalendar, AiOutlineFieldTime, AiOutlineRead} from "react-icons/ai";
 import getWordEnding from "@/lib/getWordEnding";
 import Link from "next/link";
+import useWindowSize from "@/hooks/useWindowSize";
 
 function PostLayout({post, children}) {
 
+  const window = useWindowSize();
+
   return (
     <section className={`${s.postLayout} container-fluid`}>
-      {
-        post.tableOfContents.length !== 0 &&
+      { post.tableOfContents.length !== 0 &&
+        <>
         <div className={`${s.tableOfContents} container-fluid`}>
           <input className={s.inputSearchTitle} type="search" placeholder="Найти" />
           <h3 className={s.tocTitle}>Содержание</h3>
           <div className={s.tocLinkWrapper}>
             { post.tableOfContents.map((item, index: string) => {
-              console.log(1 - Number(`0.${item.level}`))
-              if (item.level >= 1) {
-                return <Link style={{marginLeft: (item.level * 15) + "px", fontSize: 1 - Number(`0.${item.level}`) + "em",}} key={item.heading + index} href={`#${item.transliteratedHeading}`}>{item.heading}</Link>
+
+              if (item.level >= 1 && window.width > 768) {
+                return <Link className={s.todLink} style={{marginLeft: (item.level * 15) + "px", fontSize: 1 - Number(`0.${item.level}`) + "em",}} key={item.heading + index} href={`#${item.transliteratedHeading}`}>{item.heading}</Link>
+              } else if (window.width < 768) {
+                return <Link className={s.todLink} style={{marginLeft: (item.level * 15) + "px", fontSize: 1.4 - Number(`0.${item.level}`) + "em",}} key={item.heading + index} href={`#${item.transliteratedHeading}`}>{item.heading}</Link>
               }
-              return <Link style={{marginLeft: (item.level * 15) + "px"}} key={item.heading + index} href={`#${item.transliteratedHeading}`}>{item.heading}</Link>
+              return <Link className={s.todLink} style={{marginLeft: (item.level * 15) + "px"}} key={item.heading + index} href={`#${item.transliteratedHeading}`}>{item.heading}</Link>
             }) }
           </div>
-
-
-          <button className={`btn ${s.tableOfContentsBtn}`}>Открыть содержание</button>
         </div>
+          <button className={`btn ${s.tableOfContentsBtn}`}>Открыть содержание</button>
+        </>
       }
       <article className={s.post}>
         <div className={s.topBlock}>

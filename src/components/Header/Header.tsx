@@ -1,7 +1,7 @@
 import s from './Header.module.scss';
 import Link from 'next/link';
 import {useRouter} from 'next/router';
-import {activeLink} from "@/utils/utils";
+import {activeLink, lockScroll, removeScrollLock} from "@/utils/utils";
 import React, {useEffect, useRef, useState} from "react";
 import { BsMoonStars, BsSun, BsSunFill } from 'react-icons/bs';
 
@@ -34,7 +34,6 @@ const Header: React.FC = () => {
   function toggleShowMenu() {
     // isMenuOpen ? setIsMenuOpen(false) : setIsMenuOpen(true);
     if (isMenuOpen) {
-
       setIsMenuOpen(false);
       // setIsOverlay(false);
     } else {

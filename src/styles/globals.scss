@@ -382,11 +382,8 @@ a {
 }
 
 .lock-scroll {
-  margin: 0;
-  height: 100%;
-  overflow: hidden
+  overflow: hidden !important;
 }
-
 /* Nprogress bar Custom Styling (force) >>start<< */
 #nprogress .bar {
   background: var(--accent-color) !important;
