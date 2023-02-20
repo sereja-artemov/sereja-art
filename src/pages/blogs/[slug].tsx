@@ -11,6 +11,7 @@ const Post = ({ post, error }) => {
   if (error) return <PageNotFound />;
 
   // кастомные MDX заголовки, id присваивает rehypeSlug из MDXContent
+  // кастомные MDX заголовки начало
   const CustomH1 = ({ id, ...rest }) => {
     // транслитерируем id, т.к. в ссылках содержания мы используем транслитерированные якоря
     const transliteratedID = transliterate(id);
@@ -20,7 +21,6 @@ const Post = ({ post, error }) => {
     }
     return <h1 {...rest} />;
   };
-
   const CustomH2 = ({ id, ...rest }) => {
     // транслитерируем id, т.к. в ссылках содержания мы используем транслитерированные якоря
     const transliteratedID = transliterate(id);
@@ -30,7 +30,6 @@ const Post = ({ post, error }) => {
     }
     return <h2 {...rest} />;
   };
-
   const CustomH3 = ({ id, ...rest }) => {
     // транслитерируем id, т.к. в ссылках содержания мы используем транслитерированные якоря
     const transliteratedID = transliterate(id);
@@ -40,7 +39,6 @@ const Post = ({ post, error }) => {
     }
     return <h3 {...rest} />;
   };
-
   const CustomH4 = ({ id, ...rest }) => {
     // транслитерируем id, т.к. в ссылках содержания мы используем транслитерированные якоря
     const transliteratedID = transliterate(id);
@@ -50,7 +48,6 @@ const Post = ({ post, error }) => {
     }
     return <h4 {...rest} />;
   };
-
   const CustomH5 = ({ id, ...rest }) => {
     // транслитерируем id, т.к. в ссылках содержания мы используем транслитерированные якоря
     const transliteratedID = transliterate(id);
@@ -60,7 +57,6 @@ const Post = ({ post, error }) => {
     }
     return <h5 {...rest} />;
   };
-
   const CustomH6 = ({ id, ...rest }) => {
     // транслитерируем id, т.к. в ссылках содержания мы используем транслитерированные якоря
     const transliteratedID = transliterate(id);
@@ -79,6 +75,7 @@ const Post = ({ post, error }) => {
     h5: CustomH5,
     h6: CustomH6,
   };
+  // кастомные MDX заголовки конец
 
   // this would also work in pages/_app.js
 
