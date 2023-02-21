@@ -7,6 +7,7 @@ import useWindowSize from "@/hooks/useWindowSize";
 import {useEffect, useState} from "react";
 import handler from "@/pages/api/hello";
 import {lockScroll, removeScrollLock} from "@/utils/utils";
+import ScrollProgressBar from "@/components/ScrollProgressBar/ScrollProgressBar";
 
 function PostLayout({post, children}) {
   const [isTodActive, setIsTodActive] = useState(false);
@@ -51,6 +52,7 @@ function PostLayout({post, children}) {
               return <Link className={s.todLink} style={{marginLeft: (item.level * 15) + "px"}} key={item.heading + index} href={`#${item.transliteratedHeading}`}>{item.heading}</Link>
             }) }
           </div>
+          { filteredTod.length === 0 && <p>Ничего не найдено</p> }
         </div>
           <button onClick={handleTodShow} className={`btn ${s.tableOfContentsBtn}`}>{ isTodActive ? 'Закрыть' : 'Открыть содержание' }</button>
         </>
@@ -76,6 +78,7 @@ function PostLayout({post, children}) {
         </div>
         {children}
       </article>
+      <ScrollProgressBar />
     </section>
   );
 }
