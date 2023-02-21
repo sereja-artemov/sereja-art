@@ -51,6 +51,7 @@ function PostLayout({post, children}) {
               return <Link className={s.todLink} style={{marginLeft: (item.level * 15) + "px"}} key={item.heading + index} href={`#${item.transliteratedHeading}`}>{item.heading}</Link>
             }) }
           </div>
+          { filteredTod.length === 0 && <p>Ничего не найдено</p> }
         </div>
           <button onClick={handleTodShow} className={`btn ${s.tableOfContentsBtn}`}>{ isTodActive ? 'Закрыть' : 'Открыть содержание' }</button>
         </>
