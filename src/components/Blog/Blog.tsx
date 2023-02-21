@@ -1,8 +1,5 @@
 import * as React from 'react'
 import s from './Blog.module.scss';
-import Link from 'next/link';
-import Image from 'next/image';
-import {blogData} from "@/data/blogData";
 import BlogItem from "@/components/BlogItem/BlogItem";
 
 const Blog: React.FC = ({ blogs }) => {

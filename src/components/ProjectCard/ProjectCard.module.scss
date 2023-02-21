@@ -57,9 +57,12 @@
 
 .projectAbout {
   position: relative;
+  width: 80%;
   padding: 27px 45px;
   background-color: var(--card-background-color-opacity);
-  margin-top: -37px;
+  margin-top: -60px;
+  margin-left: auto;
+  margin-right: auto;
   overflow: hidden;
 
   border: 1px solid var(--border-color);
@@ -68,6 +71,10 @@
   @include media-M {
     position: relative;
     padding: 21px 31px;
+  }
+  @include media-S {
+    width: 100%;
+    padding: 20px 28px;
   }
   @include media-XS {
     padding: 20px 28px;
@@ -86,7 +93,7 @@
   h3 {
     margin: 0;
     margin-bottom: 4px;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 800;
 
     @include media-M {
