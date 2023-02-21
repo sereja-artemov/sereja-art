@@ -92,8 +92,27 @@
     line-height: 1.4rem;
   }
 
-  p, ul, ol, blockquote, img, pre {
+  p, ul, ol, blockquote, img, pre, figure {
     margin-bottom: 1.25em;
+  }
+  figure {
+    display: block;
+    img {
+      margin-bottom: .5em;
+    }
+  }
+  figcaption {
+    text-align: center;
+    color: var(--font-color-second);
+    font-size: .9em;
+  }
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
   }
 }
 .postLayout {

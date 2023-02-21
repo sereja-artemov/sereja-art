@@ -78,7 +78,7 @@ function PostLayout({post, children}) {
         </div>
         {children}
       </article>
-      <ScrollProgressBar />
+
     </section>
   );
 }
