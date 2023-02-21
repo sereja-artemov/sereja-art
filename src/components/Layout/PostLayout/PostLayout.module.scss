@@ -37,6 +37,7 @@
 
     @include media-S {
       font-size: 2.2rem;
+      margin-bottom: 1.2rem;
     }
     @include media-XS {
       font-size: 1.8rem;
@@ -186,10 +187,12 @@
     max-height: 100%;
     background-color: #fff;
     padding-bottom: 55px;
+
   }
 }
+
 .tableOfContentsBtn {
-  z-index: 700;
+  z-index: 850;
   display: none;
   position: fixed;
   bottom: 0;
@@ -227,6 +230,7 @@
     font-size: 1.5em;
   }
 }
+
 .tocLinkWrapper {
   position: relative;
   display: flex;
@@ -243,10 +247,6 @@
     background-color: var(--border-color-strong);
   }
 
-  @include media-S {
-    background-color: var(--background-start-rgb);
-  }
-
   a {
     padding: .25em;
     padding-left: .7em;
@@ -261,4 +261,8 @@
 }
 .todLink {
 
+}
+.todActive {
+  display: block !important;
+  z-index: 850;
 }

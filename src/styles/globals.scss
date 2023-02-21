@@ -380,6 +380,9 @@ a {
     }
   }
 }
+.active {
+  display: block !important;
+}
 
 .lock-scroll {
   overflow: hidden !important;

@@ -4,16 +4,24 @@ import {AiOutlineCalendar, AiOutlineFieldTime, AiOutlineRead} from "react-icons/
 import getWordEnding from "@/lib/getWordEnding";
 import Link from "next/link";
 import useWindowSize from "@/hooks/useWindowSize";
+import {useState} from "react";
+import handler from "@/pages/api/hello";
+import {lockScroll, removeScrollLock} from "@/utils/utils";
 
 function PostLayout({post, children}) {
-
+  const [isTodActive, setIsTodActive] = useState(false);
   const window = useWindowSize();
+
+  const handleTodShow = () => {
+    setIsTodActive(!isTodActive);
+    !isTodActive ? lockScroll() : removeScrollLock();
+  }
 
   return (
     <section className={`${s.postLayout} container-fluid`}>
       { post.tableOfContents.length !== 0 &&
         <>
-        <div className={`${s.tableOfContents} container-fluid`}>
+        <div className={`${isTodActive ? s.todActive : ''} ${s.tableOfContents} container-fluid`}>
           <input className={s.inputSearchTitle} type="search" placeholder="Найти" />
           <h3 className={s.tocTitle}>Содержание</h3>
           <div className={s.tocLinkWrapper}>
@@ -28,7 +36,7 @@ function PostLayout({post, children}) {
             }) }
           </div>
         </div>
-          <button className={`btn ${s.tableOfContentsBtn}`}>Открыть содержание</button>
+          <button onClick={handleTodShow} className={`btn ${s.tableOfContentsBtn}`}>{ isTodActive ? 'Закрыть' : 'Открыть содержание' }</button>
         </>
       }
       <article className={s.post}>
