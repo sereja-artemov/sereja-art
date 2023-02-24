@@ -1,11 +1,11 @@
 import 'keen-slider/keen-slider.min.css';
 import {useKeenSlider} from 'keen-slider/react';
 import {useState} from 'react';
-import s from "./Projects.module.scss";
-import ProjectCard from "@/components/ProjectCard/ProjectCard";
+import s from "./ProjectsBlock.module.scss";
+import ProjectCardItemSlider from "@/components/ProjectCardItemSlider/ProjectCardItemSlider";
 import {projectsData} from "@/data/projectsData";
 
-function Projects() {
+function ProjectsBlock() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [isAnimation, setIsAnimation] = useState(false);
@@ -63,9 +63,7 @@ function Projects() {
       <div ref={ref} className="keen-slider">
         {
           projectsData.map((project, index) => {
-            return <ProjectCard key={index} image={project.image} video={project.video} name={project.name}
-                                cost={project.cost} date={project.date} description={project.description}
-                                link={project.link}/>
+            return <ProjectCardItemSlider key={index} data={project} />
           })
         }
       </div>
@@ -92,4 +90,4 @@ function Projects() {
   );
 }
 
-export default Projects;
+export default ProjectsBlock;

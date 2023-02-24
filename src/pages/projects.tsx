@@ -1,13 +1,13 @@
+import ProjectsPage from "@/components/ProjectsPage/ProjectsPage";
 import {getProjects} from "@/lib/dataFetch";
-import projects from "@/components/Projects/Projects";
 
-const Projects = ({projects}) => {
-  const projectsArr = JSON.parse(projects);
+export interface projectsProps {
+  projects: string,
+}
 
+const Projects = ({projects}:projectsProps) => {
   return (
-    <div>
-
-    </div>
+      <ProjectsPage projects={projects} />
   );
 };
 

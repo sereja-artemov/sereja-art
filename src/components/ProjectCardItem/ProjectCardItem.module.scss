@@ -1,0 +1,98 @@
+@import '../../styles/_media.scss';
+
+.imgWrapper {
+  position: relative;
+  max-width: 100%;
+  height: 0;
+  padding-bottom: 56.2%;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  border-radius: 30px;
+  //box-shadow: 0 1px 7px 0 rgba(34, 60, 80, 0.2);
+}
+
+.image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.info {
+  padding: 1.2rem 1.6rem;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  max-width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  backdrop-filter: blur(15px);
+  margin-top: -85px;
+  background-color: var(--card-background-color-opacity);
+
+  @include media-S {
+    margin-top: -45px;
+  }
+}
+
+.title {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  margin-bottom: .5rem;
+
+  @include media-XL {
+    font-size: 1rem;
+  }
+  @include media-L {
+    font-size: .9rem;
+  }
+  @include media-S {
+    font-size: 1rem;
+  }
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(103, 103, 171, 0.23);
+
+  &:hover {
+    backdrop-filter: blur(0);
+    background-color: transparent;
+  }
+}
+
+.tools {
+  display: flex;
+  gap: 10px;
+  color: var(--font-color-second);
+
+  p {
+    font-size: .8rem;
+    @include media-L {
+      font-size: .7rem;
+    }
+    @include media-S {
+      font-size: .8rem;
+    }
+  }
+
+}
+.description {
+  font-size: .9rem;
+  margin-bottom: .5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @include media-XL {
+    font-size: .8rem;
+  }
+  @include media-S {
+    font-size: 1rem;
+    -webkit-line-clamp: 3;
+  }
+}

@@ -1,19 +1,13 @@
-import s from './ProjectCard.module.scss';
+import s from './ProjectCardItemSlider.module.scss';
 import React, {useState} from 'react';
 import Image from "next/image";
+import { project } from "@/data/projectsData";
 
 interface ProjectCardProps {
-  name: string,
-  description?: string,
-  date: number | string | Date,
-  cost?: number,
-  link: string,
-  video: string,
-  image: string,
+  data: project,
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = (data) => {
-
+const ProjectCardItemSlider: React.FC<ProjectCardProps> = ({data}) => {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
@@ -22,15 +16,6 @@ const ProjectCard: React.FC<ProjectCardProps> = (data) => {
         {isLoading && <p style={{top: '50%'}}>загрузка... загрузка... загрузка... загрузка...</p>}
         <Image fill={true} src={data.image} alt={`${data.name} картинка проекта`}
                onLoadingComplete={() => setIsLoading(false)} priority/>
-        {/*<video className={s.video}*/}
-        {/*       loop*/}
-        {/*       autoPlay*/}
-        {/*       muted*/}
-        {/*       poster={data.image.src}*/}
-        {/*    // controls={false}*/}
-        {/*>*/}
-        {/*    <source src={data.video} type="video/mp4" />*/}
-        {/*</video>*/}
       </div>
       <div className={s.projectAbout}>
         <div className={s.foreground}>
@@ -43,4 +28,4 @@ const ProjectCard: React.FC<ProjectCardProps> = (data) => {
   );
 };
 
-export default ProjectCard;
+export default ProjectCardItemSlider;

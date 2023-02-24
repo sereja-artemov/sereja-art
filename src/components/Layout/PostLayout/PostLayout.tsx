@@ -4,16 +4,16 @@ import {AiOutlineCalendar, AiOutlineFieldTime, AiOutlineRead} from "react-icons/
 import getWordEnding from "@/lib/getWordEnding";
 import Link from "next/link";
 import useWindowSize from "@/hooks/useWindowSize";
-import {useEffect, useState} from "react";
-import handler from "@/pages/api/hello";
+import {useEffect, useRef, useState} from "react";
 import {lockScroll, removeScrollLock} from "@/utils/utils";
-import ScrollProgressBar from "@/components/ScrollProgressBar/ScrollProgressBar";
+import useScrollPercentage from "@/hooks/useScrollPercentage";
 
 function PostLayout({post, children}) {
   const [isTodActive, setIsTodActive] = useState(false);
   const [filteredTod, setFilteredTod] = useState(post.tableOfContents);
   const [searchValue, setSearchValue] = useState('');
   const window = useWindowSize();
+  const scrollPercentage = useScrollPercentage();
 
   useEffect(() => {
     const filteredArray = post.tableOfContents.filter(item => item.heading.toLowerCase().includes(searchValue.toLowerCase()));
@@ -38,23 +38,28 @@ function PostLayout({post, children}) {
     <section className={`${s.postLayout} container-fluid`}>
       { post.tableOfContents.length !== 0 &&
         <>
-        <div className={`${isTodActive ? s.todActive : ''} ${s.tableOfContents} container-fluid`}>
-          <input onChange={handleSearchInput} className={s.inputSearchTitle} type="search" placeholder="Найти" />
-          <h3 className={s.tocTitle}>Содержание</h3>
-          <div className={s.tocLinkWrapper}>
-            { filteredTod.map((item, index: string) => {
+          { scrollPercentage < 95 &&
+            <>
+              <div className={`${isTodActive ? s.todActive : ''} ${s.tableOfContents} container-fluid`}>
+                <input onChange={handleSearchInput} className={s.inputSearchTitle} type="search" placeholder="Найти" />
+                <h3 className={s.tocTitle}>Содержание</h3>
+                <div className={s.tocLinkWrapper}>
+                  { filteredTod.map((item, index: string) => {
 
-              if (item.level >= 1 && window.width > 768) {
-                return <Link className={s.todLink} style={{marginLeft: (item.level * 15) + "px", fontSize: 1 - Number(`0.${item.level}`) + "em",}} key={item.heading + index} href={`#${item.transliteratedHeading}`}>{item.heading}</Link>
-              } else if (window.width < 768) {
-                return <Link onClick={closeTod} className={s.todLink} style={{marginLeft: (item.level * 15) + "px", fontSize: 1.4 - Number(`0.${item.level}`) + "em",}} key={item.heading + index} href={`#${item.transliteratedHeading}`}>{item.heading}</Link>
-              }
-              return <Link className={s.todLink} style={{marginLeft: (item.level * 15) + "px"}} key={item.heading + index} href={`#${item.transliteratedHeading}`}>{item.heading}</Link>
-            }) }
-          </div>
-          { filteredTod.length === 0 && <p>Ничего не найдено</p> }
-        </div>
-          <button onClick={handleTodShow} className={`btn ${s.tableOfContentsBtn}`}>{ isTodActive ? 'Закрыть' : 'Открыть содержание' }</button>
+                    if (item.level >= 1 && window.width > 768) {
+                      return <Link className={s.todLink} style={{marginLeft: (item.level * 15) + "px", fontSize: 1 - Number(`0.${item.level}`) + "em",}} key={item.heading + index} href={`#${item.transliteratedHeading}`}>{item.heading}</Link>
+                    } else if (window.width < 768) {
+                      return <Link onClick={closeTod} className={s.todLink} style={{marginLeft: (item.level * 15) + "px", fontSize: 1.4 - Number(`0.${item.level}`) + "em",}} key={item.heading + index} href={`#${item.transliteratedHeading}`}>{item.heading}</Link>
+                    }
+                    return <Link className={s.todLink} style={{marginLeft: (item.level * 15) + "px"}} key={item.heading + index} href={`#${item.transliteratedHeading}`}>{item.heading}</Link>
+                  }) }
+                </div>
+                { filteredTod.length === 0 && <p>Ничего не найдено</p> }
+              </div>
+              <button onClick={handleTodShow} className={`btn ${s.tableOfContentsBtn}`}>{ isTodActive ? 'Закрыть' : 'Открыть содержание' }</button>
+            </>
+
+          }
         </>
       }
       <article className={s.post}>

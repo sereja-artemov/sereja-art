@@ -95,17 +95,21 @@
   p, ul, ol, blockquote, img, pre, figure {
     margin-bottom: 1.25em;
   }
+
   figure {
     display: block;
+
     img {
       margin-bottom: .5em;
     }
   }
+
   figcaption {
     text-align: center;
     color: var(--font-color-second);
     font-size: .9em;
   }
+
   img {
     display: block;
     margin-left: auto;
@@ -115,10 +119,12 @@
     height: auto;
   }
 }
+
 .postLayout {
   position: relative;
   padding: 0;
 }
+
 .topBlock {
   border-radius: 22px;
   border: 1px solid var(--border-color-strong);
@@ -179,9 +185,11 @@
     margin-right: 6px;
   }
 }
+
 .iconCalendar {
   margin-bottom: .2rem;
 }
+
 .tableOfContents {
   position: fixed;
   left: 0;
@@ -196,7 +204,6 @@
 
   @include media-S {
     display: none;
-
     z-index: 999;
     position: fixed;
     top: 0;
@@ -206,7 +213,6 @@
     max-height: 100%;
     background-color: #fff;
     padding-bottom: 55px;
-
   }
 }
 
@@ -225,6 +231,7 @@
     display: block;
   }
 }
+
 .inputSearchTitle {
   width: 100%;
   font-size: 15px;
@@ -242,10 +249,11 @@
     color: var(--tech-color);
   }
 }
+
 .tocTitle {
   margin-bottom: .5rem;
 
-  @include  media-S {
+  @include media-S {
     font-size: 1.5em;
   }
 }
@@ -278,9 +286,11 @@
     }
   }
 }
+
 .todLink {
 
 }
+
 .todActive {
   display: block !important;
   z-index: 850;

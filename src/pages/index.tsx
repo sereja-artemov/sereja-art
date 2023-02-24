@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Descriptor from '@/components/Descriptor/Descriptor';
 import VideoBanner from '@/components/VideoBanner/VideoBanner';
 import Skills from '@/components/Skills/Skills';
-import Projects from "@/components/Projects/Projects";
+import ProjectsBlock from "@/components/ProjectsBlock/ProjectsBlock";
 import Blog from "@/components/Blog/Blog";
 import MDXContent from "@/lib/MDXContent";
 
@@ -19,7 +19,7 @@ export default function Home({ blogs }) {
       <Descriptor />
       <VideoBanner />
       <Skills />
-      <Projects />
+      <ProjectsBlock />
       <Blog blogs={blogs} />
 
     </>
