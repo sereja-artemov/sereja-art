@@ -6,10 +6,10 @@ import PostLayout from "@/components/Layout/PostLayout/PostLayout";
 import Link from 'next/link';
 import { MDXProvider } from '@mdx-js/react'
 import { transliterate } from "transliteration";
+import SEO from "@/components/SEO/SEO";
 
 const Post = ({ post, error }) => {
   if (error) return <PageNotFound />;
-
   // кастомные MDX заголовки, id присваивает rehypeSlug из MDXContent
   // кастомные MDX заголовки начало
   const CustomH1 = ({ id, ...rest }) => {
@@ -81,6 +81,7 @@ const Post = ({ post, error }) => {
 
   return (
     <MDXProvider components={components}>
+      <SEO title={post.meta.title} description={post.meta.excerpt} keywords={''} previewImage={post.meta.image} />
       <PostLayout post={post} >
         <MDXRemote
           {...post.source}

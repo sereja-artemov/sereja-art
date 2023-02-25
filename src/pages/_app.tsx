@@ -2,7 +2,7 @@ import '@/styles/utils/normalize.css'
 import '@/styles/_variables.scss'
 import '@/styles/globals.scss'
 import type {AppProps} from 'next/app'
-import { Raleway, Roboto } from "@next/font/google";
+import { Raleway, Roboto } from "next/font/google";
 import Layout from "@/components/Layout/Layout";
 import {DarkModeProvider} from "@/context/darkModeContext";
 import { IconContext } from 'react-icons';
@@ -12,6 +12,7 @@ import NProgress from 'nprogress';
 import "nprogress/nprogress.css";
 import {MDXProvider} from "@mdx-js/react";
 import Link from "next/link";
+import SEO from "@/components/SEO/SEO";
 
 const raleway = Raleway({
   style: ['normal'],
@@ -53,8 +54,6 @@ export default function App({Component, pageProps}: AppProps) {
   }, [router.events])
 
 
-
-
   return (
     <>
       <style jsx global>{`
@@ -69,8 +68,8 @@ export default function App({Component, pageProps}: AppProps) {
 
       <DarkModeProvider>
         <IconContext.Provider value={{ color: 'var(--icons-color)' }}>
-
           <Layout>
+            <SEO />
             <Component {...pageProps} />
           </Layout>
         </ IconContext.Provider>
