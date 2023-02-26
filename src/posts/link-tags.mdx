@@ -12,6 +12,38 @@ https://mikebifulco.com/posts/mdx-auto-link-headings-with-rehype-slug#automatica
 
 ## test title
 ### test title 2
+<code>
+  ```js
+  import ProjectsPage from "@/components/ProjectsPage/ProjectsPage";
+  import {getProjects} from "@/lib/dataFetch";
+  import SEO from "@/components/SEO/SEO";
+
+  export interface projectsProps {
+   projects: string,
+  }
+
+  const Projects = ({projects}: projectsProps) => {
+    return (
+      <>
+        <SEO title="Проекты"/>
+        <ProjectsPage projects={projects}/>
+      </>
+    );
+  };
+
+  export default Projects;
+
+  export async function getStaticProps() {
+  const projects = JSON.stringify(getProjects());
+    return {
+     props: {
+       projects,
+      },
+    };
+  }
+
+  ```
+</code>
 ### test title 2
 ### test title 2
 ### test title 2

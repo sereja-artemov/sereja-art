@@ -6,11 +6,11 @@ export interface projectsProps {
   projects: string,
 }
 
-const Projects = ({projects}:projectsProps) => {
+const Projects = ({projects}: projectsProps) => {
   return (
     <>
-      <SEO title="Проекты" />
-      <ProjectsPage projects={projects} />
+      <SEO title="Проекты"/>
+      <ProjectsPage projects={projects}/>
     </>
   );
 };
