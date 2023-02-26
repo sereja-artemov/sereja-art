@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { MDXProvider } from '@mdx-js/react'
 import { transliterate } from "transliteration";
 import SEO from "@/components/SEO/SEO";
+import "highlight.js/scss/atom-one-dark.scss";
 
 const Post = ({ post, error }) => {
   if (error) return <PageNotFound />;

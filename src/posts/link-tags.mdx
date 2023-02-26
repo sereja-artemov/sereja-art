@@ -12,35 +12,37 @@ https://mikebifulco.com/posts/mdx-auto-link-headings-with-rehype-slug#automatica
 
 ## test title
 ### test title 2
+
+<CodeTitle title='Какой-то тестовый заголовок блока с кодом' lang="react" />
 <code>
-  ```js
+  ```tsx {1-3,4}
   import ProjectsPage from "@/components/ProjectsPage/ProjectsPage";
   import {getProjects} from "@/lib/dataFetch";
   import SEO from "@/components/SEO/SEO";
 
   export interface projectsProps {
-   projects: string,
-  }
+  projects: string,
+}
 
   const Projects = ({projects}: projectsProps) => {
-    return (
-      <>
-        <SEO title="Проекты"/>
-        <ProjectsPage projects={projects}/>
-      </>
-    );
-  };
+  return (
+  <>
+  <SEO title="Проекты"/>
+  <ProjectsPage projects={projects}/>
+  </>
+  );
+};
 
   export default Projects;
 
   export async function getStaticProps() {
   const projects = JSON.stringify(getProjects());
-    return {
-     props: {
-       projects,
-      },
-    };
-  }
+  return {
+  props: {
+  projects,
+},
+};
+}
 
   ```
 </code>
