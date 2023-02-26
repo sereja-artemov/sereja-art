@@ -3,12 +3,14 @@ import {useKeenSlider} from 'keen-slider/react';
 import {useState} from 'react';
 import s from "./ProjectsBlock.module.scss";
 import ProjectCardItemSlider from "@/components/ProjectCardItemSlider/ProjectCardItemSlider";
-import {projectsData} from "@/data/projectsData";
+import {projectsProps} from "@/lib/dataFetch";
 
-function ProjectsBlock() {
+function ProjectsBlock({projects}:projectsProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [isAnimation, setIsAnimation] = useState(false);
+
+  const projectsData = JSON.parse(projects);
 
   const [ref, instanceRef] = useKeenSlider<HTMLDivElement>(
     {

@@ -6,8 +6,9 @@ import ProjectsBlock from "@/components/ProjectsBlock/ProjectsBlock";
 import Blog from "@/components/Blog/Blog";
 import MDXContent from "@/lib/MDXContent";
 import SEO from '@/components/SEO/SEO';
+import {getProjects} from "@/lib/dataFetch";
 
-export default function Home({ blogs }) {
+export default function Home({ blogs, projects }) {
 
   return (
     <>
@@ -15,7 +16,7 @@ export default function Home({ blogs }) {
       <Descriptor />
       <VideoBanner />
       <Skills />
-      <ProjectsBlock />
+      <ProjectsBlock projects={projects} />
       <Blog blogs={blogs} />
     </>
   )
@@ -24,8 +25,10 @@ export default function Home({ blogs }) {
 export async function getStaticProps() {
   /* Получаем только gray matter */
   const blogs = new MDXContent('src/posts').getAllPosts();
+  /* Получаем данные проектов */
+  const projects = JSON.stringify(getProjects());
 
   return {
-    props: { blogs },
+    props: { blogs, projects },
   }
 }

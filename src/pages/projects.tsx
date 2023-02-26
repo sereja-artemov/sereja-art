@@ -1,5 +1,6 @@
 import ProjectsPage from "@/components/ProjectsPage/ProjectsPage";
 import {getProjects} from "@/lib/dataFetch";
+import SEO from "@/components/SEO/SEO";
 
 export interface projectsProps {
   projects: string,
@@ -7,7 +8,10 @@ export interface projectsProps {
 
 const Projects = ({projects}:projectsProps) => {
   return (
+    <>
+      <SEO title="Проекты" />
       <ProjectsPage projects={projects} />
+    </>
   );
 };
 
