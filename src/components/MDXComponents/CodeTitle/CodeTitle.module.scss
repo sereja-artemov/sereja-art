@@ -1,0 +1,14 @@
+@import '../../../styles/_media.scss';
+
+.codeTitle {
+  display: flex;
+  align-items: center;
+
+  p {
+    margin: 0;
+  }
+}
+
+.icon {
+  margin-right: 12px;
+}

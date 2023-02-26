@@ -17,8 +17,22 @@ export interface project {
 
 export const projectsData: project[] = [
   {
+    name: 'Калькулятор семейного бюджета',
+    description: 'Финансовый вопрос – важный аспект семейной жизни. Многие пары расстаются из-за разногласий в формировании бюджета, а ведь коммуналку проще платить вдвоем. Иначе, зачем оно всё?',
+    date: new Date("2017-01-26"),
+    cost: 123,
+    links: {
+      detailLink: '#',
+      githubLink: '#',
+    },
+    image: 'https://sereja-art.ru/upload/family-budget-calculator-960x540.jpg',
+    previewImage: 'https://sereja-art.ru/upload/family-budget-calculator-960x540.jpg',
+    tools: ["1C-Bitrix", "Aspro", "Битрикс24"],
+    active: true,
+  },
+  {
     name: 'Сайт производственной компании Промматик',
-    description: 'Запустил с нуля сайт компании Промматик, наполнил контентом и подключил необходимые сервисы.',
+    description: 'Запустил с нуля сайт компании Промматик, наполнил контентом, сделал базовую SEO-оптимизацию и подключил необходимые сервисы.',
     date: new Date("2017-01-26"),
     cost: 123,
     links: {

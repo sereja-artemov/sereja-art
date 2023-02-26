@@ -401,3 +401,74 @@ a {
   border-left-color: var(--accent-color) !important;
 }
 /* Nprogress bar Custom Styling (force) >>end<< */
+
+/* For preventing the blue highlight color box on tap(click) */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.truncate-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.truncate-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.auto-row {
+  -webkit-margin-before: auto;
+  margin-block-start: auto;
+}
+
+/* Code Line Highlighting START */
+pre {
+  overflow: auto;
+}
+code {
+  counter-reset: line;
+}
+
+code span.line {
+  padding: 2px 12px;
+  border-left: 4px solid transparent;
+}
+
+code > .line::before {
+  counter-increment: line;
+  content: counter(line);
+
+  /* Other styling */
+  display: inline-block;
+  width: 1rem;
+  margin-right: 1rem;
+  text-align: right;
+  color: gray;
+  font-weight: 500;
+  border-right: 4px solid transparent;
+}
+
+.highlighted {
+  background: rgba(200, 200, 255, 0.1);
+  border-left: 4px solid #3777de !important;
+  filter: saturate(1.5);
+}
+/* Code Line Highlighting ENDS */
+div[data-rehype-pretty-code-fragment] {
+  font-size: 15px;
+
+  & > pre {
+    background-color: var(--card-background-color);
+    padding-top: 10px;
+    border: 1px solid;
+    border-bottom-right-radius: 10px;
+    /* font-size: 15px; */
+    border-bottom-left-radius: 10px;
+  }
+
+}
