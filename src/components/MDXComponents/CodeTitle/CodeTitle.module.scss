@@ -1,0 +1,26 @@
+@import '../../../styles/_media.scss';
+
+.codeTitle {
+  display: flex;
+  align-items: center;
+  background-color: var(--card-background-color);
+  padding: .7rem .7rem;
+  border: 1px solid var(--border-color-strong);
+  border-bottom: 0;
+  border-top-left-radius: var(--code-block-border-radius);
+  border-top-right-radius: var(--code-block-border-radius);
+  font-size: .85rem;
+
+  @include media-S {
+    font-size: 15px;
+  }
+}
+
+.title {
+  margin: 0 !important;
+}
+
+.icon {
+  flex-shrink: 0;
+  margin-right: 12px;
+}

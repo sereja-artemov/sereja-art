@@ -12,35 +12,37 @@ https://mikebifulco.com/posts/mdx-auto-link-headings-with-rehype-slug#automatica
 
 ## test title
 ### test title 2
+
+<CodeTitle title='components/MDXComponents/NextAndPreviousButton.jsx' lang="tsx" />
 <code>
-  ```js
-  import ProjectsPage from "@/components/ProjectsPage/ProjectsPage";
-  import {getProjects} from "@/lib/dataFetch";
-  import SEO from "@/components/SEO/SEO";
+  ```tsx {1-3,4}
+import ProjectsPage from "@/components/ProjectsPage/ProjectsPage";
+import {getProjects} from "@/lib/dataFetch";
+import SEO from "@/components/SEO/SEO";
 
-  export interface projectsProps {
-   projects: string,
-  }
+export interface projectsProps {
+    projects: string,
+}
 
-  const Projects = ({projects}: projectsProps) => {
-    return (
-      <>
-        <SEO title="Проекты"/>
-        <ProjectsPage projects={projects}/>
-      </>
-    );
-  };
+const Projects = ({projects}: projectsProps) => {
+  return (
+    <>
+      <SEO title="Проекты"/>
+      <ProjectsPage projects={projects}/>
+    </>
+  );
+};
 
-  export default Projects;
+export default Projects;
 
-  export async function getStaticProps() {
+export async function getStaticProps() {
   const projects = JSON.stringify(getProjects());
-    return {
-     props: {
-       projects,
-      },
-    };
-  }
+  return {
+    props: {
+      projects,
+  },
+};
+}
 
   ```
 </code>
