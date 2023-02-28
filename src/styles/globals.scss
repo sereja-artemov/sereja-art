@@ -36,6 +36,8 @@
   --icons-color: var(--font-color);
   --divider-color: var(--border-color);
 
+  --code-block-border-radius: 10px;
+
   --header-offset: 87px;
   @include media.media-S {
     --header-offset: 78px;
@@ -380,6 +382,7 @@ a {
     }
   }
 }
+
 .active {
   display: block !important;
 }
@@ -387,19 +390,23 @@ a {
 .lock-scroll {
   overflow: hidden !important;
 }
+
 /* Nprogress bar Custom Styling (force) >>start<< */
 #nprogress .bar {
   background: var(--accent-color) !important;
   height: 4px !important;
 }
+
 /* Fancy blur effect */
 #nprogress .peg {
   box-shadow: 0 0 10px var(--accent-color), 0 0 5px var(--accent-color) !important;
 }
+
 #nprogress .spinner-icon {
   border-top-color: var(--accent-color) !important;
   border-left-color: var(--accent-color) !important;
 }
+
 /* Nprogress bar Custom Styling (force) >>end<< */
 
 /* For preventing the blue highlight color box on tap(click) */
@@ -430,12 +437,13 @@ a {
 pre {
   overflow: auto;
 }
+
 code {
   counter-reset: line;
 }
 
 code span.line {
-  padding: 2px 12px;
+  padding: 2px 1em;
   border-left: 4px solid transparent;
 }
 
@@ -445,8 +453,8 @@ code > .line::before {
 
   /* Other styling */
   display: inline-block;
-  width: 1rem;
-  margin-right: 1rem;
+  width: 1em;
+  margin-right: 1em;
   text-align: right;
   color: gray;
   font-weight: 500;
@@ -458,6 +466,7 @@ code > .line::before {
   border-left: 4px solid #3777de !important;
   filter: saturate(1.5);
 }
+
 /* Code Line Highlighting ENDS */
 div[data-rehype-pretty-code-fragment] {
   font-size: 15px;
@@ -465,10 +474,8 @@ div[data-rehype-pretty-code-fragment] {
   & > pre {
     background-color: var(--card-background-color);
     padding-top: 10px;
-    border: 1px solid;
-    border-bottom-right-radius: 10px;
-    /* font-size: 15px; */
-    border-bottom-left-radius: 10px;
+    border: 1px solid var(--border-color-strong);
+    border-bottom-right-radius: var(--code-block-border-radius);
+    border-bottom-left-radius: var(--code-block-border-radius);
   }
-
 }
