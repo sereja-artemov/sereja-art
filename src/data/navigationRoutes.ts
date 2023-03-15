@@ -1,3 +1,5 @@
+// Добавляем \u00A0 вместо пробелов, чтобы корректно работала заливка текста
+
 export const navigationRoutes = [
   {
     route: '/',
@@ -5,7 +7,7 @@ export const navigationRoutes = [
   },
   {
     route: '/about',
-    name: 'Обо мне',
+    name: `Обо\u00A0мне`,
   },
   {
     route: '#',

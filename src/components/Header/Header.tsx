@@ -104,19 +104,19 @@ const Header: React.FC = () => {
             fill="none" stroke="var(--font-color)"/>
         </svg>
       </Link>
-        <nav className={s.nav}>
+
+      {isMenuOpen &&
+        <nav onMouseLeave={closeMenu} className={s.nav}>
           <ul className={s.list}>
-            {
-              navigationRoutes.map((element) => (
-                <li className={s.listItem}>
-                  <Link onClick={closeMobileMenu} href={element.route} className={`${s.link} ${activeLink(element.route, router.pathname)}`}>
-                    <span data-text={element.name}>{element.name}</span>
-                  </Link>
-                </li>
-              ))
-            }
+            { navigationRoutes.map((element) => (
+              <li className={s.listItem}>
+                <Link onClick={closeMobileMenu} href={element.route} className={`${s.link} ${activeLink(element.route, router.pathname)}`}>
+                  <span data-text={element.name}>{element.name}</span>
+                </Link>
+              </li>
+            )) }
           </ul>
-        </nav>
+        </nav>}
       <button onClick={toggleTheme} className={s.toggleThemeButton}>
 
         { currentTheme === theme.lightTheme ? <BsSun className={s.sunIcon} /> : <BsMoonStars className={s.sunIcon} /> }
