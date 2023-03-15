@@ -6,6 +6,7 @@ import React, {useEffect, useRef, useState} from "react";
 import { BsMoonStars, BsSun, BsSunFill } from 'react-icons/bs';
 
 import {useTheme} from "@/context/darkModeContext";
+import {navigationRoutes} from "@/data/navigationRoutes";
 
 // type HeaderProps = {
 //   setIsOverlay: (a: boolean) => void,
@@ -103,48 +104,19 @@ const Header: React.FC = () => {
             fill="none" stroke="var(--font-color)"/>
         </svg>
       </Link>
-
-      {isMenuOpen &&
-        <nav onMouseLeave={closeMenu} className={s.nav}>
+        <nav className={s.nav}>
           <ul className={s.list}>
-            <li className={s.listItem}>
-              <Link onClick={closeMobileMenu} href="/" className={`${s.link} ${activeLink('/', router.pathname)}`}>
-                <span data-text="Главная">Главная</span>
-              </Link>
-            </li>
-            <li className={s.listItem}>
-              <Link onClick={closeMobileMenu} href="/about"
-                    className={`${s.link} ${activeLink('/about', router.pathname)}`}>
-                <span data-text="Обо&nbsp;мне">Обо мне</span>
-              </Link>
-            </li>
-            <li className={s.listItem}>
-              <Link onClick={closeMobileMenu} href="#" className={`${s.link} ${activeLink('#', router.pathname)}`}>
-                <span data-text="Портфолио">Портфолио</span>
-              </Link>
-            </li>
-            <li className={s.listItem}>
-              <Link onClick={closeMobileMenu} href="#" className={`${s.link} ${activeLink('#', router.pathname)}`}>
-                <span data-text="Услуги">Услуги</span>
-              </Link>
-            </li>
-            <li className={s.listItem}>
-              <Link onClick={closeMobileMenu} href="/blogs" className={`${s.link} ${activeLink('/blogs', router.pathname)}`}>
-                <span data-text="Блог">Блог</span>
-              </Link>
-            </li>
-            <li className={s.listItem}>
-              <Link onClick={closeMobileMenu} href="/projects" className={`${s.link} ${activeLink('/projects', router.pathname)}`}>
-                <span data-text="Проекты">Проекты</span>
-              </Link>
-            </li>
-            <li className={s.listItem}>
-              <Link onClick={closeMobileMenu} href="#" className={`${s.link} ${activeLink('#', router.pathname)}`}>
-                <span data-text="Контакты">Контакты</span>
-              </Link>
-            </li>
+            {
+              navigationRoutes.map((element) => (
+                <li className={s.listItem}>
+                  <Link onClick={closeMobileMenu} href={element.route} className={`${s.link} ${activeLink(element.route, router.pathname)}`}>
+                    <span data-text={element.name}>{element.name}</span>
+                  </Link>
+                </li>
+              ))
+            }
           </ul>
-        </nav>}
+        </nav>
       <button onClick={toggleTheme} className={s.toggleThemeButton}>
 
         { currentTheme === theme.lightTheme ? <BsSun className={s.sunIcon} /> : <BsMoonStars className={s.sunIcon} /> }
