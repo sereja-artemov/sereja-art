@@ -14,7 +14,7 @@ export default function Home({ blogs, projects }) {
     <>
       <SEO title='Главная' description='Сайт-портфолио frontend-разработчика Артемова Сергея.' />
       <Descriptor />
-      <VideoBanner />
+      {/*<VideoBanner />*/}
       <Skills />
       <ProjectsBlock projects={projects} />
       <Blog blogs={blogs} />

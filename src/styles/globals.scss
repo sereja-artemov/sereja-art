@@ -285,6 +285,10 @@ a {
   padding: 0 65px;
   margin: 0 auto;
 
+  @include media.media-M {
+    padding: 0 45px;
+  }
+
   @include media.media-S {
     padding: 0 15px;
   }
