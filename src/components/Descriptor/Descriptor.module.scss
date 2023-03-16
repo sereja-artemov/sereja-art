@@ -1,23 +1,46 @@
 @import "../../styles/_media.scss";
 
 .descriptor {
+  position: relative;
   padding-top: 150px;
+  padding-bottom: 150px;
   margin-bottom: 100px;
 
+
+  @include media-L {
+    padding-top: 300px;
+  }
   @include media-M {
-    padding-top: 85px;
+    //padding-top: 85px;
     margin-bottom: 70px;
   }
   @include media-S {
-    padding-top: 35px;
+    //padding-top: 35px;
     margin-bottom: 40px;
   }
 }
 
 .contentWrapper {
-  max-width: 601px;
   margin-left: auto;
   margin-right: auto;
+  backdrop-filter: blur(25px);
+  padding: 40px 60px 50px 60px;
+  max-width: 601px;
+  box-sizing: content-box;
+  background-color: var(--card-background-color-opacity);
+  border-radius: 20px;
+  border: 1px solid var(--border-color-strong);
+
+  @include media-M {
+    padding: 35px 45px 40px 45px;
+  }
+  @include media-S {
+    padding: 25px 35px 30px 35px;
+  }
+  @include media-XS {
+    padding: 25px 22px 25px 22px;
+  }
+
 }
 
 .title {
@@ -27,13 +50,17 @@
   line-height: 1.4;
   font-weight: 900;
 
+  @include media-M {
+    font-size: 44px;
+    margin-bottom: 30px;
+  }
   @include media-S {
     font-size: 40px;
     margin-bottom: 25px;
   }
   @include media-XS {
-    font-size: 7.4vw;
-    margin-bottom: 20px;
+    font-size: 6vw;
+    margin-bottom: 14px;
   }
 }
 
@@ -60,4 +87,110 @@ body[data-theme="dark"] {
   .stroke {
     -webkit-text-stroke: 1px var(--font-color);
   }
+}
+
+.bgBlob {
+  z-index: -1;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  padding: 30px;
+  max-width: 250px;
+  transform: translateX(-50%);
+
+  @include media-S {
+    top: 0;
+  }
+}
+
+.blob {
+  position: relative;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: animate-blob 4s ease-in-out infinite;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+@keyframes animate-blob {
+  0%,100% { border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; }
+  14% { border-radius: 40% 60% 54% 46% / 49% 60% 40% 51%; }
+  28% { border-radius: 54% 46% 38% 62% / 49% 70% 30% 51%; }
+  42% { border-radius: 61% 39% 55% 45% / 61% 38% 62% 39%; }
+  56% { border-radius: 61% 39% 67% 33% / 70% 50% 50% 30%; }
+  70% { border-radius: 50% 50% 34% 66% / 56% 68% 32% 44%; }
+  84% { border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%; }
+}
+
+.blobFirst {
+  //mix-blend-mode: multiply;
+  position: absolute;
+  top: 4%;
+  left: 3%;
+  width: 600px;
+  height: 600px;
+  //background: url("../../images/projects/prommatic.webp") no-repeat center center;
+  //background-size: cover;
+  @include media-custom(1600px) {
+    width: 400px;
+    height: 400px;
+  }
+  @include media-XS {
+    left: 50%;
+    transform: translateX(-50%);
+    top: -2%;
+    width: 290px;
+    height: 290px;
+  }
+}
+
+.blobSecond {
+  position: absolute;
+  bottom: 2%;
+  right: 4%;
+  width: 250px;
+  height: 250px;
+  //background: url("../../images/projects/project1.png") no-repeat center center;
+  //background-size: cover;
+  animation-direction: alternate;
+  animation-delay: 1s;
+
+  @include media-L {
+    bottom: -6%;
+  }
+
+  @include media-XS {
+    width: 160px;
+    height: 160px;
+    bottom: 2%;
+  }
+}
+
+.blobThird {
+  position: absolute;
+  top: 20%;
+  right: 16%;
+  width: 100px;
+  height: 100px;
+  border: 1px solid var(--border-color-strong);
+  //background: url("../../images/projects/project1.png") no-repeat center center;
+  //background-size: cover;
+  animation-delay: 2s;
+
+  @include media-XS {
+    top: auto;
+    right: auto;
+    left: 10%;
+    bottom: -1%;
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.blobImage {
+  max-width: none !important;
+  height: inherit;
+  height: -webkit-fill-available;
 }
