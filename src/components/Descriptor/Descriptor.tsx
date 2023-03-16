@@ -50,8 +50,6 @@ export default function Descriptor() {
         </p>
       </div>
 
-
-
       <div className={`${s.blob} ${s.blobFirst}`}>
         <Image className={s.blobImage} src={blobFirstImage} alt="blob first image" />
       </div>
