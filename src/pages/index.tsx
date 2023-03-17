@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Descriptor from '@/components/Descriptor/Descriptor';
-import VideoBanner from '@/components/VideoBanner/VideoBanner';
+import Blob from '@/components/Blob/Blob';
 import Skills from '@/components/Skills/Skills';
 import ProjectsBlock from "@/components/ProjectsBlock/ProjectsBlock";
 import Blog from "@/components/Blog/Blog";
@@ -14,7 +14,6 @@ export default function Home({ blogs, projects }) {
     <>
       <SEO title='Главная' description='Сайт-портфолио frontend-разработчика Артемова Сергея.' />
       <Descriptor />
-      <VideoBanner />
       <Skills />
       <ProjectsBlock projects={projects} />
       <Blog blogs={blogs} />
