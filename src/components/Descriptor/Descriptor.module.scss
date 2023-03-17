@@ -21,6 +21,7 @@
 }
 
 .title {
+  position: relative;
   margin: 0;
   margin-bottom: 35px;
   font-size: 48px;
@@ -46,6 +47,7 @@
 
 .description {
   font-size: 18px;
+  margin-bottom: 4em;
 
   @include media-S {
     font-size: 15px;
@@ -53,6 +55,7 @@
   }
   @include media-XS {
     font-size: 14px;
+    margin-bottom: 2.5em;
   }
 }
 
@@ -61,3 +64,22 @@ body[data-theme="dark"] {
     -webkit-text-stroke: 1px var(--font-color);
   }
 }
+.bgBlob {
+  z-index: -1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 30px;
+  max-width: 60%;
+  transform: translate(-50%, -50%);
+
+  @include media-S {
+    top: 0;
+  }
+  @include media-XS {
+    top: 15px;
+    max-width: 150px;
+  }
+}
+
+

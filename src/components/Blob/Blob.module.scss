@@ -1,0 +1,30 @@
+@import "../../styles/_media.scss";
+
+.blob {
+  position: relative;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: animate-blob 4s ease-in-out infinite;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+@keyframes animate-blob {
+  0% {
+    border-radius: 20% 30% 60% 20% / 47% 51% 49% 53% ;
+  }
+  25% {
+    border-radius: 20% 40% 48% 52% / 58% 40% 60% 42% ;
+  }
+  50% {
+    border-radius: 63% 37% 59% 41% / 40% 28% 72% 60% ;
+  }
+  75% {
+    border-radius: 37% 63% 31% 69% / 66% 43% 57% 34% ;
+  }
+  100% {
+    border-radius: 20% 30% 60% 20% / 47% 51% 49% 53% ;
+  }
+}
