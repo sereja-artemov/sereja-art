@@ -7,6 +7,7 @@ import Blog from "@/components/Blog/Blog";
 import MDXContent from "@/lib/MDXContent";
 import SEO from '@/components/SEO/SEO';
 import {getProjects} from "@/lib/dataFetch";
+import CursorFollowerBlock from "@/components/СursorFollowerBlock/CursorFollowerBlock";
 
 export default function Home({ blogs, projects }) {
 
@@ -17,6 +18,9 @@ export default function Home({ blogs, projects }) {
       <Skills />
       <ProjectsBlock projects={projects} />
       <Blog blogs={blogs} />
+
+      <CursorFollowerBlock />
+
     </>
   )
 }
