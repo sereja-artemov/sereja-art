@@ -19,7 +19,7 @@ export default function Home({ blogs, projects }) {
       <ProjectsBlock projects={projects} />
       <Blog blogs={blogs} />
 
-      <CursorFollowerBlock />
+      {/*<CursorFollowerBlock />*/}
 
     </>
   )
