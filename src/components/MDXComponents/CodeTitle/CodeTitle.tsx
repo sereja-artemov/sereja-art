@@ -45,7 +45,7 @@ export default function CodeTitle({ title, lang }) {
 
         <div className={s.codeTitle}>
           <Icon className={s.icon} />
-          <p>{title}</p>
+          <p className={s.titleText}>{title}</p>
         </div>
 
   );

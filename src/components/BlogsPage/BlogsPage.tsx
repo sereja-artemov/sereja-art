@@ -4,7 +4,7 @@ import s from './BlogPage.module.scss';
 
 function BlogsPage({ filteredBlogs }) {
   return (
-    <section className={`${s.blog} container-fluid`}>
+    <section className={`${s.blog} container-fluid section-padding`}>
       { filteredBlogs.length !== 0 ? (
         filteredBlogs.map((article, index) => {
           return <BlogItem article={article} key={index}  />

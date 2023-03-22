@@ -3,9 +3,16 @@
 .codeTitle {
   display: flex;
   align-items: center;
+  border: 1px solid var(--border-color-strong);
+  border-bottom: none;
+  border-top-left-radius: var(--code-block-border-radius);
+  border-top-right-radius: var(--code-block-border-radius);
+  padding: .7rem 1rem;
+  background-color: var(--card-background-color);
 
-  p {
-    margin: 0;
+  .titleText {
+    font-size: .8rem;
+    margin-bottom: 0;
   }
 }
 
