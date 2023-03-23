@@ -479,6 +479,7 @@ div[data-rehype-pretty-code-fragment] {
     border-bottom-left-radius: var(--code-block-border-radius);
   }
 }
+
 .svg-bg {
   z-index: -2;
   position: fixed;
@@ -486,9 +487,9 @@ div[data-rehype-pretty-code-fragment] {
   height: 100%;
   left: 0;
   top: 0;
-
   opacity: .3;
 }
+
 .section-padding {
   padding-top: 2rem;
   padding-bottom: 4rem;
