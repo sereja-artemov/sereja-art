@@ -10,8 +10,8 @@ export const navigationRoutes = [
     name: `Обо\u00A0мне`,
   },
   {
-    route: '#',
-    name: 'Портфолио',
+    route: '/projects',
+    name: 'Проекты',
   },
   {
     route: '#',
@@ -20,10 +20,6 @@ export const navigationRoutes = [
   {
     route: '/blogs',
     name: 'Блог',
-  },
-  {
-    route: '/projects',
-    name: 'Проекты',
   },
   {
     route: '/contacts',
