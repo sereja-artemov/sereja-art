@@ -26,7 +26,7 @@ export const navigationRoutes = [
     name: 'Проекты',
   },
   {
-    route: '#',
+    route: '/contacts',
     name: 'Контакты',
   },
 ];

@@ -1,2 +1,39 @@
 @import "../../styles/_media.scss";
 
+.title {
+  font-size: 6.5rem;
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: .4em;
+
+  @include media-S {
+    font-size: 5rem;
+  }
+  @include media-XS {
+    font-size: 3.5rem;
+  }
+}
+.description {
+  max-width: 410px;
+}
+.textBlock {
+  display: block;
+  margin-bottom: 2rem;
+}
+.contactsItem {
+  font-family: 'Raleway', 'Roboto', 'Arial', sans-serif;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 500;
+}
+.messengerItems {
+  font-size: 1.1em;
+
+  span {
+    margin-right: .8em;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
