@@ -1,4 +1,5 @@
 import s from './ContactsPage.module.scss';
+import Link from 'next/link';
 
 const ContactsPage = () => {
   return (
@@ -10,8 +11,8 @@ const ContactsPage = () => {
       <div className={`${s.textBlock}`}>
         <span className={s.contactsItem}>+7 951 333 99 23</span>
         <div className={s.messengerItems}>
-          <span>— Telegram</span>
-          <span>— WhatsApp</span>
+          <Link href='https://t.me/sereja_art' target='_blank'>— Telegram</Link>
+          <Link href='https://wa.me/79513339923' target='_blank'>— WhatsApp</Link>
         </div>
       </div>
       <p className={`${s.textBlock}`}>я в соцсетях</p>

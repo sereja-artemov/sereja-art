@@ -7,7 +7,7 @@ import React from 'react';
 import { router } from 'next/client';
 import { BsTelegram } from 'react-icons/bs';
 import { MdEmail } from 'react-icons/md';
-import { IoLogoWhatsapp } from 'react-icons/all';
+import { IoLogoWhatsapp } from 'react-icons/io';
 
 
 const Footer = () => {

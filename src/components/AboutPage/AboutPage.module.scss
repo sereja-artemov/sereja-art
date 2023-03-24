@@ -1,0 +1,15 @@
+@import "../../styles/_media.scss";
+
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5em;
+}
+
+.aboutBlock {
+  max-width: 680px;
+  .description {
+    margin: 0;
+    margin-bottom: 1.5em;
+  }
+}
