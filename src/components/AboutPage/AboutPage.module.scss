@@ -1,0 +1,43 @@
+@import "../../styles/_media.scss";
+
+.aboutTextWrapper {
+
+  display: flex;
+  gap: 2.5em;
+  margin-bottom: 2rem;
+
+  @include media-M {
+    padding-top: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.aboutBlock {
+  width: 60%;
+  max-width: 680px;
+
+  @include media-M {
+    width: 100%;
+  }
+
+  .description {
+    margin: 0;
+    margin-bottom: 1.5em;
+  }
+}
+
+.imageWrapper {
+  width: 40%;
+
+
+  @include media-M {
+    width: 100%;
+  }
+}
+
+.avatarImage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

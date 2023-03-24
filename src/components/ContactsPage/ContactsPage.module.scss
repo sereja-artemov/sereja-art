@@ -29,8 +29,10 @@
 .messengerItems {
   font-size: 1.1em;
 
+  a,
   span {
     margin-right: .8em;
+    text-decoration: none;
 
     &:last-child {
       margin-right: 0;
