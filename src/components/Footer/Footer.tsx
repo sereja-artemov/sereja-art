@@ -7,6 +7,7 @@ import React from 'react';
 import { router } from 'next/client';
 import { BsTelegram } from 'react-icons/bs';
 import { MdEmail } from 'react-icons/md';
+import { IoLogoWhatsapp } from 'react-icons/all';
 
 
 const Footer = () => {
@@ -22,6 +23,10 @@ const Footer = () => {
         <div className={s.contactsLinkWrapper}>
           <BsTelegram />
           <Link href='https://t.me/sereja_art' target='_blank' className={s.telegram}>@sereja_art</Link>
+        </div>
+        <div className={s.contactsLinkWrapper}>
+          <IoLogoWhatsapp />
+          <Link href='https://wa.me/79513339923' target='_blank' className={s.whatsapp}>whatsapp</Link>
         </div>
       </div>
     </footer>
