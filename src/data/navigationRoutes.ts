@@ -13,10 +13,10 @@ export const navigationRoutes = [
     route: '/projects',
     name: 'Проекты',
   },
-  {
-    route: '#',
-    name: 'Услуги',
-  },
+  // {
+  //   route: '#',
+  //   name: 'Услуги',
+  // },
   {
     route: '/blogs',
     name: 'Блог',

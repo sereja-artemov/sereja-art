@@ -242,6 +242,21 @@ img {
   }
 }
 
+.page-title {
+  margin: 0;
+  margin-bottom: 2.5rem;
+  font-size: 3rem;
+  line-height: 1.5;
+
+  @include media.media-M {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  @include media.media-S {
+    margin-bottom: 1.5rem;
+  }
+}
 
 a {
   color: inherit;
@@ -493,4 +508,7 @@ div[data-rehype-pretty-code-fragment] {
 .section-padding {
   padding-top: 2rem;
   padding-bottom: 4rem;
+}
+.main-content-pt {
+  padding-top: 1rem;
 }

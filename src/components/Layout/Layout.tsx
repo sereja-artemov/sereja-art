@@ -42,7 +42,7 @@ export default function Layout({children}: LayoutProps) {
       {/*{isOverlay && <div className="overlay"></div>}*/}
       <Cursor/>
       <Header />
-      <main>
+      <main className='main-content-pt'>
         {children}
       </main>
       <Footer />

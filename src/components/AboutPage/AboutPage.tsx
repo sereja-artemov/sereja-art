@@ -1,4 +1,3 @@
-import PageTopBlock from '../PageTopBlock/PageTopBlock';
 import s from './AboutPage.module.scss';
 import Image from 'next/image';
 import Skills from '@/components/Skills/Skills';

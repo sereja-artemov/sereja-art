@@ -20,7 +20,7 @@ export default function Descriptor() {
           width="100%"
           id="blobSvg"
           transform="rotate(qs18)"
-          style={{ opacity: .4 }}
+          style={{ opacity: .6 }}
           filter="url(#f1)"
         >
         {" "}

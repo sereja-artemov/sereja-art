@@ -3,7 +3,7 @@ import Descriptor from '@/components/Descriptor/Descriptor';
 import Blob from '@/components/Blob/Blob';
 import Skills from '@/components/Skills/Skills';
 import ProjectsBlock from "@/components/ProjectsBlock/ProjectsBlock";
-import Blog from "@/components/Blog/Blog";
+import BlogBlock from "@/components/Blog/BlogBlock";
 import MDXContent from "@/lib/MDXContent";
 import SEO from '@/components/SEO/SEO';
 import {getProjects} from "@/lib/dataFetch";
@@ -17,7 +17,7 @@ export default function Home({ blogs, projects }) {
       <Descriptor />
       <Skills />
       <ProjectsBlock projects={projects} />
-      <Blog blogs={blogs} />
+      <BlogBlock blogs={blogs} />
 
       {/*<CursorFollowerBlock />*/}
 
