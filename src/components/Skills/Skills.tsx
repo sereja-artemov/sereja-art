@@ -1,6 +1,8 @@
 import s from "@/components/Skills/Skills.module.scss";
 import SkillsItem from "@/components/SkillItem/SkillItem";
 import { skillsData } from "@/data/skillsData";
+import { motion } from 'framer-motion';
+import { FadeContainer } from '@/utils/framerMotionVariants';
 
 export default function Skills() {
 
@@ -11,11 +13,14 @@ export default function Skills() {
   return (
     <section className={`container block-mb`}>
       <h1 className={`block-title`}>Мои основные навыки</h1>
-      <div className={s.cardsWrapper}>
+      <motion.div initial="hidden"
+                  whileInView="visible"
+                  variants={FadeContainer}
+                  viewport={{ once: true }} className={s.cardsWrapper}>
         {activeSkillsArray.map((skill, index) => {
           return <SkillsItem key={index} name={skill.name} />
         })}
-      </div>
+      </motion.div>
     </section>
   )
 

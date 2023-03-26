@@ -3,6 +3,8 @@ import s from './SkillItem.module.scss';
 import Image from "next/image";
 import {SiAdobephotoshop, SiCss3, SiFigma, SiHtml5, SiJavascript, SiNextdotjs, SiReact, SiSass} from "react-icons/si";
 import {skillsData} from "@/data/skillsData";
+import { popUp } from '@/utils/framerMotionVariants';
+import { motion } from 'framer-motion';
 
 type SkillsItemProps = {
   name: string,
@@ -12,12 +14,13 @@ const SkillsItem: React.FC<SkillsItemProps> = ({name}) => {
   const Icon = chooseIcon(name);
 
   return (
-    <div className={s.skill}>
+    <motion.div
+      variants={popUp} className={s.skill}>
         <Icon className={s.image} alt={`${name} логотип иконка`} priority />
 
         {/*<Image className={s.image} src={image} alt={`${name} логотип иконка`} priority />*/}
         <p className={s.name}>{name}</p>
-    </div>
+    </motion.div>
   )
 }
 

@@ -1,6 +1,6 @@
 @import '../../styles/_media.scss';
 
-.blog {
+.articleWrapper {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(413px, 1fr));
   grid-gap: 1.5rem;
@@ -19,4 +19,7 @@
 .notFound {
   text-align: center;
   margin: 20px auto;
+}
+.pageDescription {
+  margin-bottom: 2rem;
 }
