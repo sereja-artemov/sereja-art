@@ -12,7 +12,7 @@ export default function Skills() {
 
   return (
     <section className={`container block-mb`}>
-      <h1 className={`block-title`}>Мои основные навыки</h1>
+      <h2 className={`block-title`}>Мои основные навыки</h2>
       <motion.div initial="hidden"
                   whileInView="visible"
                   variants={FadeContainer}

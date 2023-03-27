@@ -4,7 +4,7 @@
   box-sizing: content-box;
   max-width: 680px;
   margin: 0 auto;
-  margin-left: 30%;
+  margin-left: 31%;
   margin-bottom: 2rem;
   padding: 0 20px;
   padding-top: 1rem;
@@ -127,7 +127,7 @@
 
 .topBlock {
   border-radius: 22px;
-  border: 1px solid var(--border-color-strong);
+  border: 1px solid var(--border-color);
   padding: 45px 35px;
   background-color: var(--card-background-color);
   margin-bottom: 2rem;
@@ -237,9 +237,10 @@
   font-size: 15px;
   padding: 17px 25px;
   border-radius: 9px;
-  border: 1px solid var(--border-color-strong);
+  border: 1px solid var(--border-color);
   margin-bottom: 1.5rem;
-  background-color: var(--card-background-color-opacity);
+  background-color: var(--card-background-color);
+  color: var(--font-color);
 
   @include media-S {
     padding: 11px 15px;

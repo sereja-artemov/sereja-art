@@ -1,10 +1,9 @@
 @import "../../styles/_media.scss";
 
 .aboutTextWrapper {
-
   display: flex;
+  align-items: center;
   gap: 2.5em;
-  margin-bottom: 2rem;
 
   @include media-M {
     padding-top: 30px;
@@ -21,12 +20,15 @@
     width: 100%;
   }
 
-  .description {
-    margin: 0;
-    margin-bottom: 1.5em;
+  .description:last-child {
+    margin-bottom: 0;
   }
-}
 
+}
+.description {
+  margin: 0;
+  margin-bottom: 1.5em;
+}
 .imageWrapper {
   width: 40%;
 
@@ -40,4 +42,13 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+.advantages {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    max-width: 680px;
+  }
 }

@@ -161,8 +161,8 @@
   margin-bottom: 1em;
 
   p {
-    font-size: .8rem;
-    margin-right: .7em;
+    font-size: 14px;
+    margin-right: .9em;
 
     @include media-L {
       font-size: .7rem;
@@ -177,7 +177,7 @@
 
 }
 .description {
-  font-size: .9rem;
+  font-size: .8rem;
   margin-bottom: .5rem;
   display: -webkit-box;
   -webkit-line-clamp: 2;
