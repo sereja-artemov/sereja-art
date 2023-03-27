@@ -116,8 +116,22 @@
     display: none;
   }
 }
-.linkWrapper {
-  display: flex;
+.readingLink {
+  display: inline-flex;
+  width: fit-content;
   gap: .8em;
   align-items: center;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+
+  &:hover {
+    color: var(--accent-color);
+  }
+
+  &:hover .readingLinkArrow {
+    fill: var(--accent-color) !important;
+    color: var(--accent-color) !important;
+  }
 }

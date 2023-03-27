@@ -42,11 +42,7 @@ const BlogItem: React.FC<BlogItemProps> = ({ article }) => {
             </Link>
             <p className={s.description}>{article.excerpt}</p>
           </div>
-          <div className={s.linkWrapper}>
-            <Link href={`blogs/${article.slug}`}>Читать</Link>
-            <CgArrowLongRight size={'2em'} />
-          </div>
-
+            <Link className={s.readingLink} href={`blogs/${article.slug}`}>Читать<CgArrowLongRight className={s.readingLinkArrow} size={'2.2em'} /></Link>
         </div>
       </article>
   )
