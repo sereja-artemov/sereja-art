@@ -32,3 +32,12 @@
 .active {
   background: var(--accent-color);
 }
+.sliderWrapper {
+
+  @include media-S {
+    padding: 0 15px;
+  }
+  @include media-XS {
+    padding: 0 10px;
+  }
+}
