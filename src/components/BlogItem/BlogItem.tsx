@@ -16,7 +16,7 @@ interface BlogItemProps {
 }
 
 const BlogItem: React.FC<BlogItemProps> = ({ article }) => {
-  console.log(article.readingTime)
+
   return (
       <article className={s.article}>
         <div className={s.imageWrapper}>

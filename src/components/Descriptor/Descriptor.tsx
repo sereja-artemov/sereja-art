@@ -4,11 +4,23 @@ import mainBlob from '../../images/main-blob.svg';
 import Image from "next/image";
 import React from "react";
 import Blob from "@/components/Blob/Blob";
+import { motion } from 'framer-motion';
+import {
+  BlogCardAnimation,
+  FadeContainer,
+  fromLeftChildren,
+  fromLeftVariant,
+  fromTopVariant, hamFastFadeContainer, mobileNavItemSideways, opacityVariant,
+  popUpFromBottomForText, searchBarSlideAnimation
+} from '@/utils/framerMotionVariants';
 
 export default function Descriptor() {
 
   return (
-    <div className={`${s.descriptor} container`}>
+    <motion.div initial="hidden"
+                whileInView="visible"
+                variants={popUpFromBottomForText}
+                viewport={{ once: true }} className={`${s.descriptor} container`}>
       <div className={s.contentWrapper}>
         <h1 className={s.title}>
           Привет, я <span className={s.stroke}> SEREJA
@@ -54,6 +66,6 @@ export default function Descriptor() {
         {/*  <Image className={s.blobImage} src={blobFirstImage} alt="blob first image" />*/}
         {/*</Blob>*/}
       </div>
-    </div>
+    </motion.div>
   )
 }

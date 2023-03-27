@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const ContactsPage = () => {
   return (
-    <section className={`${s.contacts} container-fluid section-padding`}>
+    <section className={`${s.contacts} container section-padding`}>
      <h1 className='page-title'>
         Контакты
       </h1>
