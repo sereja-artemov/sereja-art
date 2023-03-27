@@ -37,7 +37,7 @@ const BlogItem: React.FC<BlogItemProps> = ({ article }) => {
               {getWordEnding(article.readingTime.words, [' слово', ' слова', ' слов'])}</span>
           </div>
           <div className={s.content}>
-            <Link className={s.articleLink} href={`blogs/${article.slug}`}>
+            <Link className={s.articleLink} href={`blogs/${article.slug}`} passHref >
               <h3 className={s.title}>{article.title}</h3>
             </Link>
             <p className={s.description}>{article.excerpt}</p>
