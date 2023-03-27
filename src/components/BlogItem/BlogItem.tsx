@@ -5,6 +5,7 @@ import Link from "next/link";
 import {AiOutlineCalendar, AiOutlineFieldTime, AiOutlineRead} from "react-icons/ai";
 import getLocaleDate from "@/lib/getLocaleDate";
 import getWordEnding from "@/lib/getWordEnding";
+import { CgArrowLongRight } from 'react-icons/cg';
 
 interface BlogItemProps {
   title: string,
@@ -41,7 +42,10 @@ const BlogItem: React.FC<BlogItemProps> = ({ article }) => {
             </Link>
             <p className={s.description}>{article.excerpt}</p>
           </div>
-            <Link href={`blogs/${article.slug}`} className={`btn btn--second ${s.button}`}>Читать</Link>
+          <div className={s.linkWrapper}>
+            <Link href={`blogs/${article.slug}`}>Читать</Link>
+            <CgArrowLongRight size={'2em'} />
+          </div>
 
         </div>
       </article>
