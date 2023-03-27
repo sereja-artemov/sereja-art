@@ -27,8 +27,8 @@ export default function Cursor() {
   }
   const {x: cursorX, y: cursorY} = getCursorPosition();
 
-  const endX = useRef(cursorX);
-  const endY = useRef(cursorY);
+  const posX = useRef(cursorX);
+  const posY = useRef(cursorY);
   const _x = useRef(cursorX);
   const _y = useRef(cursorY);
 
@@ -49,8 +49,8 @@ export default function Cursor() {
     animateDotOutline();
 
     if (dot.current) {
-      dot.current.style.top = endY.current + 'px';
-      dot.current.style.left = endX.current + 'px';
+      dot.current.style.top = posY.current + 'px';
+      dot.current.style.left = posX.current + 'px';
       dot.current.style.zIndex = '999';
     }
     if (dotOutline.current) {
@@ -144,17 +144,17 @@ export default function Cursor() {
     toggleCursorVisibility();
     saveCursorPositionInLS(e.pageX, e.pageY);
 
-    endX.current = e.pageX;
-    endY.current = e.pageY;
+    posX.current = e.pageX;
+    posY.current = e.pageY;
     // @ts-ignore
-    dot.current.style.top = endY.current + 'px';
+    dot.current.style.top = posY.current + 'px';
     // @ts-ignore
-    dot.current.style.left = endX.current + 'px';
+    dot.current.style.left = posX.current + 'px';
   };
 
   const animateDotOutline = () => {
-    _x.current += (endX.current - _x.current) / delay;
-    _y.current += (endY.current - _y.current) / delay;
+    _x.current += (posX.current - _x.current) / delay;
+    _y.current += (posY.current - _y.current) / delay;
     // @ts-ignore
     dotOutline.current.style.top = _y.current + 'px';
     // @ts-ignore
