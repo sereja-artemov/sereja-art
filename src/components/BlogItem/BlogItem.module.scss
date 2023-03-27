@@ -119,6 +119,8 @@
 .readingLink {
   display: inline-flex;
   width: fit-content;
+  padding: 0.25rem 0.6rem;
+  margin-left: -0.6em;
   gap: .8em;
   align-items: center;
   text-decoration: none;
@@ -128,6 +130,9 @@
 
   &:hover {
     color: var(--accent-color);
+    background-color: var(--accent-color-light);
+    border-radius: 0.5em;
+
   }
 
   &:hover .readingLinkArrow {
