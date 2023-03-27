@@ -5,7 +5,7 @@
   flex-direction: column;
   background-color: var(--card-background-color);
   border-radius: 1rem;
-  box-shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1);
+  box-shadow: var(--card-shadow);
   overflow: hidden;
 }
 
@@ -24,28 +24,30 @@
   display: block;
   text-decoration: none;
   font-family: 'Raleway', 'Roboto', 'Arial', sans-serif;
-  font-size: 18px;
-  line-height: 1.4;
-  font-weight: 800;
-  margin-bottom: 12px;
+  margin-bottom: .3em;
 
   &:hover {
     text-decoration: underline;
   }
 
   @include media-XS {
-    margin-bottom: 10px;
+    font-size: 1.1rem;
   }
 }
 
 .title {
+  font-size: 21px;
+  line-height: 1.4;
   font-weight: 800;
 
+  @include media-M {
+    font-size: 18px;
+  }
+
   @include media-XS {
-   font-size: 18px;
+    font-size: 16px;
   }
 }
-
 .content {
   height: 100%;
   margin-bottom: 30px;
@@ -113,4 +115,9 @@
   @include media-custom(424.98px) {
     display: none;
   }
+}
+.linkWrapper {
+  display: flex;
+  gap: .8em;
+  align-items: center;
 }

@@ -39,14 +39,14 @@ function ProjectsBlock({projects}:projectsProps) {
           slides: {
             perView: 'auto',
             spacing: () => 30,
-            origin: "center",
+            origin: "auto",
           }
         },
         '(max-width: 575.98px)': {
           slides: {
             perView: 'auto',
-            spacing: () => 30,
-            origin: "center",
+            spacing: () => 15,
+            origin: "auto",
           }
         },
       }
@@ -62,7 +62,7 @@ function ProjectsBlock({projects}:projectsProps) {
         <h1 className={`${s.projectTitle} block-title`}>Мои проекты</h1>
       </div>
 
-      <div ref={ref} className="keen-slider">
+      <div ref={ref} className={`${s.sliderWrapper} keen-slider`}>
         {
           projectsData.map((project, index) => {
             return <ProjectCardItemSlider key={index} data={project} />

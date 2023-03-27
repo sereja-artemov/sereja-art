@@ -3,11 +3,11 @@ import Link from 'next/link';
 
 const ContactsPage = () => {
   return (
-    <section className={`${s.contacts} container-fluid section-padding`}>
+    <section className={`${s.contacts} container section-padding`}>
      <h1 className='page-title'>
         Контакты
       </h1>
-      <p className={`${s.textBlock} ${s.description}`}>Если вы заинтересованы в сотрудничестве или вам нужна помощь с проектом, пожалуйста, напишите мне на email</p>
+      <p className={`${s.textBlock} ${s.description}`}>Если вы заинтересованы в сотрудничестве или вам нужна помощь <br/> с проектом, пожалуйста, напишите мне на email</p>
       <a href='mailto:artemov46@gmail.com' className={`${s.textBlock} ${s.contactsItem}`}>artemov46@gmail.com</a>
       <p className={`${s.textBlock}`}>или в любом мессенджере</p>
       <div className={`${s.textBlock}`}>

@@ -7,10 +7,6 @@ interface skillsObj {
 
 export const skillsData: skillsObj[] = [
   {
-    name: 'JavaScript',
-    active: false,
-  },
-  {
     name: 'HTML',
     active: true,
   },
@@ -20,6 +16,10 @@ export const skillsData: skillsObj[] = [
   },
   {
     name: 'SCSS',
+    active: true,
+  },
+  {
+    name: 'JavaScript',
     active: true,
   },
   {

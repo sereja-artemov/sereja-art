@@ -1,9 +1,11 @@
 import {useEffect, useRef} from 'react';
-// import s from './SkillItem.module.scss'
+import { element } from 'prop-types';
+import s from './Cursor.module.scss';
 
 export default function Cursor() {
 
   const delay = 10; //скорость следования follower 'cursor-dot'
+  const followerOpacity = 1;
 
   const dot = useRef<HTMLDivElement>(null);
   const dotOutline = useRef<HTMLDivElement>(null);
@@ -13,6 +15,8 @@ export default function Cursor() {
 
   const centerDisplayX = window.innerWidth / 2;
   const centerDisplayY = window.innerHeight / 2;
+
+  const linkArr = document.getElementsByTagName('a');
 
   const getCursorPosition = () => {
     if (localStorage.getItem('cursorPosition')) {
@@ -37,6 +41,11 @@ export default function Cursor() {
     document.addEventListener('mouseenter', mouseEnterEvent);
     document.addEventListener('mouseleave', mouseLeaveEvent);
 
+    Array.from(linkArr).forEach((element) => {
+      element.addEventListener('mouseenter', mouseEnterOnLink);
+      element.addEventListener('mouseleave', mouseLeaveOnLink);
+    })
+
     animateDotOutline();
 
     if (dot.current) {
@@ -54,10 +63,29 @@ export default function Cursor() {
       document.removeEventListener('mousemove', mouseMoveEvent);
       document.removeEventListener('mouseenter', mouseEnterEvent);
       document.removeEventListener('mouseleave', mouseLeaveEvent);
+
+      Array.from(linkArr).forEach((element) => {
+        element.removeEventListener('mouseenter', mouseEnterOnLink);
+      })
+
       // @ts-ignore
       cancelAnimationFrame(requestRef.current);
     };
   }, []);
+
+  // эффект при наведении на ссылки
+  const mouseEnterOnLink = () => {
+    if (dotOutline.current) {
+      dotOutline.current.style.background = 'none';
+      dotOutline.current.style.border = '1px solid var(--cursor-follower-color)';
+    }
+  }
+  const mouseLeaveOnLink = () => {
+    if (dotOutline.current) {
+      dotOutline.current.style.background = 'rgb(103 103 171 / 40%)';
+      dotOutline.current.style.border = 'none';
+    }
+  }
 
   const saveCursorPositionInLS = (x: number, y: number) => {
     localStorage.setItem('cursorPosition', JSON.stringify({x, y}));
@@ -138,8 +166,8 @@ export default function Cursor() {
 
   return (
     <>
-      <div className="cursor-dot-outline" ref={dotOutline}></div>
-      <div className="cursor-dot" ref={dot}></div>
+      <div className={s.cursorDotOutline} ref={dotOutline}></div>
+      <div className={s.cursorDot} ref={dot}></div>
     </>
   );
 };
