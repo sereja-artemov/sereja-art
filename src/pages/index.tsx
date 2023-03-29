@@ -6,10 +6,11 @@ import ProjectsBlock from "@/components/ProjectsBlock/ProjectsBlock";
 import BlogBlock from "@/components/Blog/BlogBlock";
 import MDXContent from "@/lib/MDXContent";
 import SEO from '@/components/SEO/SEO';
-import {getProjects} from "@/lib/dataFetch";
+import { getProjects, getServices } from '@/lib/dataFetch';
 import CursorFollowerBlock from "@/components/СursorFollowerBlock/CursorFollowerBlock";
+import ServicesBlock from '@/components/ServicesBlock/ServicesBlock';
 
-export default function Home({ blogs, projects }) {
+export default function Home({ blogs, projects, servicesData }) {
 
   return (
     <>
@@ -18,7 +19,7 @@ export default function Home({ blogs, projects }) {
       <Skills />
       <ProjectsBlock projects={projects} />
       <BlogBlock blogs={blogs} />
-
+      <ServicesBlock data={servicesData} />
       {/*<CursorFollowerBlock />*/}
 
     </>
@@ -30,8 +31,10 @@ export async function getStaticProps() {
   const blogs = new MDXContent('src/posts').getAllPosts();
   /* Получаем данные проектов */
   const projects = JSON.stringify(getProjects());
+  /* Получаем услуги */
+  const servicesData = JSON.stringify(getServices());
 
   return {
-    props: { blogs, projects },
+    props: { blogs, projects, servicesData },
   }
 }
