@@ -20,7 +20,8 @@ export default function Layout({children}: LayoutProps) {
 
   return (
     <>
-      <div className="bg"></div>
+      {/*noise background*/}
+      {/*<div className="bg"></div>*/}
       {/*<div className="svg-bg" id="bg-wrap">*/}
       {/*  <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">*/}
       {/*    <defs>*/}

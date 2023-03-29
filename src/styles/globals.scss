@@ -12,7 +12,7 @@
   --font-color-dark: #101921;
   --font-color-second: #616161;
   --tech-color: #828282;
-  --border-color: #dadada;
+  --border-color: #efefef;
   --border-color-strong: var(--font-color);
   --white-darker-color: #F9FAFB;
   --font-size: 20px;
@@ -152,7 +152,7 @@ body {
   background: transparent url('../images/noise-transparent.png') repeat 0 0;
   background-repeat: repeat;
   animation: bg-animation .2s infinite;
-  opacity: .9;
+  opacity: .8;
   visibility: visible;
 }
 
@@ -347,7 +347,11 @@ a {
 //}
 
 .block-mb {
-  margin-bottom: 205px;
+  margin-bottom: 105px;
+
+  @include media.media-M {
+    margin-bottom: 80px;
+  }
 
   @include media.media-S {
     margin-bottom: 60px;
