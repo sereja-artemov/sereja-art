@@ -5,6 +5,10 @@ export interface projectsProps {
   projects: string;
 }
 
+export interface servicesProps {
+  data: string;
+}
+
 export function getProjects() {
   return projectsData;
 }

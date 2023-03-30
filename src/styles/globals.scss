@@ -19,7 +19,7 @@
   --font-size-M: 18px;
   --font-size-S: 15px;
   --font-size-XS: 14px;
-  --line-height: 1.5;
+  --line-height: 1.6;
   --text-container-width: 680px;
   --paragraph-margin-bottom: 2.15rem; //43px
 
@@ -534,4 +534,11 @@ div[data-rehype-pretty-code-fragment] {
 }
 .keen-slider:not([data-keen-slider-disabled]) {
   align-items: flex-start;
+}
+.bg-block {
+  display: block;
+  padding: 35px 45px;
+  background-color: var(--card-background-color);
+  border-radius: 20px;
+
 }

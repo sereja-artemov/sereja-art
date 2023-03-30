@@ -31,7 +31,9 @@ const ProjectCardItemSlider: React.FC<ProjectCardProps> = ({data}) => {
         <h2 className={s.title}>{data.name}</h2>
           <p className={s.description}>{data.description}</p>
           <div className={s.tools}>
-            { data.tools.map(item => <p>{item}</p>) }
+            { data.tools.map((item, index) => (
+              <p key={index}>{item}</p>
+            ) ) }
           </div>
         <div className={s.links}>
           { data.links.githubLink !== undefined &&

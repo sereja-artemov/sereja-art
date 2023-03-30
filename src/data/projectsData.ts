@@ -12,6 +12,7 @@ export interface project {
   image: string | StaticImageData,
   previewImage:  string | StaticImageData,
   tools: string[],
+  year?: number,
   active: boolean,
 }
 
@@ -28,6 +29,7 @@ export const projectsData: project[] = [
     image: 'https://sereja-art.ru/upload/family-budget-calculator-960x540.jpg',
     previewImage: 'https://sereja-art.ru/upload/family-budget-calculator-960x540.jpg',
     tools: ["1C-Bitrix", "Aspro", "Битрикс24"],
+    year: 2023,
     active: true,
   },
   {
@@ -43,6 +45,7 @@ export const projectsData: project[] = [
     image: prommaticwebp,
     previewImage: prommaticwebp,
     tools: ["1C-Bitrix", "Aspro", "Битрикс24", "SEO", "Bicall"],
+    year: 2023,
     active: true,
   },
   {
@@ -57,6 +60,7 @@ export const projectsData: project[] = [
     image: 'https://sereja-art.ru/upload/family-budget-calculator-960x540.jpg',
     previewImage: 'https://sereja-art.ru/upload/family-budget-calculator-960x540.jpg',
     tools: ["1C-Bitrix", "Aspro", "Битрикс24"],
+    year: 2023,
     active: true,
   },
   {
@@ -71,6 +75,7 @@ export const projectsData: project[] = [
     image: prommaticwebp,
     previewImage: prommaticwebp,
     tools: ["1C-Bitrix", "Aspro", "Битрикс24"],
+    year: 2023,
     active: true,
   },
   {
@@ -85,6 +90,7 @@ export const projectsData: project[] = [
     image: prommaticwebp,
     previewImage: prommaticwebp,
     tools: ["1C-Bitrix", "Aspro", "Битрикс24"],
+    year: 2023,
     active: true,
   },
   {
@@ -99,6 +105,7 @@ export const projectsData: project[] = [
     image: prommaticwebp,
     previewImage: prommaticwebp,
     tools: ["1C-Bitrix", "Aspro", "Битрикс24", "SEO", "Bicall"],
+    year: 2023,
     active: true,
   },
 

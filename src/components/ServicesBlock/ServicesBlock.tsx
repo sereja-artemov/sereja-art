@@ -1,21 +1,33 @@
 import s from './ServicesBlock.module.scss';
-import { getProjects, getServices } from '@/lib/dataFetch';
+import { getProjects, getServices, servicesProps } from '@/lib/dataFetch';
 import MDXContent from '@/lib/MDXContent';
 import { log } from 'next/dist/server/typescript/utils';
 
-const ServicesBlock = ({data}) => {
+const ServicesBlock = ({data}:servicesProps) => {
   const servicesData = JSON.parse(data);
-  console.log(servicesData);
+
   return (
-    <section className={s.services}>
-      { servicesData.map((element, index) => (
-        <ServicesItem key={index} itemData={element} />
-      )) }
+    <section className={`${s.services} container block-mb`}>
+      <h1 className={`${s.projectTitle} block-title`}>Услуги</h1>
+      <div className={`${s.wrapper} bg-block`}>
+        { servicesData.map((element, index) => (
+          <ServicesItem key={index} itemData={element} />
+        )) }
+      </div>
     </section>
   );
 };
 
-const ServicesItem = ({ itemData }) => {
+interface ServicesItemProps {
+  itemData: {
+    group: string,
+    services: {
+      name: string,
+    }[],
+  };
+}
+
+const ServicesItem = ({ itemData }:ServicesItemProps) => {
   return (
     <div className={s.servicesItem}>
       <h3 className={s.serviceGroupTitle}>{itemData.group}</h3>

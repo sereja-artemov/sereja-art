@@ -45,7 +45,7 @@ function ProjectsBlock({projects}:projectsProps) {
         '(max-width: 575.98px)': {
           slides: {
             perView: 'auto',
-            spacing: () => 15,
+            spacing: () => 20,
             origin: "auto",
           }
         },

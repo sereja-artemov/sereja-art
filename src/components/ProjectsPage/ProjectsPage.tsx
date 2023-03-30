@@ -7,7 +7,7 @@ const ProjectsPage = ({projects}:projectsProps) => {
   const projectsArr: project[] = JSON.parse(projects);
 
   return (
-    <section className={`container-fluid`}>
+    <section className={`container`}>
       <h1 className='page-title'>Проекты</h1>
       <div className={s.projectItems}>
         {projectsArr.map((project, index) => {
