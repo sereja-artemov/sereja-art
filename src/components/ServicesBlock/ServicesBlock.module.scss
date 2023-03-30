@@ -1,2 +1,24 @@
 @import "../../styles/_media.scss";
 
+.services {
+
+  .wrapper {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+
+  }
+}
+.servicesList {
+  padding: 0;
+  list-style: none;
+
+  li {
+    font-size: 16px;
+    margin-bottom: .2em;
+  }
+}
+.serviceGroupTitle {
+  font-size: 21px;
+  font-family: 'Raleway', 'Roboto', 'Arial', sans-serif;
+}
