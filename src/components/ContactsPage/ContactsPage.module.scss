@@ -1,5 +1,10 @@
 @import "../../styles/_media.scss";
 
+.contacts {
+  a:hover {
+    color: var(--accent-color);
+  }
+}
 .title {
   font-size: 6rem;
   line-height: 1;
@@ -28,7 +33,7 @@
   font-weight: 500;
 }
 .messengerItems {
-  font-size: 1.1em;
+  //font-size: 1.1em;
 
   a,
   span {
