@@ -2,6 +2,7 @@ import s from './AboutPage.module.scss';
 import Image from 'next/image';
 import Skills from '@/components/Skills/Skills';
 import avatarImage from '../../images/about-image.png';
+import avatarPhoto from '../../images/about-photo.png';
 
 const AboutPage = () => {
 
@@ -9,7 +10,7 @@ const AboutPage = () => {
     <section className={`${s.about} container`}>
       <div className={`${s.aboutTextWrapper} block-mb`}>
         <div className={s.imageWrapper}>
-          <Image className={s.avatarImage} src={avatarImage} alt='Сергей Артемов - веб-разработчик' />
+          <Image className={s.avatarImage} src={avatarPhoto} alt='Сергей Артемов - веб-разработчик' />
         </div>
         <div className={s.aboutBlock}>
           <h1 className={'block-title'}>Обо мне</h1>

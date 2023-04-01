@@ -7,7 +7,6 @@ import BlogBlock from "@/components/Blog/BlogBlock";
 import MDXContent from "@/lib/MDXContent";
 import SEO from '@/components/SEO/SEO';
 import { getProjects, getServices } from '@/lib/dataFetch';
-import CursorFollowerBlock from "@/components/СursorFollowerBlock/CursorFollowerBlock";
 import ServicesBlock from '@/components/ServicesBlock/ServicesBlock';
 
 export default function Home({ blogs, projects, servicesData }) {
@@ -19,7 +18,7 @@ export default function Home({ blogs, projects, servicesData }) {
       <Skills />
       <ProjectsBlock projects={projects} />
       <BlogBlock blogs={blogs} />
-      <ServicesBlock data={servicesData} />
+      {/*<ServicesBlock data={servicesData} />*/}
       {/*<CursorFollowerBlock />*/}
 
     </>
