@@ -38,5 +38,9 @@ export const skillsData: skillsObj[] = [
     name: 'Photoshop',
     active: true,
   },
+  {
+    name: 'WordPress',
+    active: true,
+  },
 ];
 

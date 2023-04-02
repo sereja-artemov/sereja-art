@@ -5,6 +5,7 @@ import {SiAdobephotoshop, SiCss3, SiFigma, SiHtml5, SiJavascript, SiNextdotjs, S
 import {skillsData} from "@/data/skillsData";
 import { popUp } from '@/utils/framerMotionVariants';
 import { motion } from 'framer-motion';
+import { BsWordpress } from 'react-icons/bs';
 
 type SkillsItemProps = {
   name: string,
@@ -50,6 +51,9 @@ function chooseIcon(title: string) {
       break;
     case "Photoshop":
       Icon = SiAdobephotoshop;
+      break;
+    case "WordPress":
+      Icon = BsWordpress;
       break;
     default:
       break;
