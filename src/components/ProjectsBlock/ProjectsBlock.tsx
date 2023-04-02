@@ -27,7 +27,7 @@ function ProjectsBlock({projects}:projectsProps) {
         setCurrentSlide(slider.track.details.rel)
       },
       initial: 0,
-      mode: "free",
+      mode: "free-snap",
       slides: {
         perView: 'auto',
         spacing: () => 60,

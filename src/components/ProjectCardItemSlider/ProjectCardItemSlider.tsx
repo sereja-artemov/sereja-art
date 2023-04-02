@@ -17,7 +17,7 @@ const ProjectCardItemSlider: React.FC<ProjectCardProps> = ({data}) => {
     <div className={`${s.card} keen-slider__slide`}>
       <div className={s.videoWrapper}>
         {isLoading && <p style={{top: '50%'}}>загрузка... загрузка... загрузка... загрузка...</p>}
-        <Image fill={true} src={data.image} alt={`${data.name} картинка проекта`}
+        <Image fill={true} src={data.previewImage || data.image} alt={`${data.name} картинка проекта`}
                onLoadingComplete={() => setIsLoading(false)} priority/>
       </div>
       {/*<div className={s.projectAbout}>*/}
