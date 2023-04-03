@@ -146,3 +146,16 @@ export const BlogCardAnimation: Variants = {
     },
   },
 };
+
+export const popUpFromBottomWithRotate: Variants = {
+  hidden: { opacity: 0, y: 40, rotate: 0, },
+  visible: {
+    opacity: 1,
+    y: 0,
+    rotate: 45,
+    transition: {
+      type: "spring",
+      stiffness: 60,
+    },
+  },
+};

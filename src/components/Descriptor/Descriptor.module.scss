@@ -39,6 +39,7 @@
 }
 
 .stroke {
+  position: relative;
   color: transparent;
   -webkit-text-stroke: 1px var(--font-color);
   letter-spacing: .54em;
@@ -81,5 +82,19 @@ body[data-theme="dark"] {
     max-width: 150px;
   }
 }
-
+.serejaImg {
+  position: absolute;
+  min-width: 30px;
+  min-height: 30px;
+  max-width: 30vw;
+  top: 0;
+  left: 50%;
+  background-color: var(--accent-color);
+  font-size: 15px;
+  color: var(--font-color);
+  -webkit-text-stroke: initial;
+  letter-spacing: normal;
+  margin-left: 0.6em;
+  mix-blend-mode: multiply;
+}
 
