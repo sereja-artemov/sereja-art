@@ -13,7 +13,7 @@ import {
   fromTopVariant, hamFastFadeContainer, mobileNavItemSideways, opacityVariant, popUp,
   popUpFromBottomForText, popUpFromBottomWithRotate, searchBarSlideAnimation
 } from '@/utils/framerMotionVariants';
-import sereja from '@/images/sereja/sereja4.png';
+import sereja from '@/images/sereja/sereja2.png';
 
 export default function Descriptor() {
 
@@ -46,7 +46,7 @@ export default function Descriptor() {
               <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
                 {" "}
                 <stop offset="0%" style={{ stopColor: "rgb(202, 158, 255)" }} />{" "}
-                <stop offset="100%" style={{ stopColor: "rgb(0, 87, 255)" }} />{" "}
+                <stop offset="100%" style={{ stopColor: "rgb(0 87 255 / 0%)" }} />{" "}
               </linearGradient>{" "}
             </defs>{" "}
             <path id="blob"  fill="url(#gradient)" style={{ opacity: 1 }}>
@@ -70,7 +70,7 @@ export default function Descriptor() {
         </span> <br/>
           <span className={s.text}>фронтенд-разработчик</span>
         </h1>
-        <p className={s.description}>Меня зовут Сергей Артемов, я занимаюсь разработкой и поддержкой сайтов. Создаю
+        <p className={s.description}>👋 Меня зовут Сергей Артемов, я занимаюсь разработкой и поддержкой сайтов. Создаю
           дизайн, верстаю и программирую.</p>
         {/*<Blob>*/}
         {/*  <Image className={s.blobImage} src={blobFirstImage} alt="blob first image" />*/}

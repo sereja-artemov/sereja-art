@@ -155,7 +155,7 @@ export const popUpFromBottomWithRotate: Variants = {
     },  },
   visible: {
     opacity: 1,
-    scale: 1.3,
+    scale: 1.15,
     y: 0,
     rotate: 2,
 

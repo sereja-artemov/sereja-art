@@ -90,8 +90,8 @@ body[data-theme="dark"] {
   min-width: 30px;
   min-height: 30px;
   max-width: 30vw;
-  top: -20vh;
-  left: 40%;
+  top: -15vh;
+  left: 60%;
   //background-color: var(--accent-color);
   font-size: 15px;
   color: var(--font-color);
@@ -111,10 +111,11 @@ body[data-theme="dark"] {
 }
 [data-theme="dark"] {
   .text {
-    mix-blend-mode: color-dodge;
+    //mix-blend-mode: color-dodge;
+    mix-blend-mode: luminosity;
   }
   .serejaImg {
-    mix-blend-mode: soft-light;
+    mix-blend-mode: lighten;
   }
 
 }
