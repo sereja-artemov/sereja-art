@@ -19,7 +19,7 @@ const ProjectCardItem = ({ data }: ProjectCardProps) => {
     <article className={s.project}>
       <div className={s.imageWrapper}>
         <Image width={910} height={512} src={data.previewImage || data.image} alt={`${data.name} картинка проекта`}
-               onLoadingComplete={() => setIsLoading(false)} priority/>
+               onLoadingComplete={() => setIsLoading(false)} priority />
       </div>
       <div className={s.info}>
         <div className={s.techInfo}>

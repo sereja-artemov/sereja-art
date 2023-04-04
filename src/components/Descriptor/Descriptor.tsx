@@ -10,9 +10,10 @@ import {
   FadeContainer,
   fromLeftChildren,
   fromLeftVariant,
-  fromTopVariant, hamFastFadeContainer, mobileNavItemSideways, opacityVariant,
+  fromTopVariant, hamFastFadeContainer, mobileNavItemSideways, opacityVariant, popUp,
   popUpFromBottomForText, popUpFromBottomWithRotate, searchBarSlideAnimation
 } from '@/utils/framerMotionVariants';
+import sereja from '@/images/sereja/sereja4.png';
 
 export default function Descriptor() {
 
@@ -57,17 +58,17 @@ export default function Descriptor() {
               />
             </path>
           </svg>
-          Привет, я <span onMouseOver={() => setIsSerejaImageActive(true)} onMouseLeave={() => setIsSerejaImageActive(false)} className={s.stroke}> SEREJA
+          <span className={s.text}>Привет, я</span> <span onMouseOver={() => setIsSerejaImageActive(true)} onMouseLeave={() => setIsSerejaImageActive(false)} className={s.stroke}> SEREJA
 
           { isSerejaImageActive &&
             <motion.div animate={isSerejaImageActive ? 'visible' : 'hidden'}
                         variants={popUpFromBottomWithRotate} className={s.serejaImg}>
-              <Image src="" alt="Сергей Артемов - веб-разработчик фото" />
+              <Image src={sereja} alt="Сергей Артемов - веб-разработчик фото" />
             </motion.div>
           }
 
         </span> <br/>
-          фронтенд-разработчик
+          <span className={s.text}>фронтенд-разработчик</span>
         </h1>
         <p className={s.description}>Меня зовут Сергей Артемов, я занимаюсь разработкой и поддержкой сайтов. Создаю
           дизайн, верстаю и программирую.</p>
