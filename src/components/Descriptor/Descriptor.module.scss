@@ -83,13 +83,16 @@ body[data-theme="dark"] {
   }
 }
 .serejaImg {
+  z-index: -1;
+
   position: absolute;
+  width: 100%;
   min-width: 30px;
   min-height: 30px;
   max-width: 30vw;
-  top: 0;
-  left: 50%;
-  background-color: var(--accent-color);
+  top: -20vh;
+  left: 40%;
+  //background-color: var(--accent-color);
   font-size: 15px;
   color: var(--font-color);
   -webkit-text-stroke: initial;
