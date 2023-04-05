@@ -70,8 +70,11 @@ export default function Descriptor() {
         </span> <br/>
           <span className={s.text}>фронтенд-разработчик</span>
         </h1>
-        <p className={s.description}>👋 Меня зовут Сергей Артемов, я занимаюсь разработкой и поддержкой сайтов. Создаю
-          дизайн, верстаю и программирую.</p>
+        <motion.p initial="hidden"
+                  whileInView="visible"
+                  variants={popUpFromBottomForText}
+                  viewport={{ once: true }} className={s.description}>👋 Меня зовут Сергей Артемов, я занимаюсь разработкой и поддержкой сайтов. Создаю
+          дизайн, верстаю и программирую.</motion.p>
         {/*<Blob>*/}
         {/*  <Image className={s.blobImage} src={blobFirstImage} alt="blob first image" />*/}
         {/*</Blob>*/}
