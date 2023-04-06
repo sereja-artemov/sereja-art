@@ -3,6 +3,7 @@ import s from './Blog.module.scss';
 import BlogItem from '@/components/BlogItem/BlogItem';
 
 const BlogBlock: React.FC = ({ blogs }) => {
+  console.log(blogs);
   return (
     <section className={`${s.blog} container block-mb`}>
       <h1 className={`block-title`}>Блог</h1>

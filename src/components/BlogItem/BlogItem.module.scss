@@ -1,12 +1,24 @@
 @import '../../styles/_media.scss';
 
 .article {
+  position: relative;
   display: flex;
   flex-direction: column;
   background-color: var(--card-background-color);
   border-radius: 1rem;
   box-shadow: var(--card-shadow);
   overflow: hidden;
+}
+.category {
+  position: absolute;
+  background-color: var(--card-background-color-opacity);
+  top: 10px;
+  left: 10px;
+  border-radius: .4rem;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0.3em 1em;
+  border: 1px solid var(--border-color);
 }
 
 .image {

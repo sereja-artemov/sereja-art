@@ -1,10 +1,10 @@
-import * as React from 'react'
+import * as React from 'react';
 import s from './BlogItem.module.scss';
-import Image, {StaticImageData} from "next/image";
-import Link from "next/link";
-import {AiOutlineCalendar, AiOutlineFieldTime, AiOutlineRead} from "react-icons/ai";
-import getLocaleDate from "@/lib/getLocaleDate";
-import getWordEnding from "@/lib/getWordEnding";
+import Image, { StaticImageData } from 'next/image';
+import Link from 'next/link';
+import { AiOutlineCalendar, AiOutlineFieldTime, AiOutlineRead } from 'react-icons/ai';
+import getLocaleDate from '@/lib/getLocaleDate';
+import getWordEnding from '@/lib/getWordEnding';
 import { CgArrowLongRight } from 'react-icons/cg';
 
 interface BlogItemProps {
@@ -14,38 +14,65 @@ interface BlogItemProps {
   link: string,
   date: number | string | Date | any,
   time: string,
+  category: string,
 }
 
 const BlogItem: React.FC<BlogItemProps> = ({ article }) => {
 
+  const getCategoryName = (data) => {
+    let name;
+    switch (data) {
+      case 'web-dev':
+        name = 'Веб-разработка';
+        break;
+      case 'design':
+        name = 'Дизайн';
+        break;
+      case 'kitchen':
+        name = 'Кулинария';
+        break;
+      case 'other':
+        name = 'Прочее';
+        break;
+      default:
+        name = '';
+    }
+    return name;
+  };
+
   return (
-      <article className={s.article}>
-        <div className={s.imageWrapper}>
-          <Image width={635} height={400} className={s.image} src={article.image} fill={false} alt={`${article.title} картинка`} />
-        </div>
-        <div className={s.contentWrapper}>
-          <div className={s.info}>
+    <article className={s.article}>
+      { article.category !== '' &&
+        <p className={s.category}>{getCategoryName(article.category)}</p>
+      }
+      <div className={s.imageWrapper}>
+        <Image width={635} height={400} className={s.image} src={article.image} fill={false}
+               alt={`${article.title} картинка`} />
+      </div>
+      <div className={s.contentWrapper}>
+        <div className={s.info}>
             <span className={s.publicationDate}>
               <AiOutlineCalendar className={s.icon} />
               {getLocaleDate('ru', article.date, 'short')}</span>
-            <span className={s.readingTime}>
+          <span className={s.readingTime}>
               <AiOutlineFieldTime className={s.icon} />
-              {article.readingTime.textRU}</span>
-            <span className={s.readingWords}>
+            {article.readingTime.textRU}</span>
+          <span className={s.readingWords}>
               <AiOutlineRead className={s.icon} />
-              {article.readingTime.words}
-              {getWordEnding(article.readingTime.words, [' слово', ' слова', ' слов'])}</span>
-          </div>
-          <div className={s.content}>
-            <Link className={s.articleLink} href={`blogs/${article.slug}`} passHref >
-              <h3 className={s.title}>{article.title}</h3>
-            </Link>
-            <p className={s.description}>{article.excerpt}</p>
-          </div>
-            <Link className={s.readingLink} href={`blogs/${article.slug}`}>Читать<CgArrowLongRight className={s.readingLinkArrow} size={'2.2em'} /></Link>
+            {article.readingTime.words}
+            {getWordEnding(article.readingTime.words, [' слово', ' слова', ' слов'])}</span>
         </div>
-      </article>
-  )
-}
+        <div className={s.content}>
+          <Link className={s.articleLink} href={`blogs/${article.slug}`} passHref>
+            <h3 className={s.title}>{article.title}</h3>
+          </Link>
+          <p className={s.description}>{article.excerpt}</p>
+        </div>
+        <Link className={s.readingLink} href={`blogs/${article.slug}`}>Читать<CgArrowLongRight
+          className={s.readingLinkArrow} size={'2.2em'} /></Link>
+      </div>
+    </article>
+  );
+};
 
 export default BlogItem;

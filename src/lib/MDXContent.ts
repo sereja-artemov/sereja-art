@@ -60,6 +60,7 @@ export default class MDXContent {
         stringDate: data.stringDate ?? "",
         keywords: data.keywords ?? "",
         image: data.image ?? "https://sereja-art.ru/upload/image-empty.jpg",
+        category: data.category ?? "",
       };
     }
   }

@@ -15,6 +15,7 @@ function BlogsPage({ filteredBlogs }) {
           { filteredBlogs.length !== 0 ? (
             filteredBlogs.map((article, index) => {
               return <BlogItem article={article} key={index}  />
+
             })
           ) : (
             <div className={s.notFound}>
