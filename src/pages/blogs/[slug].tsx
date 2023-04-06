@@ -5,7 +5,7 @@ import MDXComponents from "@/components/MDXComponents";
 import PostLayout from "@/components/Layout/PostLayout/PostLayout";
 import Link from 'next/link';
 import { MDXProvider } from '@mdx-js/react'
-import { transliterate } from "transliteration";
+import { transliterate, slugify } from "transliteration";
 import SEO from "@/components/SEO/SEO";
 import "highlight.js/scss/atom-one-dark.scss";
 
@@ -82,7 +82,7 @@ const Post = ({ post, error }) => {
 
   return (
     <MDXProvider components={components}>
-      <SEO title={post.meta.title} description={post.meta.excerpt} keywords={''} previewImage={post.meta.image} />
+      <SEO title={post.meta.title} description={post.meta.excerpt} keywords={post.meta.keywords} previewImage={post.meta.image} />
       <PostLayout post={post} >
         <MDXRemote
           {...post.source}

@@ -509,7 +509,8 @@ div[data-rehype-pretty-code-fragment] {
   & > pre {
     background-color: var(--card-background-color);
     padding-top: 10px;
-    border: 1px solid var(--border-color-strong);
+    padding-bottom: 10px;
+    border: 1px solid var(--border-color);
     border-bottom-right-radius: var(--code-block-border-radius);
     border-bottom-left-radius: var(--code-block-border-radius);
   }

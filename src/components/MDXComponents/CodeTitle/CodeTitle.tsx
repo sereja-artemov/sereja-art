@@ -1,5 +1,5 @@
 import { BsFileEarmarkCodeFill } from "react-icons/bs";
-import { SiCss3, SiPython, SiGnubash, SiHtml5, SiReact, SiTypescript } from "react-icons/si";
+import { SiCss3, SiPython, SiGnubash, SiHtml5, SiReact, SiTypescript, SiPhp } from 'react-icons/si';
 import { VscJson } from "react-icons/vsc";
 import { IoLogoJavascript } from "react-icons/io5";
 import s from './CodeTitle.module.scss';
@@ -36,6 +36,9 @@ export default function CodeTitle({ title, lang }) {
       break;
     case "ts":
       Icon = SiTypescript;
+      break;
+    case "php":
+      Icon = SiPhp;
       break;
     default:
       Icon = BsFileEarmarkCodeFill;
