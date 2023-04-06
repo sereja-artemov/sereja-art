@@ -129,7 +129,32 @@
     border-radius: 15px;
   }
 }
+.publicationDate {
+  display: flex;
+  align-items: center;
 
+  @include media-S {
+    font-size: 13px;
+  }
+  @include media-XS {
+    font-size: 12px;
+  }
+}
+.techInfo {
+  display: flex;
+  gap: 1em;
+  font-size: 15px;
+  color: var(--tech-color);
+  margin-bottom: 0.4em;
+
+  .icon {
+    margin-right: .5em;
+    margin-bottom: 2px;
+    fill: var(--tech-color);
+    width: 1.1em;
+    height: auto;
+  }
+}
 .title {
   font-size: 21px;
   line-height: 1.4;

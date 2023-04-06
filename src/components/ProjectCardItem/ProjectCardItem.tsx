@@ -25,7 +25,7 @@ const ProjectCardItem = ({ data }: ProjectCardProps) => {
         <div className={s.techInfo}>
           <span className={s.publicationDate}>
             <AiOutlineCalendar className={s.icon} />
-            {data.year}
+            {data.year + ' год'}
           </span>
         </div>
         <h3 className={s.title}>{data.name}</h3>
