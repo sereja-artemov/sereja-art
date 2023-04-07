@@ -402,7 +402,7 @@ a {
   color: var(--white-darker-color);
 
   @include media.media-S {
-    padding: .8em;
+    padding: 0.8em 1.2rem;
   }
 
   &--second {
@@ -414,6 +414,17 @@ a {
       background-color: var(--accent-color);
       color: var(--white-darker-color);
       border: 1px solid transparent;
+    }
+  }
+  &--light {
+    background-color: var(--accent-color-light);
+    border: 1px solid transparent;
+    color: var(--font-color);
+
+    &:hover {
+      background-color: var(--accent-color);
+      border: 1px solid transparent;
+      color: var(--white-darker-color);
     }
   }
 }
