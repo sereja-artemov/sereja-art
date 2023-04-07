@@ -14,6 +14,9 @@ import {
   popUpFromBottomForText, popUpFromBottomWithRotate, searchBarSlideAnimation
 } from '@/utils/framerMotionVariants';
 import sereja from '@/images/sereja/sereja2.png';
+import Link from 'next/link';
+import { GiNinjaHead } from 'react-icons/gi';
+
 
 export default function Descriptor() {
 
@@ -78,6 +81,10 @@ export default function Descriptor() {
         {/*<Blob>*/}
         {/*  <Image className={s.blobImage} src={blobFirstImage} alt="blob first image" />*/}
         {/*</Blob>*/}
+        <Link className={`${s.btn} btn btn--light`} href={'https://hh.ru/resume/bc6faab9ff0b4ddbed0039ed1f697661364845'} target="_blank">
+          <GiNinjaHead className={s.resumeIcon} />
+          Посмотреть резюме
+        </Link>
       </div>
     </motion.div>
   )
