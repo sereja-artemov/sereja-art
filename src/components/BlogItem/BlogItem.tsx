@@ -45,10 +45,12 @@ const BlogItem: React.FC<BlogItemProps> = ({ article }) => {
       { article.category !== '' &&
         <p className={s.category}>{getCategoryName(article.category)}</p>
       }
-      <div className={s.imageWrapper}>
-        <Image width={635} height={400} className={s.image} src={article.image} fill={false}
-               alt={`${article.title} картинка`} />
-      </div>
+
+        <Link href={`blogs/${article.slug}`} className={s.imageWrapper}>
+          <Image width={635} height={400} className={s.image} src={article.image} fill={false}
+                 alt={`${article.title} картинка`} />
+        </Link>
+
       <div className={s.contentWrapper}>
         <div className={s.info}>
             <span className={s.publicationDate}>
