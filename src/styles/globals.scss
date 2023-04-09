@@ -484,29 +484,6 @@ pre {
   overflow: auto;
 }
 
-code {
-  counter-reset: line;
-}
-
-code span.line {
-  padding: 2px 1em;
-  border-left: 4px solid transparent;
-}
-
-code > .line::before {
-  counter-increment: line;
-  content: counter(line);
-
-  /* Other styling */
-  display: inline-block;
-  width: 1em;
-  margin-right: 1em;
-  text-align: right;
-  color: gray;
-  font-weight: 500;
-  border-right: 4px solid transparent;
-}
-
 .highlighted {
   background: rgba(200, 200, 255, 0.1);
   border-left: 4px solid #3777de !important;
@@ -514,6 +491,24 @@ code > .line::before {
 }
 
 /* Code Line Highlighting ENDS */
+
+/* стиль для короткого блока кода НАЧАЛО */
+code {
+  background-color: var(--accent-color-light);
+  //padding: 2px 4px;
+  border-radius: 4px;
+  //border: 1px solid var(--border-color);
+
+  &:has(div[data-rehype-pretty-code-fragment]) {
+    padding: initial;
+    border: none;
+    border-radius: 0;
+    counter-reset: line;
+    background-color: transparent;
+  }
+}
+/* стиль для короткого блока кода КОНЕЦ */
+
 div[data-rehype-pretty-code-fragment] {
   font-size: 15px;
 
@@ -525,6 +520,34 @@ div[data-rehype-pretty-code-fragment] {
     border-bottom-right-radius: var(--code-block-border-radius);
     border-bottom-left-radius: var(--code-block-border-radius);
   }
+
+  code {
+    padding: initial;
+    border: none;
+    border-radius: 0;
+    counter-reset: line;
+    background-color: transparent;
+  }
+
+  code span.line {
+    padding: 2px 1em;
+    border-left: 4px solid transparent;
+  }
+
+  code > .line::before {
+    counter-increment: line;
+    content: counter(line);
+
+    /* Other styling */
+    display: inline-block;
+    width: 1em;
+    margin-right: 1em;
+    text-align: right;
+    color: gray;
+    font-weight: 500;
+    border-right: 4px solid transparent;
+  }
+
 }
 
 .svg-bg {
