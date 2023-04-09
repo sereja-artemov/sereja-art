@@ -1,15 +1,31 @@
 ---
 slug: tilda-popup-video-btn
-title: Кнопка с всплывающим видео для Tilda
+title: Кнопка с popup-видео для Tilda Zero Block
 date: 2022-07-03
 category: web-dev
 published: true
 keywords: tilda, popup btn, popup btn tilda, popup video button tilda, всплывающее окно тильда, попап с видео тильда
 excerpt: Показываю как сделать анимированную кнопку с всплывающим popup видео на Tilda.
-image: https://sereja-art.ru/upload/tilda-popup-btn-1200x630.jpg
+image: https://sereja-art.ru/upload/tilda-popup-video-btn/tilda-popup-btn-1200x630.jpg
 ---
+import Figcaption from '../components/MDXComponents/Figcaption';
 
-<CodeTitle title='Код для вставки в блок' lang='html' />
+<Figcaption src="https://sereja-art.ru/upload/tilda-popup-video-btn/popup-tilda-video-button-webp.webp" alt="Кнопка с всплывающим видео для Tilda картинка к блогу" />
+
+Сейчас покажу как сделать анимированную кнопку с всплывающим видео на Tilda.
+
+## Создаем блок VD09
+<Figcaption src="https://sereja-art.ru/upload/tilda-popup-video-btn/tilda-popup-video-btn_3.png" alt="Создаем блок VD09" caption="Создаем блок VD09" />
+
+Создаем блок **VD09** (popup с видео) и в настройках присваиваем ему ссылку **#popup:youtubevideo**. Эту ссылку мы будем использовать для открытия всплывающего окна с видео. Не забываем добавить ссылку на youtube-ролик или его ID.
+<Figcaption src="https://sereja-art.ru/upload/tilda-popup-video-btn/tilda-popup-video-btn_4.png" alt="Присваиваем ссылку на popup и добавляем ID youtube-ролика" caption="Присваиваем ссылку на popup и добавляем ID youtube-ролика" />
+
+## Вставляем код в Zero Block
+Открываем наш Zero Block и добавляем блок с HTML кодом.
+<Figcaption src="https://sereja-art.ru/upload/tilda-popup-video-btn/tilda-popup-video-btn_1.png" alt="Добавляем блок с HTML кодом" caption="Добавляем блок с HTML кодом" />
+Уменьшаем блок с кодом и располагаем его на странице в нужном нам месте. Открываем и вставляем код для анимированной кнопки.
+
+<CodeTitle title='Код с анимированной кнопкой для вставки в блок' lang='html' />
 <code>
   ```tsx
 <style>
@@ -93,7 +109,6 @@ image: https://sereja-art.ru/upload/tilda-popup-btn-1200x630.jpg
       opacity: 0;
     }
   }
-
 </style>
 
 <a id="play-video" class="video-play-button" href="#popup:youtubevideo">
@@ -101,3 +116,9 @@ image: https://sereja-art.ru/upload/tilda-popup-btn-1200x630.jpg
 </a>
   ```
 </code>
+
+<Figcaption src="https://sereja-art.ru/upload/tilda-popup-video-btn/tilda-popup-video-btn_2.png" alt="Добавили код в блок" caption="Добавили код в блок" />
+
+В коде настраиваете параметры кнопки: цвет, размер и т.д.
+Обратите внимание на тег ссылки, в нем должна быть ссылка на блок с всплывающим окном, который мы создали ранее.
+<Figcaption src="https://sereja-art.ru/upload/tilda-popup-video-btn/tilda-popup-video-btn_5.png" alt="ссылка на блок с всплывающим окном" caption="ссылка на блок с всплывающим окном" />
