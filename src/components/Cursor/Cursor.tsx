@@ -45,10 +45,10 @@ export default function Cursor() {
     document.addEventListener('mouseenter', mouseEnterEvent);
     document.addEventListener('mouseleave', mouseLeaveEvent);
 
-    Array.from(linkArr).forEach((element) => {
-      element.addEventListener('mouseenter', mouseEnterOnLink);
-      element.addEventListener('mouseleave', mouseLeaveOnLink);
-    })
+    // Array.from(linkArr).forEach((element) => {
+    //   element.addEventListener('mouseenter', mouseEnterOnLink);
+    //   element.addEventListener('mouseleave', mouseLeaveOnLink);
+    // })
 
     animateDotOutline();
 
