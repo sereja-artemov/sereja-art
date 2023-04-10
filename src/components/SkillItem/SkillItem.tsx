@@ -18,7 +18,7 @@ const SkillsItem: React.FC<SkillsItemProps> = ({name}) => {
   return (
     <motion.div
       variants={popUp} className={s.skill}>
-        <Icon className={s.image} alt={`${name} логотип иконка`} priority />
+        <Icon className={s.image} alt={`${name} логотип иконка`} priority="true" />
         {/*<Image className={s.image} src={image} alt={`${name} логотип иконка`} priority />*/}
         <p className={s.name}>{name}</p>
     </motion.div>

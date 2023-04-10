@@ -36,7 +36,7 @@ export default function Descriptor() {
             viewBox="0 0 500 500"
             width="100%"
             id="blobSvg"
-            transform="rotate(qs18)"
+            // transform="rotate(qs18)"
             style={{ opacity: .6 }}
             filter="url(#f1)"
           >

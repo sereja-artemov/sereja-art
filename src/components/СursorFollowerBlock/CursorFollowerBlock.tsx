@@ -24,7 +24,6 @@ const CursorFollowerBlock = (imageSrc: string) => {
     // @ts-ignore
     blockRef.current.style.left = cursorPosX + 'px';
 
-    console.log(cursorPosX, cursorPosY, blockRef.current.style.backgroundImage)
   };
 
   return (
