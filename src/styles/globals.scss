@@ -12,6 +12,7 @@
   --font-color-dark: #101921;
   --font-color-second: #616161;
   --tech-color: #828282;
+  --code-color: #e06c75;
   --border-color: #efefef;
   --border-color-strong: var(--font-color);
   --white-darker-color: #F9FAFB;
@@ -494,7 +495,8 @@ pre {
 
 /* стиль для короткого блока кода НАЧАЛО */
 code {
-  background-color: var(--accent-color-light);
+  background-color: var(--card-background-color);
+  color: var(--code-color);
   //padding: 2px 4px;
   border-radius: 4px;
   //border: 1px solid var(--border-color);

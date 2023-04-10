@@ -10,11 +10,11 @@ export default function Figcaption({src, caption, alt}: figcaptionProps) {
   if (caption !== undefined) {
     return (
       <figure>
-        <Image width={1920} height={1080} src={src} alt={alt} />
+        <Image width={1920} height={1080} src={src} alt={alt} placeholder={'blur'} blurDataURL="https://sereja-art.ru/upload/image-empty.jpg" />
         <figcaption>{caption}</figcaption>
       </figure>
     );
   } else {
-    return <Image width={1920} height={1080} src={src} alt={alt} />;
+    return <Image width={1920} height={1080} src={src} alt={alt} placeholder={'blur'} blurDataURL="https://sereja-art.ru/upload/image-empty.jpg" />;
   }
 }
