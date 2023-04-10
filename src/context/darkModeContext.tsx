@@ -1,8 +1,20 @@
-import React, {createContext, useContext, useEffect, useState} from 'react';
+import React, { createContext, ReactNode, useContext, useEffect, useState } from 'react';
 
 const DarkModeContext = createContext(undefined);
 
-const DarkModeProvider = ({ children }) => {
+type DarkModeProviderProps = {
+  children?: ReactNode
+}
+
+export interface DarkModeContextType {
+  setDarkTheme(): void;
+  setLightTheme(): void;
+  theme: object;
+  currentTheme: string;
+
+}
+const DarkModeProvider = ({ children }:DarkModeProviderProps) => {
+
 
   const theme = {
     darkTheme: 'dark',
@@ -36,8 +48,12 @@ const DarkModeProvider = ({ children }) => {
     localStorage.setItem('theme', theme.lightTheme);
   }
 
+  const contextValue: DarkModeContextType = {
+    theme, currentTheme, setDarkTheme, setLightTheme
+  };
+
   return (
-    <DarkModeContext.Provider value={{theme, currentTheme, setDarkTheme, setLightTheme}}>
+    <DarkModeContext.Provider value={contextValue}>
       {children}
     </DarkModeContext.Provider>
   )
