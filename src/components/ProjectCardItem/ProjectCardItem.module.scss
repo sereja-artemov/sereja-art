@@ -22,6 +22,7 @@
   position: relative;
   width: 38.2%;
   flex-shrink: 0;
+  font-size: 0;
 
   @include media-M {
     width: 50%;
