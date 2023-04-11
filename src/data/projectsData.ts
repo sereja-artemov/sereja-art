@@ -26,8 +26,8 @@ export const projectsData: project[] = [
       detailLink: '#',
       githubLink: '#',
     },
-    image: 'https://sereja-art.ru/upload/family-budget-calculator-960x540.jpg',
-    previewImage: 'https://sereja-art.ru/upload/family-budget-calculator-960x540.jpg',
+    image: 'https://sereja-art.ru/upload/projects/family-budget-calculator-960x540.jpg',
+    previewImage: 'https://sereja-art.ru/upload/projects/family-budget-calculator-960x540.jpg',
     tools: ["HTML", "CSS", "JS", "React", "Дизайн"],
     year: 2023,
     active: true,
@@ -60,8 +60,8 @@ export const projectsData: project[] = [
       githubLink: 'https://github.com/sereja-artemov',
       buildLink: '#'
     },
-    image: 'https://sereja-art.ru/upload/cakedreams_1280x720.png',
-    previewImage: 'https://sereja-art.ru/upload/cakedreams_1280x720.png',
+    image: 'https://sereja-art.ru/upload/projects/cakedreams_1280x720.png',
+    previewImage: 'https://sereja-art.ru/upload/projects/cakedreams_1280x720.png',
     tools: ["HTML", "CSS", "JS", "Photoshop"],
     year: 2023,
     active: true,
@@ -77,8 +77,8 @@ export const projectsData: project[] = [
       githubLink: 'https://github.com/sereja-artemov',
       buildLink: '#'
     },
-    image: 'https://sereja-art.ru/upload/ant-farm_1280x720.png',
-    previewImage: 'https://sereja-art.ru/upload/ant-farm_1280x720.png',
+    image: 'https://sereja-art.ru/upload/projects/ant-farm_1280x720.png',
+    previewImage: 'https://sereja-art.ru/upload/projects/ant-farm_1280x720.png',
     tools: ["HTML", "CSS", "JS", "Photoshop", "Bicall"],
     year: 2023,
     active: true,
@@ -94,10 +94,27 @@ export const projectsData: project[] = [
       githubLink: 'https://github.com/sereja-artemov',
       buildLink: '#'
     },
-    image: 'https://sereja-art.ru/upload/gloria_1280x720.png',
-    previewImage: 'https://sereja-art.ru/upload/gloria_1280x720.png',
+    image: 'https://sereja-art.ru/upload/projects/gloria_1280x720.png',
+    previewImage: 'https://sereja-art.ru/upload/projects/gloria_1280x720.png',
     tools: ["HTML", "CSS", "JS", "Photoshop"],
     year: 2023,
+    active: true,
+  },
+
+  {
+    name: 'Сайт-портфолио фотографа',
+    description: 'Разработал прототип и дизайн-макет сайта, выполнил адаптивную верстку.',
+    date: new Date("2018-01-26"),
+    cost: 123,
+    links: {
+      detailLink: '',
+      githubLink: '',
+      buildLink: ''
+    },
+    image: 'https://sereja-art.ru/upload/projects/projects/photographer-site_1024.webp',
+    previewImage: 'https://sereja-art.ru/upload/projects/projects/photographer-site_1024.webp',
+    tools: ["HTML", "CSS", "JS", "Photoshop"],
+    year: 2020,
     active: true,
   },
 ]
