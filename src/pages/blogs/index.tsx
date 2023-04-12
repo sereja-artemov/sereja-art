@@ -1,12 +1,11 @@
 import MDXContent from "@/lib/MDXContent";
-import {useEffect, useState} from "react";
-import BlogItem from "@/components/BlogItem/BlogItem";
+import { useState } from "react";
 import BlogsPage from "@/components/BlogsPage/BlogsPage";
-import SEO from "@/components/SEO/SEO";
+import { FrontMatter } from '@/lib/types';
 
-function Blogs({blogs}) {
+function Blogs({blogs}: { blogs: FrontMatter[] }) {
   const [filteredBlogs, setFilteredBlogs] = useState([...blogs]);
-
+  console.log({ blogs });
   return (
     <BlogsPage filteredBlogs={filteredBlogs}/>
   );

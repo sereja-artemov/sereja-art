@@ -6,7 +6,7 @@ export interface projectsProps {
 }
 
 export interface servicesProps {
-  data: string;
+  data: any;
 }
 
 export function getProjects() {

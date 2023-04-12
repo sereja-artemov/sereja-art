@@ -3,7 +3,8 @@ import ServicesBlock from '@/components/ServicesBlock/ServicesBlock';
 import { servicesData } from '@/data/servicesData';
 import MDXContent from '@/lib/MDXContent';
 import { getProjects, getServices, servicesProps } from '@/lib/dataFetch';
-const Services = ({ servicesData }) => {
+const Services = ({ servicesData }: {servicesData: servicesProps}) => {
+
   return (
     <>
       <SEO title="Услуги"/>

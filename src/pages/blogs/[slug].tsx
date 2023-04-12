@@ -8,12 +8,14 @@ import { MDXProvider } from '@mdx-js/react'
 import { transliterate, slugify } from "transliteration";
 import SEO from "@/components/SEO/SEO";
 import "highlight.js/scss/atom-one-dark.scss";
+import { PostType } from '@/lib/types';
+import { GetStaticPropsContext } from 'next';
 
-const Post = ({ post, error }) => {
+const Post = ({ post, error }: { post: PostType, error: boolean }) => {
   if (error) return <PageNotFound />;
   // кастомные MDX заголовки, id присваивает rehypeSlug из MDXContent
   // кастомные MDX заголовки начало
-  const CustomH1 = ({ id, ...rest }) => {
+  const CustomH1 = ({ id, ...rest }: {id: string}) => {
     // транслитерируем id, т.к. в ссылках содержания мы используем транслитерированные якоря
     const transliteratedID = transliterate(id);
 
@@ -22,7 +24,7 @@ const Post = ({ post, error }) => {
     }
     return <h1 {...rest} />;
   };
-  const CustomH2 = ({ id, ...rest }) => {
+  const CustomH2 = ({ id, ...rest }: {id: string}) => {
     // транслитерируем id, т.к. в ссылках содержания мы используем транслитерированные якоря
     const transliteratedID = transliterate(id);
 
@@ -31,7 +33,7 @@ const Post = ({ post, error }) => {
     }
     return <h2 {...rest} />;
   };
-  const CustomH3 = ({ id, ...rest }) => {
+  const CustomH3 = ({ id, ...rest }: {id: string}) => {
     // транслитерируем id, т.к. в ссылках содержания мы используем транслитерированные якоря
     const transliteratedID = transliterate(id);
 
@@ -40,7 +42,7 @@ const Post = ({ post, error }) => {
     }
     return <h3 {...rest} />;
   };
-  const CustomH4 = ({ id, ...rest }) => {
+  const CustomH4 = ({ id, ...rest }: {id: string}) => {
     // транслитерируем id, т.к. в ссылках содержания мы используем транслитерированные якоря
     const transliteratedID = transliterate(id);
 
@@ -49,7 +51,7 @@ const Post = ({ post, error }) => {
     }
     return <h4 {...rest} />;
   };
-  const CustomH5 = ({ id, ...rest }) => {
+  const CustomH5 = ({ id, ...rest }: {id: string}) => {
     // транслитерируем id, т.к. в ссылках содержания мы используем транслитерированные якоря
     const transliteratedID = transliterate(id);
 
@@ -58,7 +60,7 @@ const Post = ({ post, error }) => {
     }
     return <h5 {...rest} />;
   };
-  const CustomH6 = ({ id, ...rest }) => {
+  const CustomH6 = ({ id, ...rest }: {id: string}) => {
     // транслитерируем id, т.к. в ссылках содержания мы используем транслитерированные якоря
     const transliteratedID = transliterate(id);
 
@@ -80,12 +82,16 @@ const Post = ({ post, error }) => {
 
   // this would also work in pages/_app.js
 
+
+
   return (
+    // @ts-ignore
     <MDXProvider components={components}>
       <SEO title={post.meta.title} description={post.meta.excerpt} keywords={post.meta.keywords} previewImage={post.meta.image} />
       <PostLayout post={post} >
         <MDXRemote
           {...post.source}
+          // @ts-ignore
           frontmatter={post.meta}
           components={MDXComponents}
         />
@@ -93,9 +99,14 @@ const Post = ({ post, error }) => {
     </MDXProvider>
   )
 }
+type StaticProps = GetStaticPropsContext & {
+  params: {
+    slug: string;
+  };
+};
 
 /* Генерируем страницу для каждого slug */
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: StaticProps) {
   const { slug } = params;
   const { post } = await new MDXContent('src/posts').getPostFromSlug(slug);
 

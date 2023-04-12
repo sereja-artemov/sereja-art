@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { AnimatedTAGProps } from '@/lib/types';
 
 export default function AnimatedDiv({
   variants,
@@ -6,7 +7,7 @@ export default function AnimatedDiv({
   children,
   infinity,
   style,
-}) {
+}: AnimatedTAGProps) {
   return (
     <motion.div
       initial="hidden"

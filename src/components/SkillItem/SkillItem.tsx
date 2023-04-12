@@ -1,8 +1,6 @@
 import * as React from 'react'
 import s from './SkillItem.module.scss';
-import Image from "next/image";
 import {SiAdobephotoshop, SiCss3, SiFigma, SiHtml5, SiJavascript, SiNextdotjs, SiReact, SiSass} from "react-icons/si";
-import {skillsData} from "@/data/skillsData";
 import { popUp } from '@/utils/framerMotionVariants';
 import { motion } from 'framer-motion';
 import { BsWordpress } from 'react-icons/bs';
@@ -18,8 +16,7 @@ const SkillsItem: React.FC<SkillsItemProps> = ({name}) => {
   return (
     <motion.div
       variants={popUp} className={s.skill}>
-        <Icon className={s.image} alt={`${name} логотип иконка`} priority="true" />
-        {/*<Image className={s.image} src={image} alt={`${name} логотип иконка`} priority />*/}
+        <Icon className={s.image} />
         <p className={s.name}>{name}</p>
     </motion.div>
   )

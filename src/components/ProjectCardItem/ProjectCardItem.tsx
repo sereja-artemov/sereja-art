@@ -1,4 +1,3 @@
-import { project } from '@/data/projectsData';
 import s from './ProjectCardItem.module.scss';
 import Image from 'next/image';
 import React, { useState } from 'react';
@@ -6,20 +5,16 @@ import { FiExternalLink } from 'react-icons/fi';
 import { BsGithub } from 'react-icons/bs';
 import Link from 'next/link';
 import { AiOutlineCalendar } from 'react-icons/ai';
-import getLocaleDate from '@/lib/getLocaleDate';
+import { ProjectType } from '@/lib/types';
 
-interface ProjectCardProps {
-  data: project,
-}
-
-const ProjectCardItem = ({ data }: ProjectCardProps) => {
+const ProjectCardItem = ({ data }: { data: ProjectType }) => {
   const [isLoading, setIsLoading] = useState(true);
-
+  console.log(data);
   return (
     <article className={s.project}>
       <div className={s.imageWrapper}>
         <Image width={910} height={512} src={data.previewImage || data.image} alt={`${data.name} картинка проекта`}
-               onLoadingComplete={() => setIsLoading(false)} priority="true" />
+               onLoadingComplete={() => setIsLoading(false)} priority />
       </div>
       <div className={s.info}>
         <div className={s.techInfo}>

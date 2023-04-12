@@ -1,8 +1,9 @@
 import * as React from 'react';
 import s from './Blog.module.scss';
 import BlogItem from '@/components/BlogItem/BlogItem';
+import { FrontMatter } from '@/lib/types';
 
-const BlogBlock: React.FC = ({ blogs }) => {
+const BlogBlock = ({ blogs }: { blogs: FrontMatter[] }) => {
 
   return (
     <section className={`${s.blog} container block-mb`}>

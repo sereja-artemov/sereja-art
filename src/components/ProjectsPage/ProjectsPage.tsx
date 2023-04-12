@@ -11,6 +11,7 @@ const ProjectsPage = ({projects}:projectsProps) => {
       <h1 className='page-title'>Проекты</h1>
       <div className={s.projectItems}>
         {projectsArr.map((project, index) => {
+          // @ts-ignore
           return <ProjectCardItem key={index} data={project}/>
         })
         }

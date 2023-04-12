@@ -1,14 +1,10 @@
 import s from './Footer.module.scss';
-import { navigationRoutes } from '@/data/navigationRoutes';
 import Link from 'next/link';
 import {useRouter} from "next/router";
-import { activeLink } from '@/utils/utils';
 import React from 'react';
-import { router } from 'next/client';
 import { BsTelegram } from 'react-icons/bs';
 import { MdEmail } from 'react-icons/md';
 import { IoLogoWhatsapp } from 'react-icons/io';
-
 
 const Footer = () => {
   const router = useRouter();

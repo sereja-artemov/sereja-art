@@ -1,7 +1,6 @@
 import s from './ServicesBlock.module.scss';
-import { getProjects, getServices, servicesProps } from '@/lib/dataFetch';
-import MDXContent from '@/lib/MDXContent';
-import { log } from 'next/dist/server/typescript/utils';
+import { servicesProps } from '@/lib/dataFetch';
+import { ServicesProps } from '@/lib/types';
 
 const ServicesBlock = ({data}:servicesProps) => {
   const servicesData = JSON.parse(data);
@@ -10,7 +9,7 @@ const ServicesBlock = ({data}:servicesProps) => {
     <section className={`${s.services} container block-mb`}>
       <h1 className={`${s.projectTitle} block-title`}>Услуги</h1>
       <div className={`${s.wrapper} bg-block`}>
-        { servicesData.map((element, index) => (
+        { servicesData.map((element: ServicesProps, index: number) => (
           <ServicesItem key={index} itemData={element} />
         )) }
       </div>
@@ -18,16 +17,7 @@ const ServicesBlock = ({data}:servicesProps) => {
   );
 };
 
-interface ServicesItemProps {
-  itemData: {
-    group: string,
-    services: {
-      name: string,
-    }[],
-  };
-}
-
-const ServicesItem = ({ itemData }:ServicesItemProps) => {
+const ServicesItem = ({ itemData }: {itemData: ServicesProps}) => {
   return (
     <div className={s.servicesItem}>
       <h3 className={s.serviceGroupTitle}>{itemData.group}</h3>

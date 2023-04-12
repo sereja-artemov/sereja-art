@@ -15,10 +15,6 @@ const ContactsPage = () => {
           <Link href='https://t.me/sereja_art' target='_blank'>Telegram</Link>
           <Link href='https://wa.me/79513339923' target='_blank'>WhatsApp</Link>
         </span>
-        {/*<div className={s.messengerItems}>*/}
-        {/*  <Link href='https://t.me/sereja_art' target='_blank'>— Telegram</Link>*/}
-        {/*  <Link href='https://wa.me/79513339923' target='_blank'>— WhatsApp</Link>*/}
-        {/*</div>*/}
       </div>
       <p className={`${s.textBlock}`}>я в соцсетях</p>
       <div className={s.messengerItems}>

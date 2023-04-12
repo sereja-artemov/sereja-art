@@ -1,11 +1,6 @@
-import jsIcon from "@/images/icons/js-icon.jpg";
+import { skillsType } from '@/lib/types';
 
-interface skillsObj {
-  name: string,
-  active: boolean,
-}
-
-export const skillsData: skillsObj[] = [
+export const skillsData: skillsType[] = [
   {
     name: 'HTML',
     active: true,

@@ -6,20 +6,11 @@ import { AiOutlineCalendar, AiOutlineFieldTime, AiOutlineRead } from 'react-icon
 import getLocaleDate from '@/lib/getLocaleDate';
 import getWordEnding from '@/lib/getWordEnding';
 import { CgArrowLongRight } from 'react-icons/cg';
+import { FrontMatter } from '@/lib/types';
 
-interface BlogItemProps {
-  title: string,
-  description: string,
-  image: string | StaticImageData,
-  link: string,
-  date: number | string | Date | any,
-  time: string,
-  category: string,
-}
+const BlogItem = ({ article }: { article: FrontMatter }) => {
 
-const BlogItem: React.FC<BlogItemProps> = ({ article }) => {
-
-  const getCategoryName = (data) => {
+  const getCategoryName = (data: string) => {
     let name;
     switch (data) {
       case 'web-dev':

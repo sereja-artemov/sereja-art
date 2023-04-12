@@ -4,14 +4,14 @@ import { sync } from 'glob';
 import matter from 'gray-matter';
 import { serialize } from "next-mdx-remote/serialize";
 import rehypeSlug from 'rehype-slug';
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import readTime, {ReadTimeResults} from "reading-time";
 import rehypePrettyCode from "rehype-pretty-code";
 import getWordEnding from "@/lib/getWordEnding";
 import {slugify, transliterate} from "transliteration";
+import { FrontMatter } from '@/lib/types';
 
 export default class MDXContent {
-  POST_PATH: string;
+  private POST_PATH: string;
 
   constructor(folderName: string) {
     /* .replace(/\\/g, '/') меняем палочки для windows */
@@ -19,7 +19,7 @@ export default class MDXContent {
   }
 
   /* Переводим минуты на русский язык */
-  transformReadingTime(content) {
+  transformReadingTime(content: string) {
     const readingTime = readTime(content, { wordsPerMinute: 200 });
 
     const readingTimeMinutes = readingTime.text.match( /\d+/g );
@@ -41,7 +41,7 @@ export default class MDXContent {
   }
 
   /* Функция возвращает front matter */
-  getFrontMatter(slug: string) {
+  getFrontMatter(slug: string): FrontMatter | null {
     const postPath = path.join(this.POST_PATH, `${slug}.mdx`);
     /* Возвращаем содержимое файла */
     const source = readFileSync(postPath);
@@ -49,8 +49,8 @@ export default class MDXContent {
 
     const readingTime: ReadTimeResults = readTime(content, { wordsPerMinute: 200 });
     readingTime.textRU = this.transformReadingTime(content);
+    if (!data.published) return null;
 
-    if (data.published) {
       return {
         slug,
         readingTime,
@@ -62,11 +62,10 @@ export default class MDXContent {
         image: data.image ?? "https://sereja-art.ru/upload/image-empty.jpg",
         category: data.category ?? "",
       };
-    }
   }
 
   /* Получаем post по значению slug (это пост с контентом и front matter)  */
-  async getPostFromSlug(slug: string, force = false) {
+  async getPostFromSlug(slug: string, force: boolean = false) {
     const postPath = path.join(this.POST_PATH, `${slug}.mdx`);
     const source = readFileSync(postPath);
     const {content, data} = matter(source);
@@ -78,7 +77,7 @@ export default class MDXContent {
     /* настройка темы блоков с кодом */
     const prettyCodeOptions = {
       theme: "one-dark-pro",
-      onVisitLine(node) {
+      onVisitLine(node: any) {
         // Prevent lines from collapsing in `display: grid` mode, and
         // allow empty lines to be copy/pasted
         if (node.children.length === 0) {
@@ -86,10 +85,10 @@ export default class MDXContent {
         }
       },
       // Feel free to add classNames that suit your docs
-      onVisitHighlightedLine(node) {
+      onVisitHighlightedLine(node: any) {
         node.properties.className.push("highlighted");
       },
-      onVisitHighlightedWord(node) {
+      onVisitHighlightedWord(node: any) {
         node.properties.className = ["word"];
       },
     }
@@ -119,19 +118,19 @@ export default class MDXContent {
   - сортируем записи по дате
   - возвращаем массив с записями
 */
-  getAllPosts() {
+  getAllPosts(length?: number | undefined) {
     const posts = this.getSlugs()
       .map((slug) => {
-        return this.getFrontMatter(slug, false);
+        return this.getFrontMatter(slug);
       })
-      .filter((post) => post != null || post != undefined) // Оставляем только опубликованные записи
+      .filter((post) => post != null) // Оставляем только опубликованные записи
       .sort((a, b) => {
-        if (new Date(a.date) > new Date(b.date)) return -1;
-        if (new Date(a.date) < new Date(b.date)) return 1;
+        if (new Date(a!.date) > new Date(b!.date)) return -1;
+        if (new Date(a!.date) < new Date(b!.date)) return 1;
         return 0;
       });
 
-    return posts;
+    return length === undefined ? posts : posts.slice(0, length);
   }
 
   /* Генерируем навигацию по заголовкам
@@ -143,7 +142,7 @@ export default class MDXContent {
     const headingArray = markdown.match(regXHeader)
       ? markdown.match(regXHeader)
       : [];
-    return headingArray.map((heading) => {
+    return headingArray?.map((heading) => {
       return {
         level: heading.split("#").length - 1 - 2, // мы начинаем с h2, поэтому мы вычитаем 2, а 1 - это дополнительный текст заголовка
         heading: heading.replace(/#{2,6}/, "").trim(),
@@ -151,7 +150,6 @@ export default class MDXContent {
       };
     });
   }
-
 }
 
 

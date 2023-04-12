@@ -4,6 +4,7 @@ import {useState} from 'react';
 import s from "./ProjectsBlock.module.scss";
 import ProjectCardItemSlider from "@/components/ProjectCardItemSlider/ProjectCardItemSlider";
 import {projectsProps} from "@/lib/dataFetch";
+import { ProjectType } from '@/lib/types';
 
 function ProjectsBlock({projects}:projectsProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -64,7 +65,7 @@ function ProjectsBlock({projects}:projectsProps) {
 
       <div ref={ref} className={`${s.sliderWrapper} keen-slider`}>
         {
-          projectsData.map((project, index) => {
+          projectsData.map((project:ProjectType, index: number) => {
             return <ProjectCardItemSlider key={index} data={project} />
           })
         }

@@ -1,6 +1,6 @@
 import React, { createContext, ReactNode, useContext, useEffect, useState } from 'react';
 
-const DarkModeContext = createContext(undefined);
+const DarkModeContext = createContext<DarkModeContextType | null>(null);
 
 type DarkModeProviderProps = {
   children?: ReactNode
@@ -9,12 +9,11 @@ type DarkModeProviderProps = {
 export interface DarkModeContextType {
   setDarkTheme(): void;
   setLightTheme(): void;
-  theme: object;
+  theme: {[key:string]:string};
   currentTheme: string;
 
 }
 const DarkModeProvider = ({ children }:DarkModeProviderProps) => {
-
 
   const theme = {
     darkTheme: 'dark',
@@ -59,12 +58,12 @@ const DarkModeProvider = ({ children }:DarkModeProviderProps) => {
   )
 }
 
-const useTheme = () => {
+const useTheme = (): DarkModeContextType => {
   const context = useContext(DarkModeContext);
   if (context === undefined) {
     throw new Error("useTheme must be used within a ThemeProvider");
   }
-  return context;
+  return context!;
 };
 
 export { DarkModeProvider, useTheme};

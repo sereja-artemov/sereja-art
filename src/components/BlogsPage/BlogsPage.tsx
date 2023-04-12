@@ -2,8 +2,9 @@ import React from 'react';
 import BlogItem from "@/components/BlogItem/BlogItem";
 import s from './BlogPage.module.scss';
 import SEO from "@/components/SEO/SEO";
+import { FrontMatter } from '@/lib/types';
 
-function BlogsPage({ filteredBlogs }) {
+function BlogsPage({ filteredBlogs }: {filteredBlogs: FrontMatter[]}) {
   return (
     <>
       <SEO title='Блог веб-разработчика'

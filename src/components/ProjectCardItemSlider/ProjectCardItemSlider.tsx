@@ -1,17 +1,13 @@
 import s from './ProjectCardItemSlider.module.scss';
 import React, {useState} from 'react';
 import Image from "next/image";
-import { project } from "@/data/projectsData";
 import Link from "next/link";
 import {BsGithub} from "react-icons/bs";
 import {MdWeb} from "react-icons/md";
 import { AiOutlineCalendar } from 'react-icons/ai';
+import { ProjectType } from '@/lib/types';
 
-interface ProjectCardProps {
-  data: project,
-}
-
-const ProjectCardItemSlider: React.FC<ProjectCardProps> = ({data}) => {
+const ProjectCardItemSlider = ({data}: {data: ProjectType}) => {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
