@@ -1,15 +1,19 @@
-import Head from 'next/head'
 import Descriptor from '@/components/Descriptor/Descriptor';
-import Blob from '@/components/Blob/Blob';
 import Skills from '@/components/Skills/Skills';
 import ProjectsBlock from "@/components/ProjectsBlock/ProjectsBlock";
 import BlogBlock from "@/components/Blog/BlogBlock";
 import MDXContent from "@/lib/MDXContent";
 import SEO from '@/components/SEO/SEO';
 import { getProjects, getServices } from '@/lib/dataFetch';
-import ServicesBlock from '@/components/ServicesBlock/ServicesBlock';
+import { FrontMatter, ServicesProps } from '@/lib/types';
 
-export default function Home({ blogs, projects, servicesData }) {
+export interface HomeProps {
+  blogs: FrontMatter[];
+  projects: string;
+  servicesData: ServicesProps;
+}
+
+export default function Home({ blogs, projects }: HomeProps) {
 
   return (
     <>
@@ -18,9 +22,7 @@ export default function Home({ blogs, projects, servicesData }) {
       <Skills />
       <ProjectsBlock projects={projects} />
       <BlogBlock blogs={blogs} />
-      {/*<ServicesBlock data={servicesData} />*/}
       {/*<CursorFollowerBlock />*/}
-
     </>
   )
 }

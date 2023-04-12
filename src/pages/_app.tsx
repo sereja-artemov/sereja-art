@@ -8,10 +8,9 @@ import {DarkModeProvider} from "@/context/darkModeContext";
 import { IconContext } from 'react-icons';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
+// @ts-ignore
 import NProgress from 'nprogress';
 import "nprogress/nprogress.css";
-import {MDXProvider} from "@mdx-js/react";
-import Link from "next/link";
 import SEO from "@/components/SEO/SEO";
 
 const raleway = Raleway({
