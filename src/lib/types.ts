@@ -59,3 +59,9 @@ export type PostType = {
   source: MDXRemoteSerializeResult;
   tableOfContents: TableOfContents[];
 };
+
+export type TableOfContents = {
+  heading: string;
+  level: number;
+  transliteratedHeading: string;
+}

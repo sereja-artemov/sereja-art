@@ -7,8 +7,9 @@ import useWindowSize from "@/hooks/useWindowSize";
 import {useEffect, useRef, useState} from "react";
 import {lockScroll, removeScrollLock} from "@/utils/utils";
 import useScrollPercentage from "@/hooks/useScrollPercentage";
+import { PostType } from '@/lib/types';
 
-function PostLayout({post, children}) {
+function PostLayout({post, children}: {post: PostType; children: JSX.Element;}) {
   const [isTodActive, setIsTodActive] = useState(false);
   const [filteredTod, setFilteredTod] = useState(post.tableOfContents);
   const [searchValue, setSearchValue] = useState('');
@@ -20,7 +21,7 @@ function PostLayout({post, children}) {
     setFilteredTod(filteredArray);
   }, [searchValue]);
 
-  function handleSearchInput(event) {
+  function handleSearchInput(event: any) {
     setSearchValue(event.target.value);
   }
 
@@ -44,7 +45,7 @@ function PostLayout({post, children}) {
                 <input onChange={handleSearchInput} className={s.inputSearchTitle} type="search" placeholder="Найти" />
                 <h3 className={s.tocTitle}>Содержание</h3>
                 <div className={s.tocLinkWrapper}>
-                  { filteredTod.map((item, index: string) => {
+                  { filteredTod.map((item, index: number) => {
 
                     if (item.level >= 1 && window.width > 768) {
                       return <Link className={s.todLink} style={{marginLeft: (item.level * 15) + "px", fontSize: 1 - Number(`0.${item.level}`) + "em",}} key={item.heading + index} href={`#${item.transliteratedHeading}`}>{item.heading}</Link>

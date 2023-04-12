@@ -21,19 +21,15 @@ function ScrollProgressBar() {
   useEffect(() => {
     // Fires when the document view has been scrolled
     window.addEventListener("scroll", onScroll);
-
     //
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-
-
       <div
         className={s.pb}
         style={{ width: `${scrollTop}%` }}
       ></div>
-
   );
 }
 
