@@ -150,7 +150,7 @@ export const projectsData: project[] = [
     links: {
       githubLink: 'https://github.com/sereja-artemov/react-mesto-api-full',
     },
-    image: '',
+    image: 'https://sereja-art.ru/upload/projects/mesto_1280x720.jpg',
     previewImage: '',
     tools: ['HTML', 'CSS', 'JS', 'React', 'Node.js', 'MongoDB'],
     year: 2022,
