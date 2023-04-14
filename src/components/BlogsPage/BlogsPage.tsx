@@ -9,7 +9,7 @@ function BlogsPage({ filteredBlogs }: {filteredBlogs: FrontMatter[]}) {
     <>
       <SEO title='Блог веб-разработчика'
            description="Веду блог по frontend-разработке и не только. Публикую материалы по html-верстке, веб-дизайну, программированию на JS (React, NextJS) и всем, что связано с веб-разработкой и созданием сайтов."/>
-      <section className={`${s.blog} container-fluid`}>
+      <section className={`${s.blog} container`}>
         <h1 className='page-title'>Блог</h1>
         {/*<p className={s.pageDescription}>Количество записей в моем блоге: {filteredBlogs.length}.</p>*/}
         <div className={s.articleWrapper}>

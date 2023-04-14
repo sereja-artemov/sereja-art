@@ -2,8 +2,9 @@
 
 .projectItems {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 50px;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
+  gap: 25px;
 
   @include media-L {
     grid-template-columns: 1fr;
