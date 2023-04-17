@@ -24,6 +24,7 @@ export const projectsData: project[] = [
     links: {
       detailLink: '#',
       githubLink: '#',
+      buildLink: 'http://sereja-art.ru/project-build/family-budget-calculator/',
     },
     image:
       'https://sereja-art.ru/upload/projects/family-budget-calculator-960x540.jpg',
@@ -167,6 +168,20 @@ export const projectsData: project[] = [
     image: 'https://sereja-art.ru/upload/projects/catenergy_1280x720.jpg',
     previewImage: '',
     tools: ['HTML', 'CSS'],
+    year: 2020,
+    active: true,
+  },
+  {
+    name: 'Скорая компьютерная помощь',
+    description: 'Дизайн и адаптивная верстка лендинга аутсорсинговой IT-компании.',
+    date: new Date('2020-09-12'),
+    cost: 123,
+    links: {
+      githubLink: '',
+    },
+    image: 'https://sereja-art.ru/upload/projects/pchelp_1280x720.jpg',
+    previewImage: '',
+    tools: ['HTML', 'CSS', 'Photoshop'],
     year: 2020,
     active: true,
   },
