@@ -6,6 +6,7 @@ import {BsGithub} from "react-icons/bs";
 import {MdWeb} from "react-icons/md";
 import { AiOutlineCalendar } from 'react-icons/ai';
 import { ProjectType } from '@/lib/types';
+import SliderImageSkeleton from '@/components/skeletons/SliderImageSkeleton';
 
 const ProjectCardItemSlider = ({data}: {data: ProjectType}) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -13,9 +14,9 @@ const ProjectCardItemSlider = ({data}: {data: ProjectType}) => {
   return (
     <div className={`${s.card} keen-slider__slide`}>
       <div className={s.videoWrapper}>
-        {isLoading && <p style={{top: '50%'}}>загрузка... загрузка... загрузка... загрузка...</p>}
+        { isLoading && <SliderImageSkeleton /> }
         <Image fill={true} src={data.previewImage || data.image} alt={`${data.name} картинка проекта`}
-               onLoadingComplete={() => setIsLoading(false)} placeholder="blur"
+               onLoadingComplete={() => setIsLoading(true)} placeholder="blur"
                blurDataURL="https://sereja-art.ru/upload/image-empty.jpg" />
       </div>
       <div className={s.info}>
