@@ -16,6 +16,9 @@
     min-height: auto;
     gap: 1em;
   }
+  @include media-XS {
+    padding: 10px;
+  }
 }
 
 .imageWrapper {
@@ -23,14 +26,6 @@
   position: relative;
   flex-shrink: 0;
   font-size: 0;
-
-  @include media-M {
-    width: 50%;
-  }
-
-  @include media-S {
-    width: 100%;
-  }
 
   img {
     object-fit: cover;
@@ -40,15 +35,10 @@
 
 .info {
   padding: 20px 20px;
+  width: 100%;
 
-  @include media-M {
-    width: 40%;
-  }
-
-  @include media-S {
-    width: 100%;
-    padding: 0;
-    border: none;
+  @include media-XS {
+    padding: 10px 10px;
   }
 }
 

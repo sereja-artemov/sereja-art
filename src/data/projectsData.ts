@@ -156,4 +156,18 @@ export const projectsData: project[] = [
     year: 2022,
     active: true,
   },
+  {
+    name: 'CatEnergy',
+    description: 'Адаптивная верстка сайта функционального питания для котов',
+    date: new Date('2020-09-12'),
+    cost: 123,
+    links: {
+      githubLink: 'https://github.com/sereja-artemov/catenergy',
+    },
+    image: 'https://sereja-art.ru/upload/projects/catenergy_1280x720.jpg',
+    previewImage: '',
+    tools: ['HTML', 'CSS'],
+    year: 2020,
+    active: true,
+  },
 ];

@@ -9,7 +9,7 @@ import { ProjectType } from '@/lib/types';
 
 const ProjectCardItem = ({ data }: { data: ProjectType }) => {
   const [isLoading, setIsLoading] = useState(true);
-  console.log(data);
+
   return (
     <article className={s.project}>
       <div className={s.imageWrapper}>
