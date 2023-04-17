@@ -7,6 +7,7 @@ import {MdWeb} from "react-icons/md";
 import { AiOutlineCalendar } from 'react-icons/ai';
 import { ProjectType } from '@/lib/types';
 import SliderImageSkeleton from '@/components/skeletons/SliderImageSkeleton';
+import { FiExternalLink } from 'react-icons/fi';
 
 const ProjectCardItemSlider = ({data}: {data: ProjectType}) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -39,9 +40,9 @@ const ProjectCardItemSlider = ({data}: {data: ProjectType}) => {
               <BsGithub className={`${s.icon} ${s.githubIcon}`} title='github иконка' />
             </Link>
           }
-          { data.links.buildLink !== undefined &&
+          {data.links.buildLink !== undefined &&
             <Link href={data.links.buildLink} target='_blank'>
-              <MdWeb className={`${s.icon} ${s.buildIcon}`} title='build иконка' />
+              <FiExternalLink className={`${s.icon} ${s.buildIcon}`} title='build иконка' />
             </Link>
           }
         </div>

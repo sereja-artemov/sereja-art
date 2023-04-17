@@ -6,7 +6,7 @@ export interface project {
   description: string;
   date: number | string | Date;
   cost: number;
-  links: { detailLink?: string; githubLink: string; buildLink?: string };
+  links: { detailLink?: string; githubLink?: string; buildLink?: string };
   image: string | StaticImageData;
   previewImage: string | StaticImageData;
   tools: string[];
@@ -177,11 +177,51 @@ export const projectsData: project[] = [
     date: new Date('2020-09-12'),
     cost: 123,
     links: {
-      githubLink: '',
     },
     image: 'https://sereja-art.ru/upload/projects/pchelp_1280x720.jpg',
     previewImage: '',
     tools: ['HTML', 'CSS', 'Photoshop'],
+    year: 2020,
+    active: true,
+  },
+  {
+    name: 'Автомотошкола Курск',
+    description: 'Один из первых моих сайтов из далекого 2017 года. Работает без CMS.',
+    date: new Date('2017-01-01'),
+    cost: 123,
+    links: {
+    },
+    image: 'https://sereja-art.ru/upload/projects/automotoschool_1280x720.jpg',
+    previewImage: '',
+    tools: ['HTML', 'CSS', 'JS', 'Bootstrap', 'Photoshop'],
+    year: 2017,
+    active: true,
+  },
+  {
+    name: 'Предприятие Материально-Технического Снабжения «ОМ»',
+    description: 'Запустил сайт на решении Аспро:Максимум и CMS 1С-Битрикс, наполнил контентом по ТЗ заказчика и сделал интеграцию с 1С.',
+    date: new Date('2019-01-01'),
+    cost: 123,
+    links: {
+      buildLink: 'https://om2b.ru',
+    },
+    image: 'https://sereja-art.ru/upload/projects/pmtsom_1280x720.jpg',
+    previewImage: '',
+    tools: ['HTML', 'CSS', 'JS', 'Bitrix', 'Аспро: Максимум'],
+    year: 2019,
+    active: true,
+  },
+  {
+    name: 'Промышленные сварочные роботы GSK - компания Техновелд',
+    description: 'Провел маркетинговое исследование, создал дизайн и сверстал на Tilda. Подключил необходимые виджеты и маркетинговые сервисы.',
+    date: new Date('2020-01-01'),
+    cost: 123,
+    links: {
+      buildLink: 'https://robot.tweld.ru',
+    },
+    image: 'https://sereja-art.ru/upload/projects/tweld_robot_1280x720.jpg',
+    previewImage: '',
+    tools: ['HTML', 'CSS', 'JS', 'Tilda', 'Bitrix24', 'Bicall'],
     year: 2020,
     active: true,
   },
