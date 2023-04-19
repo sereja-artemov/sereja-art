@@ -195,7 +195,7 @@ export const projectsData: project[] = [
     previewImage: '',
     tools: ['HTML', 'CSS', 'JS', 'Bootstrap', 'Photoshop'],
     year: 2017,
-    active: true,
+    active: false,
   },
   {
     name: 'Предприятие Материально-Технического Снабжения «ОМ»',
