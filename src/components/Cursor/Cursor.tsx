@@ -1,8 +1,11 @@
 import {useEffect, useRef} from 'react';
 import { element } from 'prop-types';
 import s from './Cursor.module.scss';
+import { useRouter } from 'next/router';
 
 export default function Cursor() {
+
+  const { pathname } = useRouter();
 
   const delay = 10; //скорость следования follower 'cursor-dot'
   const followerOpacity = 1;
@@ -19,7 +22,9 @@ export default function Cursor() {
 
   //коллекция со всеми ссылками на странице
   const linkArr = document.getElementsByTagName('a');
-
+  //коллекция со всеми кнопками на странице
+  const buttonArr = document.getElementsByTagName('button');
+  console.log(buttonArr);
   //получаем координаты курсора из localStorage, если их нет, то из центра дисплея
   const getCursorPosition = () => {
     if (localStorage.getItem('cursorPosition')) {
@@ -45,11 +50,6 @@ export default function Cursor() {
     document.addEventListener('mouseenter', mouseEnterEvent);
     document.addEventListener('mouseleave', mouseLeaveEvent);
 
-    // Array.from(linkArr).forEach((element) => {
-    //   element.addEventListener('mouseenter', mouseEnterOnLink);
-    //   element.addEventListener('mouseleave', mouseLeaveOnLink);
-    // })
-
     animateDotOutline();
 
     if (dot.current) {
@@ -68,23 +68,41 @@ export default function Cursor() {
       document.removeEventListener('mouseenter', mouseEnterEvent);
       document.removeEventListener('mouseleave', mouseLeaveEvent);
 
-      Array.from(linkArr).forEach((element) => {
-        element.removeEventListener('mouseenter', mouseEnterOnLink);
-      })
-
       // @ts-ignore
       cancelAnimationFrame(requestRef.current);
     };
   }, []);
 
-  // эффект при наведении на ссылки
-  const mouseEnterOnLink = () => {
+  useEffect(() => {
+    Array.from(linkArr).forEach((element) => {
+      element.addEventListener('mouseenter', mouseEnterOn);
+      element.addEventListener('mouseleave', mouseLeaveOn);
+    })
+    Array.from(buttonArr).forEach((element) => {
+      element.addEventListener('mouseenter', mouseEnterOn);
+      element.addEventListener('mouseleave', mouseLeaveOn);
+    })
+
+    return () => {
+      Array.from(linkArr).forEach((element) => {
+        element.removeEventListener('mouseenter', mouseEnterOn);
+        element.addEventListener('mouseleave', mouseLeaveOn);
+      })
+      Array.from(buttonArr).forEach((element) => {
+        element.removeEventListener('mouseenter', mouseEnterOn);
+        element.addEventListener('mouseleave', mouseLeaveOn);
+      })
+    }
+  }, [pathname]);
+
+  // эффект при наведении на элементы
+  const mouseEnterOn = () => {
     if (dotOutline.current) {
       dotOutline.current.style.background = 'none';
       dotOutline.current.style.border = '1px solid var(--cursor-follower-color)';
     }
   }
-  const mouseLeaveOnLink = () => {
+  const mouseLeaveOn = () => {
     if (dotOutline.current) {
       dotOutline.current.style.background = 'rgb(103 103 171 / 40%)';
       dotOutline.current.style.border = 'none';
