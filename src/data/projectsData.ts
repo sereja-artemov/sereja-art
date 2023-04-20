@@ -119,9 +119,9 @@ export const projectsData: project[] = [
       githubLink: '',
       buildLink: '',
     },
-    image: 'https://sereja-art.ru/upload/projects/photographer-site_1024.webp',
+    image: 'https://sereja-art.ru/upload/projects/photograph_1200.webp',
     previewImage:
-      'https://sereja-art.ru/upload/projects/photographer-site_1024.webp',
+      'https://sereja-art.ru/upload/projects/photograph_1200.webp',
     tools: ['HTML', 'CSS', 'JS', 'Photoshop'],
     year: 2020,
     active: true,
