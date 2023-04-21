@@ -16,6 +16,7 @@ function PostLayout({post, children}: {post: PostType; children: JSX.Element;}) 
   const window = useWindowSize();
   const scrollPercentage = useScrollPercentage();
 
+
   useEffect(() => {
     const filteredArray = post.tableOfContents.filter(item => item.heading.toLowerCase().includes(searchValue.toLowerCase()));
     setFilteredTod(filteredArray);
@@ -83,6 +84,9 @@ function PostLayout({post, children}: {post: PostType; children: JSX.Element;}) 
           </div>
         </div>
         {children}
+        <div className={s.btnWrapper}>
+          <Link href='/blogs' className={`btn btn--light ${s.backBtn}`}>Назад в блог</Link>
+        </div>
       </article>
 
     </section>

@@ -296,3 +296,12 @@
   display: block !important;
   z-index: 850;
 }
+.backBtn {
+  display: inline-block;
+  margin: 0 auto;
+}
+.btnWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
