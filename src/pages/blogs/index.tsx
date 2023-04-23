@@ -5,7 +5,6 @@ import { FrontMatter } from '@/lib/types';
 
 function Blogs({blogs}: { blogs: FrontMatter[] }) {
   const [filteredBlogs, setFilteredBlogs] = useState([...blogs]);
-  console.log({ blogs });
   return (
     <BlogsPage filteredBlogs={filteredBlogs}/>
   );

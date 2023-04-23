@@ -24,7 +24,6 @@ export default function Cursor() {
   const linkArr = document.getElementsByTagName('a');
   //коллекция со всеми кнопками на странице
   const buttonArr = document.getElementsByTagName('button');
-  console.log(buttonArr);
   //получаем координаты курсора из localStorage, если их нет, то из центра дисплея
   const getCursorPosition = () => {
     if (localStorage.getItem('cursorPosition')) {
