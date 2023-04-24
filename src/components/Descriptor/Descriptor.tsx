@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import {
   popUpFromBottomForText, popUpFromBottomWithRotate
 } from '@/utils/framerMotionVariants';
-import sereja from '@/images/sereja/sereja2.png';
+import sereja from '@/images/sereja/sereja6.png';
 import Link from 'next/link';
 import { GiNinjaHead } from 'react-icons/gi';
 
