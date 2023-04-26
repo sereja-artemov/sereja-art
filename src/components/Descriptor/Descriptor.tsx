@@ -72,9 +72,8 @@ export default function Descriptor() {
         <motion.p initial='hidden'
                   whileInView='visible'
                   variants={popUpFromBottomForText}
-                  viewport={{ once: true }} className={s.description}>👋 Меня зовут Сергей Артемов, я занимаюсь
-          разработкой и поддержкой сайтов. Создаю
-          дизайн, верстаю и программирую.
+                  viewport={{ once: true }} className={s.description}>👋 Проведу исследование и сделаю современный и быстрый сайт. <br/>
+          Затем приведу клиентов с помощью контекстной рекламы и SMM.
         </motion.p>
         <Link className={`${s.btn} btn btn--light`} href={'https://hh.ru/resume/bc6faab9ff0b4ddbed0039ed1f697661364845'}
               target='_blank'>
