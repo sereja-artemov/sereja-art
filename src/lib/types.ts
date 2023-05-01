@@ -3,7 +3,7 @@ import React from "react";
 import CSS from 'csstype';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 
-export interface ReadTimeResults {
+export interface ReadTimeResultsCustom {
   text: string;
   textRU: string;
   time: number;
@@ -12,7 +12,7 @@ export interface ReadTimeResults {
 }
 
 export type FrontMatter = {
-  readingTime: ReadTimeResults;
+  readingTime: ReadTimeResultsCustom;
   category: string;
   date: string;
   excerpt: string;

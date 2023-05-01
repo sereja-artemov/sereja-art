@@ -20,7 +20,7 @@ const DarkModeProvider = ({ children }:DarkModeProviderProps) => {
     lightTheme: 'light',
   }
 
-  const [currentTheme, setCurrentTheme] = useState(theme.lightTheme);
+  const [currentTheme, setCurrentTheme] = useState(theme.darkTheme);
 
   useEffect(() => {
     updateTheme();
