@@ -585,4 +585,7 @@ div[data-rehype-pretty-code-fragment] {
   background-color: var(--card-background-color);
   border-radius: 20px;
 
+  @include media.media-XS {
+    padding: 20px 15px;
+  }
 }

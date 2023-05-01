@@ -7,6 +7,9 @@
     gap: 30px;
     grid-template-columns: repeat(auto-fit, minmax(383px, 1fr));
 
+    @include media-XS {
+      grid-template-columns: 1fr;
+    }
   }
 }
 .servicesList {
@@ -31,6 +34,14 @@
       top: 50%;
       border-radius: 50%;
       background-color: var( --accent-color);
+
+      @include media-XS {
+        width: .4em;
+        height: .4em;
+      }
+    }
+    @include media-XS {
+      padding-left: 1.1em;
     }
   }
 }
