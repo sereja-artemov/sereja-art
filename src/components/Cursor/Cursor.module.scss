@@ -1,3 +1,5 @@
+@import "../../styles/_media.scss";
+
 .cursorDot,
 .cursorDotOutline {
   z-index: 9999999 !important;
@@ -9,6 +11,10 @@
   border-radius: 50%;
   opacity: 1;
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+  @include media-S {
+    display: none;
+  }
 }
 
 .cursorDot {
