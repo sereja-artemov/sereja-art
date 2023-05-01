@@ -44,6 +44,7 @@ function ProjectsBlock({projects}:projectsProps) {
           }
         },
         '(max-width: 575.98px)': {
+          mode: "free-snap",
           slides: {
             perView: 'auto',
             spacing: () => 20,
