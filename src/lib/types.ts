@@ -5,7 +5,7 @@ import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 export interface ReadTimeResultsCustom {
   text: string;
-  textRU: string;
+  textRU?: string;
   time: number;
   words: number;
   minutes: number;
