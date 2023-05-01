@@ -104,11 +104,11 @@
   }
 
   @include media-S {
-    font-size: 42px;
+    font-size: 9vw;
   }
 
   @include media-XS {
-    font-size: 35px;
+    font-size: 11vw;
   }
 
   &::selection {
