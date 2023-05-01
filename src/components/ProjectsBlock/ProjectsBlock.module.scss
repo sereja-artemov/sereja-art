@@ -7,8 +7,12 @@
   justify-content: center;
   gap: 20px;
 
-  @include media-XS {
-    padding-top: 10px;
+  @include media-S {
+    padding-top: 30px;
+    gap: 12px;
+  }
+  @include media-S {
+    padding-top: 20px;
     gap: 12px;
   }
 }
