@@ -1,8 +1,15 @@
-import { ReadTimeResults } from "reading-time";
 import { Variants } from "framer-motion";
 import React from "react";
 import CSS from 'csstype';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
+
+export interface ReadTimeResults {
+  text: string;
+  textRU: string;
+  time: number;
+  words: number;
+  minutes: number;
+}
 
 export type FrontMatter = {
   readingTime: ReadTimeResults;
