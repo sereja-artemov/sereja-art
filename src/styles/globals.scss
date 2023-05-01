@@ -259,6 +259,13 @@ img {
   }
 }
 
+@media (max-width: 575.98px) {
+  .b24-widget-button-position-bottom-right {
+    right: 10px !important;
+    bottom: 40px !important;
+  }
+}
+
 .page-title {
   margin: 0;
   margin-bottom: 2.5rem;

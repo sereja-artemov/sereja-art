@@ -41,5 +41,9 @@ export const skillsData: skillsType[] = [
     name: 'Tilda',
     active: true,
   },
+  {
+    name: 'Яндекс.Директ',
+    active: true,
+  },
 ];
 

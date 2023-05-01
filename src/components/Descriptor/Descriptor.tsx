@@ -5,9 +5,11 @@ import { motion } from 'framer-motion';
 import {
   popUpFromBottomForText, popUpFromBottomWithRotate
 } from '@/utils/framerMotionVariants';
-import sereja from '@/images/sereja/sereja6.png';
+import sereja from '@/images/sereja/sereja7.png';
 import Link from 'next/link';
 import { GiNinjaHead } from 'react-icons/gi';
+import Script from 'next/script';
+import B24FormButton from '@/lib/bitrix24Script';
 
 export default function Descriptor() {
   const [isSerejaImageActive, setIsSerejaImageActive] = useState(false);
@@ -75,6 +77,7 @@ export default function Descriptor() {
                   viewport={{ once: true }} className={s.description}>👋 Проведу исследование и сделаю современный и быстрый сайт. <br/>
           Затем приведу клиентов с помощью контекстной рекламы и SMM.
         </motion.p>
+        {/*<B24FormButton />*/}
         <Link className={`${s.btn} btn btn--light`} href={'https://hh.ru/resume/bc6faab9ff0b4ddbed0039ed1f697661364845'}
               target='_blank'>
           <GiNinjaHead className={s.resumeIcon} />

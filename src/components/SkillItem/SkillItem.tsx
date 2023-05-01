@@ -5,6 +5,7 @@ import { popUp } from '@/utils/framerMotionVariants';
 import { motion } from 'framer-motion';
 import { BsWordpress } from 'react-icons/bs';
 import { AiOutlineSmallDash } from 'react-icons/ai';
+import { FaYandex } from 'react-icons/fa';
 
 type SkillsItemProps = {
   name: string,
@@ -52,6 +53,9 @@ function chooseIcon(title: string) {
       break;
     case "WordPress":
       Icon = BsWordpress;
+      break;
+    case "Яндекс.Директ":
+      Icon = FaYandex;
       break;
     default:
       Icon = AiOutlineSmallDash;

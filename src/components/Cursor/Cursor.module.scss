@@ -1,6 +1,6 @@
 .cursorDot,
 .cursorDotOutline {
-  z-index: 900;
+  z-index: 9999999 !important;
   pointer-events: none;
   position: absolute;
   top: 50%;
