@@ -327,32 +327,11 @@ a {
   @include media.media-S {
     padding: 0 15px;
   }
-}
 
-//Стили курсора
-//.cursor-dot,
-//.cursor-dot-outline {
-//  pointer-events: none;
-//  position: absolute;
-//  top: 50%;
-//  left: 50%;
-//  transform: translate(-50%, -50%);
-//  border-radius: 50%;
-//  opacity: 1;
-//  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-//}
-//
-//.cursor-dot {
-//  width: 8px;
-//  height: 8px;
-//  background-color: #6C6DB2;
-//}
-//
-//.cursor-dot-outline {
-//  width: 40px;
-//  height: 40px;
-//  background-color: var(--cursor-follower-color);
-//}
+  @include media.media-XS {
+    padding: 0 10px;
+  }
+}
 
 .block-mb {
   margin-bottom: 105px;

@@ -73,7 +73,7 @@ function ProjectsBlock({projects}:projectsProps) {
       </div>
       {/*!isAnimation && <p style={{textAlign: "center", position: "absolute", left: '50%', transform: "translateX(-50%)", fontSize: 15}}>Тащите мышкой</p>*/}
       {loaded && instanceRef.current && (
-        <div className={s.dots}>
+        <div className={`${s.dots} container-fluid`}>
           {[
             ...Array(instanceRef.current.track.details.slides.length).keys(),
           ].map((idx) => {
