@@ -32,7 +32,7 @@
 .active {
   background: var(--accent-color);
 }
-.sliderWrapper {
+.sliderContainer {
 
   @include media-S {
     padding: 0 15px;

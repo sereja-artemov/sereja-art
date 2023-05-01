@@ -62,13 +62,14 @@ function ProjectsBlock({projects}:projectsProps) {
       <div className={`container`}>
         <h1 className={`${s.projectTitle} block-title`}>Мои проекты</h1>
       </div>
-
-      <div ref={ref} className={`${s.sliderWrapper} keen-slider`}>
-        {
-          projectsData.map((project:ProjectType, index: number) => {
-            return <ProjectCardItemSlider key={index} data={project} />
-          })
-        }
+      <div className={s.sliderContainer}>
+        <div ref={ref} className={`${s.sliderWrapper} keen-slider`}>
+          {
+            projectsData.map((project:ProjectType, index: number) => {
+              return <ProjectCardItemSlider key={index} data={project} />
+            })
+          }
+        </div>
       </div>
       {/*!isAnimation && <p style={{textAlign: "center", position: "absolute", left: '50%', transform: "translateX(-50%)", fontSize: 15}}>Тащите мышкой</p>*/}
       {loaded && instanceRef.current && (
