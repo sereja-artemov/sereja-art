@@ -152,4 +152,8 @@
     fill: var(--accent-color) !important;
     color: var(--accent-color) !important;
   }
+
+  @include media-XS {
+    align-self: end;
+  }
 }
