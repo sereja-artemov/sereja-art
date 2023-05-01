@@ -37,8 +37,13 @@
 }
 .sunIcon {
   display: inline-block;
-  width: 1.6em;
-  height: 1.6em;
+  width: 32px;
+  height: 32px;
+
+  @include media-S {
+    width: 25px;
+    height: 25px;
+  }
 }
 .moonIcon {
   fill: var(--icons-color);
