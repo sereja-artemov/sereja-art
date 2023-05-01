@@ -8,7 +8,7 @@ import readTime, {ReadTimeResults} from "reading-time";
 import rehypePrettyCode from "rehype-pretty-code";
 import getWordEnding from "@/lib/getWordEnding";
 import {slugify, transliterate} from "transliteration";
-import { FrontMatter } from '@/lib/types';
+import { FrontMatter, ReadTimeResultsCustom } from '@/lib/types';
 
 export default class MDXContent {
   private POST_PATH: string;
@@ -47,7 +47,7 @@ export default class MDXContent {
     const source = readFileSync(postPath);
     const { content, data } = matter(source);
 
-    const readingTime: ReadTimeResults = readTime(content, { wordsPerMinute: 200 });
+    const readingTime: ReadTimeResultsCustom = readTime(content, { wordsPerMinute: 200 });
     readingTime.textRU = this.transformReadingTime(content);
     if (!data.published) return null;
 
