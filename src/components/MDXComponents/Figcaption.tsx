@@ -10,11 +10,11 @@ export default function Figcaption({src, caption, alt}: figcaptionProps) {
   if (caption !== undefined) {
     return (
       <figure>
-        <Image width={1920} height={1080} src={src} alt={alt} placeholder={'blur'} blurDataURL="https://sereja-art.ru/upload/image-empty.jpg" />
+        <Image width={1920} height={1080} src={src} alt={alt} placeholder={'blur'} blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNMT19dDwAEsAH6aQ1/kwAAAABJRU5ErkJggg==" />
         <figcaption>{caption}</figcaption>
       </figure>
     );
   } else {
-    return <Image width={1920} height={1080} src={src} alt={alt} placeholder={'blur'} blurDataURL="https://sereja-art.ru/upload/image-empty.jpg" />;
+    return <Image width={1920} height={1080} src={src} alt={alt} placeholder={'blur'} blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNMT19dDwAEsAH6aQ1/kwAAAABJRU5ErkJggg==" />;
   }
 }
