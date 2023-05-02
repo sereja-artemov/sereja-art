@@ -74,12 +74,9 @@ body[data-theme="dark"] {
   max-width: 60%;
   transform: translate(-50%, -50%);
 
-  @include media-S {
-    top: 0;
-  }
   @include media-XS {
-    top: 15px;
-    max-width: 150px;
+    top: 40px;
+    max-width: 320px;
   }
 }
 .serejaImg {
