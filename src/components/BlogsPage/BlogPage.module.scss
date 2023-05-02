@@ -3,19 +3,20 @@
 .articleWrapper {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(413px, 1fr));
-  grid-gap: 1.5rem;
   gap: 1.5rem;
   margin: 0 auto;
 
   @include media-M {
     grid-template-columns: repeat(auto-fill, minmax(333px, 1fr));
   }
+
   @include media-S {
     grid-template-columns: repeat(auto-fill, minmax(337px, 1fr));
   }
 
   @include media-XS {
     grid-template-columns: repeat(1, minmax(auto, 1fr));
+    gap: 30px;
   }
 }
 
