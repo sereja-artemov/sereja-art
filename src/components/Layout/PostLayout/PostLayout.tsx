@@ -64,7 +64,7 @@ function PostLayout({post, children}: {post: PostType; children: JSX.Element;}) 
           }
         </>
       }
-      <article className={s.post}>
+      <article className={`${s.post} ${ post.tableOfContents.length === 0 && s.postMarginLeft}`}>
         <div className={s.topBlock}>
           <h1 className={s.title}>{post.meta.title}</h1>
           <div className={s.info}>

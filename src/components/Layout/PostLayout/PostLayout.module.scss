@@ -120,6 +120,10 @@
   }
 }
 
+.postMarginLeft {
+  margin-left: auto;
+}
+
 .postLayout {
   position: relative;
   padding: 0;
@@ -286,10 +290,6 @@
       border-left: 1px solid var(--accent-color);
     }
   }
-}
-
-.todLink {
-
 }
 
 .todActive {

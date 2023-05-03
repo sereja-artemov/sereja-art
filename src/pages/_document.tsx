@@ -9,7 +9,7 @@ export default function Document() {
       <Main/>
       <NextScript/>
       {/* Чат Битрикс24 Открытые линии */}
-      <Script id="show-banner" strategy="lazyOnload">
+      <Script id="show-banner" strategy="afterInteractive">
         {`(function (w, d, u) {
             var s = d.createElement('script');
             s.async = true;
