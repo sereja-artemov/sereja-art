@@ -219,7 +219,9 @@
     padding-bottom: 55px;
   }
 }
-
+.todLink {
+  font-size: .5rem;
+}
 .tableOfContentsBtn {
   z-index: 850;
   display: none;
@@ -289,6 +291,13 @@
       background-color: var(--card-background-color-opacity);
       border-left: 1px solid var(--accent-color);
     }
+  }
+
+  @include media-L() {
+    font-size: 18px;
+  }
+  @include media-M() {
+    font-size: 16px;
   }
 }
 

@@ -16,7 +16,6 @@ function PostLayout({post, children}: {post: PostType; children: JSX.Element;}) 
   const window = useWindowSize();
   const scrollPercentage = useScrollPercentage();
 
-
   useEffect(() => {
     const filteredArray = post.tableOfContents.filter(item => item.heading.toLowerCase().includes(searchValue.toLowerCase()));
     setFilteredTod(filteredArray);
@@ -48,13 +47,14 @@ function PostLayout({post, children}: {post: PostType; children: JSX.Element;}) 
                 <div className={s.tocLinkWrapper}>
                   { filteredTod.map((item, index: number) => {
 
-                    if (item.level >= 1 && window.width > 768) {
+                    // Выводим в содержание только h2-h4
+                    if (item.level >= 0 && item.level <= 2 && window.width > 768) {
                       return <Link className={s.todLink} style={{marginLeft: (item.level * 15) + "px", fontSize: 1 - Number(`0.${item.level}`) + "em",}} key={item.heading + index} href={`#${item.transliteratedHeading}`}>{item.heading}</Link>
                     } else if (window.width < 768) {
                       return <Link onClick={closeTod} className={s.todLink} style={{marginLeft: (item.level * 15) + "px", fontSize: 1.4 - Number(`0.${item.level}`) + "em",}} key={item.heading + index} href={`#${item.transliteratedHeading}`}>{item.heading}</Link>
                     }
-                    return <Link className={s.todLink} style={{marginLeft: (item.level * 15) + "px"}} key={item.heading + index} href={`#${item.transliteratedHeading}`}>{item.heading}</Link>
-                  }) }
+                  })
+                  }
                 </div>
                 { filteredTod.length === 0 && <p>Ничего не найдено</p> }
               </div>
