@@ -16,6 +16,52 @@ export interface project {
 
 export const projectsData: project[] = [
   {
+    name: 'Сайт производственной компании Промматик',
+    description:
+      'Запустил с нуля сайт компании Промматик, наполнил контентом, сделал базовую SEO-оптимизацию и подключил необходимые сервисы.',
+    date: new Date('2017-01-26'),
+    cost: 123,
+    links: {
+      detailLink: '#',
+      githubLink: 'https://github.com/sereja-artemov',
+      buildLink: '#',
+    },
+    image: 'https://sereja-art.ru/upload/projects/prommatic_1024.webp',
+    previewImage: '',
+    tools: ['1C-Bitrix', 'Aspro', 'SEO', 'Битрикс24', 'Bicall'],
+    year: 2023,
+    active: true,
+  },
+  {
+    name: 'Промышленные сварочные роботы GSK - компания Техновелд',
+    description: 'Провел маркетинговое исследование, создал дизайн и сверстал на Tilda. Подключил необходимые виджеты и маркетинговые сервисы.',
+    date: new Date('2020-01-01'),
+    cost: 123,
+    links: {
+      buildLink: 'https://robot.tweld.ru',
+    },
+    image: 'https://sereja-art.ru/upload/projects/tweld_robot_1280x720.jpg',
+    previewImage: '',
+    tools: ['HTML', 'CSS', 'JS', 'Tilda', 'Bitrix24', 'Bicall'],
+    year: 2020,
+    active: true,
+  },
+
+  {
+    name: 'Предприятие Материально-Технического Снабжения «ОМ»',
+    description: 'Запустил сайт на решении Аспро:Максимум и CMS 1С-Битрикс, наполнил контентом по ТЗ заказчика и сделал интеграцию с 1С.',
+    date: new Date('2019-01-01'),
+    cost: 123,
+    links: {
+      buildLink: 'https://om2b.ru',
+    },
+    image: 'https://sereja-art.ru/upload/projects/pmtsom_1280x720.jpg',
+    previewImage: '',
+    tools: ['HTML', 'CSS', 'JS', 'Bitrix', 'Аспро: Максимум'],
+    year: 2019,
+    active: true,
+  },
+  {
     name: 'Калькулятор семейного бюджета',
     description:
       'Финансовый вопрос – важный аспект семейной жизни. Многие пары расстаются из-за разногласий в формировании бюджета, а ведь коммуналку проще платить вдвоем. Иначе, зачем оно всё?',
@@ -34,25 +80,6 @@ export const projectsData: project[] = [
     year: 2023,
     active: true,
   },
-
-  {
-    name: 'Сайт производственной компании Промматик',
-    description:
-      'Запустил с нуля сайт компании Промматик, наполнил контентом, сделал базовую SEO-оптимизацию и подключил необходимые сервисы.',
-    date: new Date('2017-01-26'),
-    cost: 123,
-    links: {
-      detailLink: '#',
-      githubLink: 'https://github.com/sereja-artemov',
-      buildLink: '#',
-    },
-    image: 'https://sereja-art.ru/upload/projects/prommatic_1024.webp',
-    previewImage: '',
-    tools: ['1C-Bitrix', 'Aspro', 'SEO', 'Битрикс24', 'Bicall'],
-    year: 2023,
-    active: true,
-  },
-
   {
     name: 'CakeDreams - сайт кондитерской',
     description:
@@ -184,6 +211,7 @@ export const projectsData: project[] = [
     year: 2020,
     active: true,
   },
+
   {
     name: 'Автомотошкола Курск',
     description: 'Один из первых моих сайтов из далекого 2017 года. Работает без CMS.',
@@ -196,33 +224,5 @@ export const projectsData: project[] = [
     tools: ['HTML', 'CSS', 'JS', 'Bootstrap', 'Photoshop'],
     year: 2017,
     active: false,
-  },
-  {
-    name: 'Предприятие Материально-Технического Снабжения «ОМ»',
-    description: 'Запустил сайт на решении Аспро:Максимум и CMS 1С-Битрикс, наполнил контентом по ТЗ заказчика и сделал интеграцию с 1С.',
-    date: new Date('2019-01-01'),
-    cost: 123,
-    links: {
-      buildLink: 'https://om2b.ru',
-    },
-    image: 'https://sereja-art.ru/upload/projects/pmtsom_1280x720.jpg',
-    previewImage: '',
-    tools: ['HTML', 'CSS', 'JS', 'Bitrix', 'Аспро: Максимум'],
-    year: 2019,
-    active: true,
-  },
-  {
-    name: 'Промышленные сварочные роботы GSK - компания Техновелд',
-    description: 'Провел маркетинговое исследование, создал дизайн и сверстал на Tilda. Подключил необходимые виджеты и маркетинговые сервисы.',
-    date: new Date('2020-01-01'),
-    cost: 123,
-    links: {
-      buildLink: 'https://robot.tweld.ru',
-    },
-    image: 'https://sereja-art.ru/upload/projects/tweld_robot_1280x720.jpg',
-    previewImage: '',
-    tools: ['HTML', 'CSS', 'JS', 'Tilda', 'Bitrix24', 'Bicall'],
-    year: 2020,
-    active: true,
   },
 ];
