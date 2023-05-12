@@ -95,11 +95,14 @@
   p, ul, ol, blockquote, img, pre, figure {
     margin-bottom: 1.25em;
   }
-
+  li {
+    padding-bottom: .8em;
+  }
   figure {
     display: block;
 
     img {
+      width: auto;
       margin-bottom: .5em;
     }
   }

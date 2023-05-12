@@ -59,7 +59,7 @@ export default class MDXContent {
         date: (data.date ?? new Date()).toString(),
         stringDate: data.stringDate ?? "",
         keywords: data.keywords ?? "",
-        image: data.image ?? "https://sereja-art.ru/upload/image-empty.jpg",
+        image: data.image ?? "http://tech.sereja-art.ru/upload/image-empty.jpg",
         category: data.category ?? "",
       };
   }

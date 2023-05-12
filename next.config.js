@@ -2,11 +2,15 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['sereja-art.ru'],
+    domains: ['sereja-art.ru', 'tech.sereja-art.ru'],
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'sereja-art.ru',
+      },
+      {
+        protocol: 'http',
+        hostname: 'tech.sereja-art.ru',
       },
     ],
   },

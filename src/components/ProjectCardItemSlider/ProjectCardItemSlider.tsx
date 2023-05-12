@@ -18,7 +18,7 @@ const ProjectCardItemSlider = ({data}: {data: ProjectType}) => {
         { isLoading && <SliderImageSkeleton /> }
         <Image fill={true} src={data.previewImage || data.image} alt={`${data.name} картинка проекта`}
                onLoadingComplete={() => setIsLoading(true)} placeholder="blur"
-               blurDataURL="https://sereja-art.ru/upload/image-empty.jpg" />
+               blurDataURL="http://tech.sereja-art.ru/upload/image-empty.jpg" />
       </div>
       <div className={s.info}>
         <div className={s.techInfo}>
