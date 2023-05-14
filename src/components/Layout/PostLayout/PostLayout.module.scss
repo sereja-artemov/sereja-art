@@ -121,6 +121,13 @@
     max-width: 100%;
     height: auto;
   }
+  ul, ol {
+    margin-left: 20px;
+    @include media-S {
+      margin-left: 15px;
+    }
+  }
+
 }
 
 .postMarginLeft {
