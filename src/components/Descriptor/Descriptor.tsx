@@ -74,7 +74,7 @@ export default function Descriptor() {
         <motion.p initial='hidden'
                   whileInView='visible'
                   variants={popUpFromBottomForText}
-                  viewport={{ once: true }} className={s.description}>👋 Занимаюсь разработкой, поддержкой и продвижением сайтов. <br/> Создаю дизайн, верстаю, программирую и привожу клиентов.
+                  viewport={{ once: true }} className={s.description}>👋 Проведу исследование и сделаю современный и быстрый сайт. <br/> Затем приведу клиентов с помощью контекстной рекламы и SMM.
         </motion.p>
         {/*<B24FormButton />*/}
         <Link className={`${s.btn} btn btn--light`} href={'https://hh.ru/resume/bc6faab9ff0b4ddbed0039ed1f697661364845'}
