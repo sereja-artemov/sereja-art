@@ -70,7 +70,7 @@ export const projectsData: project[] = [
     links: {
       detailLink: '#',
       githubLink: '#',
-      buildLink: 'http://sereja-art.ru/project-build/family-budget-calculator/',
+      buildLink: 'http://tech.sereja-art.ru/project-build/family-budget-calculator/',
     },
     image:
       'http://tech.sereja-art.ru/upload/projects/family-budget-calculator-960x540.jpg',
