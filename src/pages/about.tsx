@@ -5,7 +5,7 @@ import AboutPage from '@/components/AboutPage/AboutPage';
 export default function About() {
   return (
     <>
-      <SEO title='Обо мне' />
+      <SEO title='Веб-разработчик, дизайнер, маркетолог' />
       <AboutPage />
     </>
   );

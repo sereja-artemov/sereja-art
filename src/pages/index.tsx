@@ -17,7 +17,7 @@ export default function Home({ blogs, projects }: HomeProps) {
 
   return (
     <>
-      <SEO title='Главная' description='Сайт-портфолио frontend-разработчика Артемова Сергея.' />
+      <SEO title='Разработка и продвижение сайтов под ключ' description='Сайт-портфолио frontend-разработчика Артемова Сергея.' />
       <Descriptor />
       <Skills />
       <ProjectsBlock projects={projects} />
