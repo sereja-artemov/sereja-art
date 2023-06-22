@@ -70,8 +70,6 @@ export default function App({Component, pageProps}: AppProps) {
       <DarkModeProvider>
         <IconContext.Provider value={{ color: 'var(--icons-color)' }}>
           <Layout>
-            <SEO />
-            <YandexMetrika />
             <Component {...pageProps} />
           </Layout>
         </ IconContext.Provider>
