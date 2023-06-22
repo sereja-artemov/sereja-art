@@ -12,6 +12,7 @@ import { useRouter } from 'next/router';
 import NProgress from 'nprogress';
 import "nprogress/nprogress.css";
 import SEO from "@/components/SEO/SEO";
+import { YandexMetrika } from '@/components/YandexMetrika/YandexMetrika';
 
 const raleway = Raleway({
   style: ['normal'],
@@ -70,6 +71,7 @@ export default function App({Component, pageProps}: AppProps) {
         <IconContext.Provider value={{ color: 'var(--icons-color)' }}>
           <Layout>
             <SEO />
+            <YandexMetrika />
             <Component {...pageProps} />
           </Layout>
         </ IconContext.Provider>
