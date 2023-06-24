@@ -24,6 +24,7 @@ export default function Document() {
           });`
         }
       </Script>
+
       {/* Чат Битрикс24 Открытые линии */}
       <Script id="show-banner" strategy="afterInteractive">
         {`(function (w, d, u) {
@@ -37,7 +38,6 @@ export default function Document() {
               'https://cdn-ru.bitrix24.ru/b17818108/crm/site_button/loader_1_xrfang.js');`
         }
       </Script>
-
       </body>
     </Html>
   )
